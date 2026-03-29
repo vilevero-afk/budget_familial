@@ -24,7 +24,8 @@ class BudgetSectionCard extends StatelessWidget {
   final VoidCallback onToggleExpanded;
   final VoidCallback onAddColumn;
   final void Function(BudgetColumnTemplate column) onRenameColumn;
-  final void Function(BudgetColumnTemplate column, String value) onAmountChanged;
+  final void Function(BudgetColumnTemplate column, String value)
+      onAmountChanged;
   final void Function(BudgetColumnTemplate column) onDeleteColumn;
 
   Color _softColor(Color color) => color.withValues(alpha: 0.10);
@@ -59,7 +60,7 @@ class BudgetSectionCard extends StatelessWidget {
 
     final total = section.columns.fold<double>(
       0.0,
-          (sum, item) => sum + amountProvider(item),
+      (sum, item) => sum + amountProvider(item),
     );
 
     final localizedTitle = _localizedSectionTitle(l10n);
@@ -96,129 +97,129 @@ class BudgetSectionCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                   child: isCompact
                       ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 42,
-                            height: 42,
-                            decoration: BoxDecoration(
-                              color: _softColor(section.color),
-                              shape: BoxShape.circle,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 42,
+                                  height: 42,
+                                  decoration: BoxDecoration(
+                                    color: _softColor(section.color),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    isExpanded
+                                        ? Icons.keyboard_arrow_down_rounded
+                                        : Icons.keyboard_arrow_right_rounded,
+                                    color: section.color,
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Text(
+                                    localizedTitle,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w800,
+                                      color: Color(0xFF111827),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Icon(
-                              isExpanded
-                                  ? Icons.keyboard_arrow_down_rounded
-                                  : Icons.keyboard_arrow_right_rounded,
-                              color: section.color,
+                            const SizedBox(height: 12),
+                            Wrap(
+                              spacing: 10,
+                              runSpacing: 10,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12,
+                                    vertical: 8,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: _softColor(section.color),
+                                    borderRadius: BorderRadius.circular(999),
+                                    border: Border.all(
+                                      color: _borderColor(section.color),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    _formatAmount(total),
+                                    style: TextStyle(
+                                      color: section.color,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                ),
+                                FilledButton.icon(
+                                  onPressed: onAddColumn,
+                                  icon: const Icon(Icons.add_rounded),
+                                  label: Text(l10n.commonAdd),
+                                ),
+                              ],
                             ),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Text(
-                              localizedTitle,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                                color: Color(0xFF111827),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Wrap(
-                        spacing: 10,
-                        runSpacing: 10,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 12,
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: _softColor(section.color),
-                              borderRadius: BorderRadius.circular(999),
-                              border: Border.all(
-                                color: _borderColor(section.color),
-                              ),
-                            ),
-                            child: Text(
-                              _formatAmount(total),
-                              style: TextStyle(
-                                color: section.color,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ),
-                          FilledButton.icon(
-                            onPressed: onAddColumn,
-                            icon: const Icon(Icons.add_rounded),
-                            label: Text(l10n.commonAdd),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
+                          ],
+                        )
                       : Row(
-                    children: [
-                      Container(
-                        width: 42,
-                        height: 42,
-                        decoration: BoxDecoration(
-                          color: _softColor(section.color),
-                          shape: BoxShape.circle,
+                          children: [
+                            Container(
+                              width: 42,
+                              height: 42,
+                              decoration: BoxDecoration(
+                                color: _softColor(section.color),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                isExpanded
+                                    ? Icons.keyboard_arrow_down_rounded
+                                    : Icons.keyboard_arrow_right_rounded,
+                                color: section.color,
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                localizedTitle,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                  color: Color(0xFF111827),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 8,
+                              ),
+                              decoration: BoxDecoration(
+                                color: _softColor(section.color),
+                                borderRadius: BorderRadius.circular(999),
+                                border: Border.all(
+                                  color: _borderColor(section.color),
+                                ),
+                              ),
+                              child: Text(
+                                _formatAmount(total),
+                                style: TextStyle(
+                                  color: section.color,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            FilledButton.icon(
+                              onPressed: onAddColumn,
+                              icon: const Icon(Icons.add_rounded),
+                              label: Text(l10n.commonAdd),
+                            ),
+                          ],
                         ),
-                        child: Icon(
-                          isExpanded
-                              ? Icons.keyboard_arrow_down_rounded
-                              : Icons.keyboard_arrow_right_rounded,
-                          color: section.color,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          localizedTitle,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xFF111827),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: _softColor(section.color),
-                          borderRadius: BorderRadius.circular(999),
-                          border: Border.all(
-                            color: _borderColor(section.color),
-                          ),
-                        ),
-                        child: Text(
-                          _formatAmount(total),
-                          style: TextStyle(
-                            color: section.color,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      FilledButton.icon(
-                        onPressed: onAddColumn,
-                        icon: const Icon(Icons.add_rounded),
-                        label: Text(l10n.commonAdd),
-                      ),
-                    ],
-                  ),
                 ),
                 AnimatedCrossFade(
                   firstChild: const SizedBox.shrink(),
@@ -233,7 +234,8 @@ class BudgetSectionCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: const Color(0xFFF8FAFC),
                               borderRadius: BorderRadius.circular(18),
-                              border: Border.all(color: const Color(0xFFE5EAF3)),
+                              border:
+                                  Border.all(color: const Color(0xFFE5EAF3)),
                             ),
                             child: Text(
                               l10n.budgetSectionEmpty,
@@ -249,197 +251,197 @@ class BudgetSectionCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: const Color(0xFFF9FAFB),
                               borderRadius: BorderRadius.circular(18),
-                              border: Border.all(color: const Color(0xFFE6EBF3)),
+                              border:
+                                  Border.all(color: const Color(0xFFE6EBF3)),
                             ),
                             child: isCompact
                                 ? Column(
-                              crossAxisAlignment:
-                              CrossAxisAlignment.stretch,
-                              children: [
-                                InkWell(
-                                  onTap: () => onRenameColumn(column),
-                                  borderRadius: BorderRadius.circular(14),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 14,
-                                      vertical: 14,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius:
-                                      BorderRadius.circular(14),
-                                      border: Border.all(
-                                        color: const Color(0xFFE1E7F0),
-                                      ),
-                                    ),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          width: 10,
-                                          height: 10,
-                                          margin: const EdgeInsets.only(
-                                            top: 5,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: [
+                                      InkWell(
+                                        onTap: () => onRenameColumn(column),
+                                        borderRadius: BorderRadius.circular(14),
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 14,
+                                            vertical: 14,
                                           ),
                                           decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(14),
+                                            border: Border.all(
+                                              color: const Color(0xFFE1E7F0),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                width: 10,
+                                                height: 10,
+                                                margin: const EdgeInsets.only(
+                                                  top: 5,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: section.color,
+                                                  shape: BoxShape.circle,
+                                                ),
+                                              ),
+                                              const SizedBox(width: 10),
+                                              Expanded(
+                                                child: Text(
+                                                  column.name,
+                                                  maxLines: 3,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: const TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(width: 8),
+                                              const Icon(
+                                                Icons.edit_outlined,
+                                                size: 18,
+                                                color: Color(0xFF667085),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 10),
+                                      TextFormField(
+                                        key: ValueKey(
+                                          '$periodKey-${section.title}-${column.id}',
+                                        ),
+                                        initialValue: amount == 0
+                                            ? ''
+                                            : amount.toStringAsFixed(2),
+                                        keyboardType: const TextInputType
+                                            .numberWithOptions(
+                                          decimal: true,
+                                        ),
+                                        decoration: InputDecoration(
+                                          labelText: l10n.dashboardAmountLabel,
+                                          prefixText: '€ ',
+                                          suffixIcon: Icon(
+                                            Icons.euro_rounded,
                                             color: section.color,
-                                            shape: BoxShape.circle,
                                           ),
                                         ),
-                                        const SizedBox(width: 10),
-                                        Expanded(
-                                          child: Text(
-                                            column.name,
-                                            maxLines: 3,
-                                            overflow:
-                                            TextOverflow.ellipsis,
-                                            style: const TextStyle(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w600,
-                                            ),
+                                        onChanged: (value) =>
+                                            onAmountChanged(column, value),
+                                      ),
+                                      const SizedBox(height: 10),
+                                      Align(
+                                        alignment: Alignment.centerRight,
+                                        child: IconButton(
+                                          onPressed: () =>
+                                              onDeleteColumn(column),
+                                          icon: const Icon(
+                                            Icons.delete_outline_rounded,
                                           ),
+                                          color: Colors.redAccent,
                                         ),
-                                        const SizedBox(width: 8),
-                                        const Icon(
-                                          Icons.edit_outlined,
-                                          size: 18,
-                                          color: Color(0xFF667085),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                TextFormField(
-                                  key: ValueKey(
-                                    '$periodKey-${section.title}-${column.id}',
-                                  ),
-                                  initialValue:
-                                  amount == 0
-                                      ? ''
-                                      : amount.toStringAsFixed(2),
-                                  keyboardType:
-                                  const TextInputType.numberWithOptions(
-                                    decimal: true,
-                                  ),
-                                  decoration: InputDecoration(
-                                    labelText: l10n.dashboardAmountLabel,
-                                    prefixText: '€ ',
-                                    suffixIcon: Icon(
-                                      Icons.euro_rounded,
-                                      color: section.color,
-                                    ),
-                                  ),
-                                  onChanged: (value) =>
-                                      onAmountChanged(column, value),
-                                ),
-                                const SizedBox(height: 10),
-                                Align(
-                                  alignment: Alignment.centerRight,
-                                  child: IconButton(
-                                    onPressed: () => onDeleteColumn(column),
-                                    icon: const Icon(
-                                      Icons.delete_outline_rounded,
-                                    ),
-                                    color: Colors.redAccent,
-                                  ),
-                                ),
-                              ],
-                            )
+                                      ),
+                                    ],
+                                  )
                                 : Row(
-                              children: [
-                                Expanded(
-                                  flex: 5,
-                                  child: InkWell(
-                                    onTap: () => onRenameColumn(column),
-                                    borderRadius:
-                                    BorderRadius.circular(14),
-                                    child: Container(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 14,
-                                        vertical: 14,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                        BorderRadius.circular(14),
-                                        border: Border.all(
-                                          color: const Color(0xFFE1E7F0),
-                                        ),
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            width: 10,
-                                            height: 10,
-                                            decoration: BoxDecoration(
-                                              color: section.color,
-                                              shape: BoxShape.circle,
+                                    children: [
+                                      Expanded(
+                                        flex: 5,
+                                        child: InkWell(
+                                          onTap: () => onRenameColumn(column),
+                                          borderRadius:
+                                              BorderRadius.circular(14),
+                                          child: Container(
+                                            padding: const EdgeInsets.symmetric(
+                                              horizontal: 14,
+                                              vertical: 14,
                                             ),
-                                          ),
-                                          const SizedBox(width: 10),
-                                          Expanded(
-                                            child: Text(
-                                              column.name,
-                                              maxLines: 2,
-                                              overflow:
-                                              TextOverflow.ellipsis,
-                                              style: const TextStyle(
-                                                fontSize: 16,
-                                                fontWeight:
-                                                FontWeight.w600,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(14),
+                                              border: Border.all(
+                                                color: const Color(0xFFE1E7F0),
                                               ),
                                             ),
+                                            child: Row(
+                                              children: [
+                                                Container(
+                                                  width: 10,
+                                                  height: 10,
+                                                  decoration: BoxDecoration(
+                                                    color: section.color,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                                const SizedBox(width: 10),
+                                                Expanded(
+                                                  child: Text(
+                                                    column.name,
+                                                    maxLines: 2,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: const TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const Icon(
+                                                  Icons.edit_outlined,
+                                                  size: 18,
+                                                  color: Color(0xFF667085),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                          const Icon(
-                                            Icons.edit_outlined,
-                                            size: 18,
-                                            color: Color(0xFF667085),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 12),
+                                      Expanded(
+                                        flex: 4,
+                                        child: TextFormField(
+                                          key: ValueKey(
+                                            '$periodKey-${section.title}-${column.id}',
                                           ),
-                                        ],
+                                          initialValue: amount == 0
+                                              ? ''
+                                              : amount.toStringAsFixed(2),
+                                          keyboardType: const TextInputType
+                                              .numberWithOptions(
+                                            decimal: true,
+                                          ),
+                                          decoration: InputDecoration(
+                                            labelText:
+                                                l10n.dashboardAmountLabel,
+                                            prefixText: '€ ',
+                                            suffixIcon: Icon(
+                                              Icons.euro_rounded,
+                                              color: section.color,
+                                            ),
+                                          ),
+                                          onChanged: (value) =>
+                                              onAmountChanged(column, value),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(width: 12),
-                                Expanded(
-                                  flex: 4,
-                                  child: TextFormField(
-                                    key: ValueKey(
-                                      '$periodKey-${section.title}-${column.id}',
-                                    ),
-                                    initialValue:
-                                    amount == 0
-                                        ? ''
-                                        : amount.toStringAsFixed(2),
-                                    keyboardType:
-                                    const TextInputType.numberWithOptions(
-                                      decimal: true,
-                                    ),
-                                    decoration: InputDecoration(
-                                      labelText:
-                                      l10n.dashboardAmountLabel,
-                                      prefixText: '€ ',
-                                      suffixIcon: Icon(
-                                        Icons.euro_rounded,
-                                        color: section.color,
+                                      const SizedBox(width: 8),
+                                      IconButton(
+                                        onPressed: () => onDeleteColumn(column),
+                                        icon: const Icon(
+                                          Icons.delete_outline_rounded,
+                                        ),
+                                        color: Colors.redAccent,
                                       ),
-                                    ),
-                                    onChanged: (value) =>
-                                        onAmountChanged(column, value),
+                                    ],
                                   ),
-                                ),
-                                const SizedBox(width: 8),
-                                IconButton(
-                                  onPressed: () => onDeleteColumn(column),
-                                  icon: const Icon(
-                                    Icons.delete_outline_rounded,
-                                  ),
-                                  color: Colors.redAccent,
-                                ),
-                              ],
-                            ),
                           );
                         }),
                         const SizedBox(height: 4),

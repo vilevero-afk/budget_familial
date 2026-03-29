@@ -185,35 +185,35 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
   double _incomeForYear(int year) {
     return widget.months.fold<double>(
       0,
-          (sum, month) => sum + _incomeForMonth(month, year),
+      (sum, month) => sum + _incomeForMonth(month, year),
     );
   }
 
   double _expensesForYear(int year) {
     return widget.months.fold<double>(
       0,
-          (sum, month) => sum + _expensesForMonth(month, year),
+      (sum, month) => sum + _expensesForMonth(month, year),
     );
   }
 
   double _savingsForYear(int year) {
     return widget.months.fold<double>(
       0,
-          (sum, month) => sum + _savingsForMonth(month, year),
+      (sum, month) => sum + _savingsForMonth(month, year),
     );
   }
 
   double _balanceForYear(int year) {
     return widget.months.fold<double>(
       0,
-          (sum, month) => sum + _balanceForMonth(month, year),
+      (sum, month) => sum + _balanceForMonth(month, year),
     );
   }
 
   int _operationCountForYear(int year) {
     return widget.months.fold<int>(
       0,
-          (sum, month) => sum + _operationCountForMonth(month, year),
+      (sum, month) => sum + _operationCountForMonth(month, year),
     );
   }
 
@@ -462,7 +462,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     if (sortedCategories.isNotEmpty) {
       final biggestCategory = sortedCategories.first;
       final ratio =
-      totalExpenses == 0 ? 0.0 : (biggestCategory.value / totalExpenses);
+          totalExpenses == 0 ? 0.0 : (biggestCategory.value / totalExpenses);
 
       items.add(
         _AdviceItem(
@@ -481,7 +481,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     if (sortedSubCategories.isNotEmpty) {
       final biggestSubCategory = sortedSubCategories.first;
       final ratio =
-      totalExpenses == 0 ? 0.0 : (biggestSubCategory.value / totalExpenses);
+          totalExpenses == 0 ? 0.0 : (biggestSubCategory.value / totalExpenses);
 
       items.add(
         _AdviceItem(
@@ -565,13 +565,13 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
 
       if (expenseMonths.isNotEmpty) {
         final averageMonthlyExpenses = expenseMonths.fold<double>(
-          0.0,
+              0.0,
               (sum, item) => sum + item.expenses,
-        ) /
+            ) /
             expenseMonths.length;
 
         final peakMonth = expenseMonths.reduce(
-              (a, b) => a.expenses >= b.expenses ? a : b,
+          (a, b) => a.expenses >= b.expenses ? a : b,
         );
 
         if (peakMonth.expenses > averageMonthlyExpenses * 1.25) {
@@ -657,24 +657,24 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
             child: IconButton(
               tooltip: monetization.canAccessExcelExport()
                   ? (_periodMode == AnalysisPeriodMode.month
-                  ? txt.exportExcel
-                  : txt.availableInMonthMode)
+                      ? txt.exportExcel
+                      : txt.availableInMonthMode)
                   : txt.premiumExcelExport,
               onPressed: _isExporting ? null : _exportCurrentPeriodToExcel,
               icon: _isExporting
                   ? const SizedBox(
-                width: 20,
-                height: 20,
-                child: CircularProgressIndicator(strokeWidth: 2.2),
-              )
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2.2),
+                    )
                   : Icon(
-                monetization.canAccessExcelExport()
-                    ? Icons.table_view_rounded
-                    : Icons.workspace_premium_rounded,
-                color: _periodMode == AnalysisPeriodMode.month
-                    ? null
-                    : Colors.grey,
-              ),
+                      monetization.canAccessExcelExport()
+                          ? Icons.table_view_rounded
+                          : Icons.workspace_premium_rounded,
+                      color: _periodMode == AnalysisPeriodMode.month
+                          ? null
+                          : Colors.grey,
+                    ),
             ),
           ),
         ],
@@ -711,10 +711,10 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                           items: widget.years
                               .map(
                                 (year) => DropdownMenuItem(
-                              value: year,
-                              child: Text(year.toString()),
-                            ),
-                          )
+                                  value: year,
+                                  child: Text(year.toString()),
+                                ),
+                              )
                               .toList(),
                           onChanged: (value) {
                             if (value == null) return;
@@ -732,10 +732,10 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                           items: widget.months
                               .map(
                                 (month) => DropdownMenuItem(
-                              value: month,
-                              child: Text(txt.monthFull(month)),
-                            ),
-                          )
+                                  value: month,
+                                  child: Text(txt.monthFull(month)),
+                                ),
+                              )
                               .toList(),
                           onChanged: (value) {
                             if (value == null) return;
@@ -756,10 +756,10 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                                 items: widget.years
                                     .map(
                                       (year) => DropdownMenuItem(
-                                    value: year,
-                                    child: Text(year.toString()),
-                                  ),
-                                )
+                                        value: year,
+                                        child: Text(year.toString()),
+                                      ),
+                                    )
                                     .toList(),
                                 onChanged: (value) {
                                   if (value == null) return;
@@ -779,10 +779,10 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                                 items: widget.months
                                     .map(
                                       (month) => DropdownMenuItem(
-                                    value: month,
-                                    child: Text(txt.monthFull(month)),
-                                  ),
-                                )
+                                        value: month,
+                                        child: Text(txt.monthFull(month)),
+                                      ),
+                                    )
                                     .toList(),
                                 onChanged: (value) {
                                   if (value == null) return;
@@ -1031,9 +1031,9 @@ class _SummaryView extends StatelessWidget {
     final localBalanceComparison = balanceComparison;
 
     final criticalAlerts =
-    alerts.where((a) => a.level == BudgetAlertLevel.critical).toList();
+        alerts.where((a) => a.level == BudgetAlertLevel.critical).toList();
     final warningAlerts =
-    alerts.where((a) => a.level == BudgetAlertLevel.warning).toList();
+        alerts.where((a) => a.level == BudgetAlertLevel.warning).toList();
 
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 6, 16, 16),
@@ -1124,11 +1124,11 @@ class _SummaryView extends StatelessWidget {
                 items: topExpenseInsights
                     .map(
                       (e) => _InsightLineData(
-                    label: '${e.categoryName} > ${e.subCategoryName}',
-                    value: e.currentAmount,
-                    extra: txt.operationsCount(e.entryCount),
-                  ),
-                )
+                        label: '${e.categoryName} > ${e.subCategoryName}',
+                        value: e.currentAmount,
+                        extra: txt.operationsCount(e.entryCount),
+                      ),
+                    )
                     .toList(),
                 formatCurrency: formatCurrency,
               ),
@@ -1140,13 +1140,13 @@ class _SummaryView extends StatelessWidget {
                     .where((e) => e.difference > 0)
                     .map(
                       (e) => _InsightLineData(
-                    label: '${e.categoryName} > ${e.subCategoryName}',
-                    value: e.difference,
-                    extra: e.previousAmount > 0
-                        ? '${e.percentChange.toStringAsFixed(1)} %'
-                        : txt.newOrNotPresentBefore,
-                  ),
-                )
+                        label: '${e.categoryName} > ${e.subCategoryName}',
+                        value: e.difference,
+                        extra: e.previousAmount > 0
+                            ? '${e.percentChange.toStringAsFixed(1)} %'
+                            : txt.newOrNotPresentBefore,
+                      ),
+                    )
                     .toList(),
                 formatCurrency: formatCurrency,
               ),
@@ -1171,9 +1171,7 @@ class _SummaryView extends StatelessWidget {
             _ChartValue(
               txt.balanceLabel,
               balance.abs(),
-              balance >= 0
-                  ? const Color(0xFF14B8A6)
-                  : const Color(0xFFF59E0B),
+              balance >= 0 ? const Color(0xFF14B8A6) : const Color(0xFFF59E0B),
             ),
           ],
           formatCurrency: formatCurrency,
@@ -1219,11 +1217,11 @@ class _CategoriesView extends StatelessWidget {
             items: sorted
                 .map(
                   (e) => _DistributionItem(
-                label: e.key,
-                value: e.value,
-                ratio: totalExpenses <= 0 ? 0.0 : (e.value / totalExpenses),
-              ),
-            )
+                    label: e.key,
+                    value: e.value,
+                    ratio: totalExpenses <= 0 ? 0.0 : (e.value / totalExpenses),
+                  ),
+                )
                 .toList(),
             formatCurrency: formatCurrency,
           ),
@@ -1285,11 +1283,11 @@ class _SubCategoriesView extends StatelessWidget {
             items: smartInsights
                 .map(
                   (e) => _InsightLineData(
-                label: '${e.categoryName} > ${e.subCategoryName}',
-                value: e.currentAmount,
-                extra: txt.operationsCount(e.entryCount),
-              ),
-            )
+                    label: '${e.categoryName} > ${e.subCategoryName}',
+                    value: e.currentAmount,
+                    extra: txt.operationsCount(e.entryCount),
+                  ),
+                )
                 .toList(),
             formatCurrency: formatCurrency,
           ),
@@ -1304,13 +1302,13 @@ class _SubCategoriesView extends StatelessWidget {
                 .where((e) => e.difference > 0)
                 .map(
                   (e) => _InsightLineData(
-                label: '${e.categoryName} > ${e.subCategoryName}',
-                value: e.difference,
-                extra: e.previousAmount > 0
-                    ? '${e.percentChange.toStringAsFixed(1)} %'
-                    : txt.newOrNotPresentBefore,
-              ),
-            )
+                    label: '${e.categoryName} > ${e.subCategoryName}',
+                    value: e.difference,
+                    extra: e.previousAmount > 0
+                        ? '${e.percentChange.toStringAsFixed(1)} %'
+                        : txt.newOrNotPresentBefore,
+                  ),
+                )
                 .toList(),
             formatCurrency: formatCurrency,
           ),
@@ -1335,7 +1333,8 @@ class _SubCategoriesView extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: top.map((entry) {
-                  final double ratio = maxValue == 0 ? 0.0 : (entry.value / maxValue);
+                  final double ratio =
+                      maxValue == 0 ? 0.0 : (entry.value / maxValue);
 
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 14),
@@ -1348,7 +1347,8 @@ class _SubCategoriesView extends StatelessWidget {
                             const SizedBox(width: 12),
                             Text(
                               formatCurrency(entry.value),
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -1390,7 +1390,7 @@ class _EvolutionView extends StatelessWidget {
 
     final double maxExpenses = stats.fold<double>(
       0.0,
-          (max, item) => item.expenses > max ? item.expenses : max,
+      (max, item) => item.expenses > max ? item.expenses : max,
     );
 
     return ListView(
@@ -1401,7 +1401,8 @@ class _EvolutionView extends StatelessWidget {
           subtitle: txt.yearLabel(year),
         ),
         const SizedBox(height: 12),
-        if (stats.every((e) => e.income == 0 && e.expenses == 0 && e.savings == 0))
+        if (stats
+            .every((e) => e.income == 0 && e.expenses == 0 && e.savings == 0))
           _EmptyCard(
             message: txt.noDataForYear,
           )
@@ -1412,7 +1413,7 @@ class _EvolutionView extends StatelessWidget {
               child: Column(
                 children: stats.map((stat) {
                   final double ratio =
-                  maxExpenses == 0 ? 0.0 : (stat.expenses / maxExpenses);
+                      maxExpenses == 0 ? 0.0 : (stat.expenses / maxExpenses);
 
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 14),
@@ -1517,7 +1518,7 @@ class _TipsView extends StatelessWidget {
         _HeaderCard(title: txt.tipsTab, subtitle: scopeLabel),
         const SizedBox(height: 12),
         ...items.map(
-              (item) => Container(
+          (item) => Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -1785,7 +1786,7 @@ class _SimpleComparisonChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final double maxValue = values.fold<double>(
       0.0,
-          (max, item) => item.value > max ? item.value : max,
+      (max, item) => item.value > max ? item.value : max,
     );
 
     return Card(
@@ -1808,7 +1809,8 @@ class _SimpleComparisonChart extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ...values.map((item) {
-              final double ratio = maxValue == 0 ? 0.0 : (item.value / maxValue);
+              final double ratio =
+                  maxValue == 0 ? 0.0 : (item.value / maxValue);
 
               return Padding(
                 padding: const EdgeInsets.only(bottom: 14),
@@ -1886,7 +1888,7 @@ class _SmartComparisonSection extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ...comparisons.map(
-                  (item) => Padding(
+              (item) => Padding(
                 padding: const EdgeInsets.only(bottom: 12),
                 child: Container(
                   padding: const EdgeInsets.all(12),
@@ -1981,7 +1983,7 @@ class _AlertsCard extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ...alerts.map(
-                  (alert) {
+              (alert) {
                 final _AlertVisuals visuals = _alertVisuals(alert.level);
 
                 return Container(
@@ -2094,7 +2096,7 @@ class _InsightListCard extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             ...items.map(
-                  (item) => Container(
+              (item) => Container(
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
@@ -2164,14 +2166,14 @@ class _DeltaPill extends StatelessWidget {
     final Color color = comparison.isStable
         ? const Color(0xFF475467)
         : isGood
-        ? const Color(0xFF16A34A)
-        : const Color(0xFFDC2626);
+            ? const Color(0xFF16A34A)
+            : const Color(0xFFDC2626);
 
     final IconData icon = comparison.isStable
         ? Icons.horizontal_rule_rounded
         : isGood
-        ? Icons.trending_up_rounded
-        : Icons.trending_down_rounded;
+            ? Icons.trending_up_rounded
+            : Icons.trending_down_rounded;
 
     final String sign = comparison.difference > 0 ? '+' : '';
     final String percentText =
@@ -2517,29 +2519,77 @@ class _AnalysisI18n {
   String monthFull(String month) {
     switch (month) {
       case 'Janvier':
-        return isEn ? 'January' : isNl ? 'Januari' : 'Janvier';
+        return isEn
+            ? 'January'
+            : isNl
+                ? 'Januari'
+                : 'Janvier';
       case 'Février':
-        return isEn ? 'February' : isNl ? 'Februari' : 'Février';
+        return isEn
+            ? 'February'
+            : isNl
+                ? 'Februari'
+                : 'Février';
       case 'Mars':
-        return isEn ? 'March' : isNl ? 'Maart' : 'Mars';
+        return isEn
+            ? 'March'
+            : isNl
+                ? 'Maart'
+                : 'Mars';
       case 'Avril':
-        return isEn ? 'April' : isNl ? 'April' : 'Avril';
+        return isEn
+            ? 'April'
+            : isNl
+                ? 'April'
+                : 'Avril';
       case 'Mai':
-        return isEn ? 'May' : isNl ? 'Mei' : 'Mai';
+        return isEn
+            ? 'May'
+            : isNl
+                ? 'Mei'
+                : 'Mai';
       case 'Juin':
-        return isEn ? 'June' : isNl ? 'Juni' : 'Juin';
+        return isEn
+            ? 'June'
+            : isNl
+                ? 'Juni'
+                : 'Juin';
       case 'Juillet':
-        return isEn ? 'July' : isNl ? 'Juli' : 'Juillet';
+        return isEn
+            ? 'July'
+            : isNl
+                ? 'Juli'
+                : 'Juillet';
       case 'Août':
-        return isEn ? 'August' : isNl ? 'Augustus' : 'Août';
+        return isEn
+            ? 'August'
+            : isNl
+                ? 'Augustus'
+                : 'Août';
       case 'Septembre':
-        return isEn ? 'September' : isNl ? 'September' : 'Septembre';
+        return isEn
+            ? 'September'
+            : isNl
+                ? 'September'
+                : 'Septembre';
       case 'Octobre':
-        return isEn ? 'October' : isNl ? 'Oktober' : 'Octobre';
+        return isEn
+            ? 'October'
+            : isNl
+                ? 'Oktober'
+                : 'Octobre';
       case 'Novembre':
-        return isEn ? 'November' : isNl ? 'November' : 'Novembre';
+        return isEn
+            ? 'November'
+            : isNl
+                ? 'November'
+                : 'Novembre';
       case 'Décembre':
-        return isEn ? 'December' : isNl ? 'December' : 'Décembre';
+        return isEn
+            ? 'December'
+            : isNl
+                ? 'December'
+                : 'Décembre';
       default:
         return month;
     }
@@ -2548,477 +2598,610 @@ class _AnalysisI18n {
   String monthShort(String month) {
     switch (month) {
       case 'Janvier':
-        return isEn ? 'Jan' : isNl ? 'Jan' : 'Jan';
+        return isEn
+            ? 'Jan'
+            : isNl
+                ? 'Jan'
+                : 'Jan';
       case 'Février':
-        return isEn ? 'Feb' : isNl ? 'Feb' : 'Fév';
+        return isEn
+            ? 'Feb'
+            : isNl
+                ? 'Feb'
+                : 'Fév';
       case 'Mars':
-        return isEn ? 'Mar' : isNl ? 'Mrt' : 'Mar';
+        return isEn
+            ? 'Mar'
+            : isNl
+                ? 'Mrt'
+                : 'Mar';
       case 'Avril':
-        return isEn ? 'Apr' : isNl ? 'Apr' : 'Avr';
+        return isEn
+            ? 'Apr'
+            : isNl
+                ? 'Apr'
+                : 'Avr';
       case 'Mai':
-        return isEn ? 'May' : isNl ? 'Mei' : 'Mai';
+        return isEn
+            ? 'May'
+            : isNl
+                ? 'Mei'
+                : 'Mai';
       case 'Juin':
-        return isEn ? 'Jun' : isNl ? 'Jun' : 'Jui';
+        return isEn
+            ? 'Jun'
+            : isNl
+                ? 'Jun'
+                : 'Jui';
       case 'Juillet':
-        return isEn ? 'Jul' : isNl ? 'Jul' : 'Jul';
+        return isEn
+            ? 'Jul'
+            : isNl
+                ? 'Jul'
+                : 'Jul';
       case 'Août':
-        return isEn ? 'Aug' : isNl ? 'Aug' : 'Aoû';
+        return isEn
+            ? 'Aug'
+            : isNl
+                ? 'Aug'
+                : 'Aoû';
       case 'Septembre':
-        return isEn ? 'Sep' : isNl ? 'Sep' : 'Sep';
+        return isEn
+            ? 'Sep'
+            : isNl
+                ? 'Sep'
+                : 'Sep';
       case 'Octobre':
-        return isEn ? 'Oct' : isNl ? 'Okt' : 'Oct';
+        return isEn
+            ? 'Oct'
+            : isNl
+                ? 'Okt'
+                : 'Oct';
       case 'Novembre':
-        return isEn ? 'Nov' : isNl ? 'Nov' : 'Nov';
+        return isEn
+            ? 'Nov'
+            : isNl
+                ? 'Nov'
+                : 'Nov';
       case 'Décembre':
-        return isEn ? 'Dec' : isNl ? 'Dec' : 'Déc';
+        return isEn
+            ? 'Dec'
+            : isNl
+                ? 'Dec'
+                : 'Déc';
       default:
         return month.length <= 3 ? month : month.substring(0, 3);
     }
   }
 
-  String yearLabel(int year) =>
-      isEn ? 'Year $year' : isNl ? 'Jaar $year' : 'Année $year';
+  String yearLabel(int year) => isEn
+      ? 'Year $year'
+      : isNl
+          ? 'Jaar $year'
+          : 'Année $year';
 
-  String get analysisTitle =>
-      isEn ? 'Analysis' : isNl ? 'Analyse' : 'Analyse';
-  String get exportExcel =>
-      isEn ? 'Export Excel' : isNl ? 'Excel exporteren' : 'Exporter Excel';
+  String get analysisTitle => isEn
+      ? 'Analysis'
+      : isNl
+          ? 'Analyse'
+          : 'Analyse';
+  String get exportExcel => isEn
+      ? 'Export Excel'
+      : isNl
+          ? 'Excel exporteren'
+          : 'Exporter Excel';
   String get availableInMonthMode => isEn
       ? 'Available in Month mode'
       : isNl
-      ? 'Beschikbaar in maandmodus'
-      : 'Disponible en mode Mois';
+          ? 'Beschikbaar in maandmodus'
+          : 'Disponible en mode Mois';
   String get premiumExcelExport => isEn
       ? 'Premium Excel export'
       : isNl
-      ? 'Premium Excel-export'
-      : 'Export Excel Premium';
+          ? 'Premium Excel-export'
+          : 'Export Excel Premium';
 
-  String get yearField => isEn ? 'Year' : isNl ? 'Jaar' : 'Année';
-  String get monthField => isEn ? 'Month' : isNl ? 'Maand' : 'Mois';
-  String get monthMode => isEn ? 'Month' : isNl ? 'Maand' : 'Mois';
-  String get yearMode => isEn ? 'Year' : isNl ? 'Jaar' : 'Année';
+  String get yearField => isEn
+      ? 'Year'
+      : isNl
+          ? 'Jaar'
+          : 'Année';
+  String get monthField => isEn
+      ? 'Month'
+      : isNl
+          ? 'Maand'
+          : 'Mois';
+  String get monthMode => isEn
+      ? 'Month'
+      : isNl
+          ? 'Maand'
+          : 'Mois';
+  String get yearMode => isEn
+      ? 'Year'
+      : isNl
+          ? 'Jaar'
+          : 'Année';
 
-  String get summaryTab => isEn ? 'Summary' : isNl ? 'Samenvatting' : 'Résumé';
-  String get categoriesTab =>
-      isEn ? 'Categories' : isNl ? 'Categorieën' : 'Catégories';
+  String get summaryTab => isEn
+      ? 'Summary'
+      : isNl
+          ? 'Samenvatting'
+          : 'Résumé';
+  String get categoriesTab => isEn
+      ? 'Categories'
+      : isNl
+          ? 'Categorieën'
+          : 'Catégories';
   String get subCategoriesTab => isEn
       ? 'Sub-categories'
       : isNl
-      ? 'Subcategorieën'
-      : 'Sous-catégories';
-  String get evolutionTab =>
-      isEn ? 'Evolution' : isNl ? 'Evolutie' : 'Évolution';
-  String get tipsTab => isEn ? 'Tips' : isNl ? 'Advies' : 'Conseils';
-  String get tipsTabLocked =>
-      isEn ? 'Tips 🔒' : isNl ? 'Advies 🔒' : 'Conseils 🔒';
+          ? 'Subcategorieën'
+          : 'Sous-catégories';
+  String get evolutionTab => isEn
+      ? 'Evolution'
+      : isNl
+          ? 'Evolutie'
+          : 'Évolution';
+  String get tipsTab => isEn
+      ? 'Tips'
+      : isNl
+          ? 'Advies'
+          : 'Conseils';
+  String get tipsTabLocked => isEn
+      ? 'Tips 🔒'
+      : isNl
+          ? 'Advies 🔒'
+          : 'Conseils 🔒';
 
   String get tipsTabPremiumOnly => isEn
       ? 'The Tips tab is reserved for Premium users.'
       : isNl
-      ? 'Het tabblad Advies is alleen voor Premium-gebruikers.'
-      : 'L’onglet Conseils est réservé aux utilisateurs Premium.';
+          ? 'Het tabblad Advies is alleen voor Premium-gebruikers.'
+          : 'L’onglet Conseils est réservé aux utilisateurs Premium.';
   String get excelExportPremiumOnly => isEn
       ? 'Excel export is reserved for Premium users.'
       : isNl
-      ? 'Excel-export is alleen voor Premium-gebruikers.'
-      : 'L’export Excel est réservé aux utilisateurs Premium.';
+          ? 'Excel-export is alleen voor Premium-gebruikers.'
+          : 'L’export Excel est réservé aux utilisateurs Premium.';
   String get excelExportMonthOnly => isEn
       ? 'Excel export is currently available only in Month mode.'
       : isNl
-      ? 'Excel-export is momenteel alleen beschikbaar in maandmodus.'
-      : 'L’export Excel est disponible uniquement en mode Mois pour le moment.';
+          ? 'Excel-export is momenteel alleen beschikbaar in maandmodus.'
+          : 'L’export Excel est disponible uniquement en mode Mois pour le moment.';
   String excelExportShareText(String period) => isEn
       ? 'Budget Excel export - $period'
       : isNl
-      ? 'Budget Excel-export - $period'
-      : 'Export Excel du budget - $period';
+          ? 'Budget Excel-export - $period'
+          : 'Export Excel du budget - $period';
   String excelExportShareSubject(String period) => 'Budget $period';
   String excelFileReady(String fileName) => isEn
       ? 'Excel file ready: $fileName'
       : isNl
-      ? 'Excel-bestand klaar: $fileName'
-      : 'Fichier Excel prêt : $fileName';
+          ? 'Excel-bestand klaar: $fileName'
+          : 'Fichier Excel prêt : $fileName';
   String excelExportError(String error) => isEn
       ? 'Error while exporting Excel: $error'
       : isNl
-      ? 'Fout bij Excel-export: $error'
-      : 'Erreur lors de l’export Excel : $error';
+          ? 'Fout bij Excel-export: $error'
+          : 'Erreur lors de l’export Excel : $error';
 
   String get smartAnalysisPremiumOnly => isEn
       ? 'Smart analysis is reserved for Premium users.'
       : isNl
-      ? 'Slimme analyses zijn alleen voor Premium-gebruikers.'
-      : 'Les analyses intelligentes sont réservées aux utilisateurs Premium.';
+          ? 'Slimme analyses zijn alleen voor Premium-gebruikers.'
+          : 'Les analyses intelligentes sont réservées aux utilisateurs Premium.';
   String get advancedInsightsPremiumOnly => isEn
       ? 'Advanced insights are reserved for Premium users.'
       : isNl
-      ? 'Geavanceerde inzichten zijn alleen voor Premium-gebruikers.'
-      : 'Les insights avancés sont réservés aux utilisateurs Premium.';
+          ? 'Geavanceerde inzichten zijn alleen voor Premium-gebruikers.'
+          : 'Les insights avancés sont réservés aux utilisateurs Premium.';
 
-  String get incomeLabel => isEn ? 'Income' : isNl ? 'Inkomsten' : 'Rentrées';
-  String get expensesLabel =>
-      isEn ? 'Expenses' : isNl ? 'Uitgaven' : 'Dépenses';
-  String get savingsLabel =>
-      isEn ? 'Savings' : isNl ? 'Spaargeld' : 'Économies';
-  String get balanceLabel => isEn ? 'Balance' : isNl ? 'Saldo' : 'Solde';
-  String get operationsLabel =>
-      isEn ? 'Operations' : isNl ? 'Bewerkingen' : 'Opérations';
+  String get incomeLabel => isEn
+      ? 'Income'
+      : isNl
+          ? 'Inkomsten'
+          : 'Rentrées';
+  String get expensesLabel => isEn
+      ? 'Expenses'
+      : isNl
+          ? 'Uitgaven'
+          : 'Dépenses';
+  String get savingsLabel => isEn
+      ? 'Savings'
+      : isNl
+          ? 'Spaargeld'
+          : 'Économies';
+  String get balanceLabel => isEn
+      ? 'Balance'
+      : isNl
+          ? 'Saldo'
+          : 'Solde';
+  String get operationsLabel => isEn
+      ? 'Operations'
+      : isNl
+          ? 'Bewerkingen'
+          : 'Opérations';
   String get averagePerOperationLabel => isEn
       ? 'Average / operation'
       : isNl
-      ? 'Gemiddelde / bewerking'
-      : 'Moyenne / opération';
+          ? 'Gemiddelde / bewerking'
+          : 'Moyenne / opération';
 
   String get comparisonPreviousMonthTitle => isEn
       ? 'Comparison with previous month'
       : isNl
-      ? 'Vergelijking met vorige maand'
-      : 'Comparaison avec le mois précédent';
+          ? 'Vergelijking met vorige maand'
+          : 'Comparaison avec le mois précédent';
   String get highestSubCategoriesTitle => isEn
       ? 'Highest sub-categories'
       : isNl
-      ? 'Hoogste subcategorieën'
-      : 'Sous-catégories les plus élevées';
+          ? 'Hoogste subcategorieën'
+          : 'Sous-catégories les plus élevées';
   String get biggestIncreasesTitle => isEn
       ? 'Biggest increases'
       : isNl
-      ? 'Sterkste stijgingen'
-      : 'Plus fortes hausses';
-  String get overviewTitle =>
-      isEn ? 'Overview' : isNl ? 'Overzicht' : 'Vue d’ensemble';
+          ? 'Sterkste stijgingen'
+          : 'Plus fortes hausses';
+  String get overviewTitle => isEn
+      ? 'Overview'
+      : isNl
+          ? 'Overzicht'
+          : 'Vue d’ensemble';
   String operationsCount(int count) => isEn
       ? '$count operation(s)'
       : isNl
-      ? '$count bewerking(en)'
-      : '$count opération(s)';
+          ? '$count bewerking(en)'
+          : '$count opération(s)';
   String get newOrNotPresentBefore => isEn
       ? 'New or not present before'
       : isNl
-      ? 'Nieuw of eerder niet aanwezig'
-      : 'Nouveau ou non présent avant';
+          ? 'Nieuw of eerder niet aanwezig'
+          : 'Nouveau ou non présent avant';
 
   String get premiumSmartAnalysisTitle => isEn
       ? 'Premium smart analysis'
       : isNl
-      ? 'Premium slimme analyses'
-      : 'Analyses intelligentes Premium';
+          ? 'Premium slimme analyses'
+          : 'Analyses intelligentes Premium';
   String get premiumSmartAnalysisMessage => isEn
       ? 'Unlock comparison with the previous month, smart alerts and advanced insights.'
       : isNl
-      ? 'Ontgrendel vergelijking met de vorige maand, slimme waarschuwingen en geavanceerde inzichten.'
-      : 'Débloque la comparaison avec le mois précédent, les alertes intelligentes et les insights avancés.';
+          ? 'Ontgrendel vergelijking met de vorige maand, slimme waarschuwingen en geavanceerde inzichten.'
+          : 'Débloque la comparaison avec le mois précédent, les alertes intelligentes et les insights avancés.';
   String get unlockPremium => isEn
       ? 'Unlock Premium'
       : isNl
-      ? 'Premium ontgrendelen'
-      : 'Débloquer Premium';
+          ? 'Premium ontgrendelen'
+          : 'Débloquer Premium';
 
   String get categoryDistributionTitle => isEn
       ? 'Distribution by category'
       : isNl
-      ? 'Verdeling per categorie'
-      : 'Répartition par catégorie';
+          ? 'Verdeling per categorie'
+          : 'Répartition par catégorie';
   String get categoryRankingTitle => isEn
       ? 'Category ranking'
       : isNl
-      ? 'Categorieklassement'
-      : 'Classement des catégories';
+          ? 'Categorieklassement'
+          : 'Classement des catégories';
   String get noExpenseForThisView => isEn
       ? 'No expenses recorded for this view.'
       : isNl
-      ? 'Geen uitgaven geregistreerd voor deze weergave.'
-      : 'Aucune dépense enregistrée pour cette vue.';
+          ? 'Geen uitgaven geregistreerd voor deze weergave.'
+          : 'Aucune dépense enregistrée pour cette vue.';
 
   String get heaviestSubCategoriesTitle => isEn
       ? 'Heaviest sub-categories'
       : isNl
-      ? 'Zwaarste subcategorieën'
-      : 'Sous-catégories les plus lourdes';
+          ? 'Zwaarste subcategorieën'
+          : 'Sous-catégories les plus lourdes';
   String get subCategoriesRisingTitle => isEn
       ? 'Rising sub-categories'
       : isNl
-      ? 'Stijgende subcategorieën'
-      : 'Sous-catégories en hausse';
+          ? 'Stijgende subcategorieën'
+          : 'Sous-catégories en hausse';
   String get premiumAdvancedInsightsTitle => isEn
       ? 'Premium advanced insights'
       : isNl
-      ? 'Premium geavanceerde inzichten'
-      : 'Insights avancés Premium';
+          ? 'Premium geavanceerde inzichten'
+          : 'Insights avancés Premium';
   String get premiumAdvancedInsightsMessage => isEn
       ? 'Unlock the heaviest sub-categories, increases and advanced insights.'
       : isNl
-      ? 'Ontgrendel de zwaarste subcategorieën, stijgingen en geavanceerde inzichten.'
-      : 'Débloque les sous-catégories les plus lourdes, les hausses et les insights avancés.';
+          ? 'Ontgrendel de zwaarste subcategorieën, stijgingen en geavanceerde inzichten.'
+          : 'Débloque les sous-catégories les plus lourdes, les hausses et les insights avancés.';
   String get noSubCategoryExpenseForView => isEn
       ? 'No sub-category with expenses for this view.'
       : isNl
-      ? 'Geen subcategorie met uitgaven voor deze weergave.'
-      : 'Aucune sous-catégorie avec dépenses pour cette vue.';
+          ? 'Geen subcategorie met uitgaven voor deze weergave.'
+          : 'Aucune sous-catégorie avec dépenses pour cette vue.';
 
   String get noDataForYear => isEn
       ? 'No data available for this year.'
       : isNl
-      ? 'Geen gegevens beschikbaar voor dit jaar.'
-      : 'Aucune donnée disponible sur cette année.';
+          ? 'Geen gegevens beschikbaar voor dit jaar.'
+          : 'Aucune donnée disponible sur cette année.';
   String get shortIncome => 'R';
-  String get shortExpenses => isEn ? 'E' : isNl ? 'U' : 'D';
-  String get shortSavings => isEn ? 'S' : isNl ? 'S' : 'É';
+  String get shortExpenses => isEn
+      ? 'E'
+      : isNl
+          ? 'U'
+          : 'D';
+  String get shortSavings => isEn
+      ? 'S'
+      : isNl
+          ? 'S'
+          : 'É';
   String get shortBalance => 'S';
 
   String get premiumUnlocksSummary => isEn
       ? 'Premium unlocks monthly comparison, smart alerts and advanced insights.'
       : isNl
-      ? 'Premium ontgrendelt maandelijkse vergelijking, slimme waarschuwingen en geavanceerde inzichten.'
-      : 'Premium débloque la comparaison mensuelle, les alertes intelligentes et les insights avancés.';
+          ? 'Premium ontgrendelt maandelijkse vergelijking, slimme waarschuwingen en geavanceerde inzichten.'
+          : 'Premium débloque la comparaison mensuelle, les alertes intelligentes et les insights avancés.';
   String get categoriesFreeView => isEn
       ? 'The Categories view stays available for free.'
       : isNl
-      ? 'De categorieënweergave blijft gratis beschikbaar.'
-      : 'La vue Catégories reste disponible gratuitement.';
+          ? 'De categorieënweergave blijft gratis beschikbaar.'
+          : 'La vue Catégories reste disponible gratuitement.';
   String get premiumUnlocksSubCategories => isEn
       ? 'Premium unlocks the heaviest sub-categories and monthly increases.'
       : isNl
-      ? 'Premium ontgrendelt de zwaarste subcategorieën en maandelijkse stijgingen.'
-      : 'Premium débloque les sous-catégories les plus lourdes et les hausses du mois.';
+          ? 'Premium ontgrendelt de zwaarste subcategorieën en maandelijkse stijgingen.'
+          : 'Premium débloque les sous-catégories les plus lourdes et les hausses du mois.';
   String get evolutionFreeView => isEn
       ? 'The Evolution view stays available for free.'
       : isNl
-      ? 'De evolutieweergave blijft gratis beschikbaar.'
-      : 'La vue Évolution reste disponible gratuitement.';
+          ? 'De evolutieweergave blijft gratis beschikbaar.'
+          : 'La vue Évolution reste disponible gratuitement.';
   String get premiumUnlocksTips => isEn
       ? 'Premium unlocks automatic tips and smart assistance.'
       : isNl
-      ? 'Premium ontgrendelt automatisch advies en slimme hulp.'
-      : 'Premium débloque les conseils automatiques et l’aide intelligente.';
+          ? 'Premium ontgrendelt automatisch advies en slimme hulp.'
+          : 'Premium débloque les conseils automatiques et l’aide intelligente.';
 
   String get unlockSmartAnalysis => isEn
       ? 'Unlock smart analysis'
       : isNl
-      ? 'Slimme analyses ontgrendelen'
-      : 'Débloquer les analyses smart';
-  String get seePremium =>
-      isEn ? 'See Premium' : isNl ? 'Bekijk Premium' : 'Voir Premium';
+          ? 'Slimme analyses ontgrendelen'
+          : 'Débloquer les analyses smart';
+  String get seePremium => isEn
+      ? 'See Premium'
+      : isNl
+          ? 'Bekijk Premium'
+          : 'Voir Premium';
   String get unlockInsights => isEn
       ? 'Unlock insights'
       : isNl
-      ? 'Inzichten ontgrendelen'
-      : 'Débloquer les insights';
+          ? 'Inzichten ontgrendelen'
+          : 'Débloquer les insights';
   String get unlockTips => isEn
       ? 'Unlock tips'
       : isNl
-      ? 'Advies ontgrendelen'
-      : 'Débloquer les conseils';
+          ? 'Advies ontgrendelen'
+          : 'Débloquer les conseils';
 
   String get comparisonsAlertsPremiumOnly => isEn
       ? 'Comparisons and smart alerts are reserved for Premium users.'
       : isNl
-      ? 'Vergelijkingen en slimme waarschuwingen zijn alleen voor Premium-gebruikers.'
-      : 'Les comparaisons et alertes intelligentes sont réservées aux utilisateurs Premium.';
+          ? 'Vergelijkingen en slimme waarschuwingen zijn alleen voor Premium-gebruikers.'
+          : 'Les comparaisons et alertes intelligentes sont réservées aux utilisateurs Premium.';
   String get premiumFunctionsPremiumOnly => isEn
       ? 'Premium functions are reserved for Premium users.'
       : isNl
-      ? 'Premiumfuncties zijn alleen voor Premium-gebruikers.'
-      : 'Les fonctions premium sont réservées aux utilisateurs Premium.';
+          ? 'Premiumfuncties zijn alleen voor Premium-gebruikers.'
+          : 'Les fonctions premium sont réservées aux utilisateurs Premium.';
   String get automaticTipsPremiumOnly => isEn
       ? 'Automatic tips are reserved for Premium users.'
       : isNl
-      ? 'Automatisch advies is alleen voor Premium-gebruikers.'
-      : 'Les conseils automatiques sont réservés aux utilisateurs Premium.';
+          ? 'Automatisch advies is alleen voor Premium-gebruikers.'
+          : 'Les conseils automatiques sont réservés aux utilisateurs Premium.';
 
-  String activePlanLabel(String plan) =>
-      isEn ? '$plan active' : isNl ? '$plan actief' : '$plan actif';
+  String activePlanLabel(String plan) => isEn
+      ? '$plan active'
+      : isNl
+          ? '$plan actief'
+          : '$plan actif';
   String get premiumFeaturesAvailable => isEn
       ? 'Premium features available'
       : isNl
-      ? 'Premiumfuncties beschikbaar'
-      : 'Fonctions premium disponibles';
+          ? 'Premiumfuncties beschikbaar'
+          : 'Fonctions premium disponibles';
   String get premiumUnlockedDescription => isEn
       ? 'Excel export, tips and advanced analysis are unlocked.'
       : isNl
-      ? 'Excel-export, advies en geavanceerde analyses zijn ontgrendeld.'
-      : 'Export Excel, conseils et analyses avancées sont déverrouillés.';
+          ? 'Excel-export, advies en geavanceerde analyses zijn ontgrendeld.'
+          : 'Export Excel, conseils et analyses avancées sont déverrouillés.';
   String get premiumModeStillDependsSelectedMode => isEn
       ? 'Premium is active. Some options still depend on the selected mode.'
       : isNl
-      ? 'Premium is actief. Sommige opties hangen nog af van de geselecteerde modus.'
-      : 'Premium actif. Certaines options dépendent encore du mode sélectionné.';
+          ? 'Premium is actief. Sommige opties hangen nog af van de geselecteerde modus.'
+          : 'Premium actif. Certaines options dépendent encore du mode sélectionné.';
 
   String get noComparisonAvailable => isEn
       ? 'No comparison available for this period.'
       : isNl
-      ? 'Geen vergelijking beschikbaar voor deze periode.'
-      : 'Aucune comparaison disponible pour cette période.';
+          ? 'Geen vergelijking beschikbaar voor deze periode.'
+          : 'Aucune comparaison disponible pour cette période.';
   String previousMonthValue(String value) => isEn
       ? 'Previous month: $value'
       : isNl
-      ? 'Vorige maand: $value'
-      : 'Mois précédent : $value';
+          ? 'Vorige maand: $value'
+          : 'Mois précédent : $value';
   String get smartAlertsTitle => isEn
       ? 'Smart alerts'
       : isNl
-      ? 'Slimme waarschuwingen'
-      : 'Alertes intelligentes';
+          ? 'Slimme waarschuwingen'
+          : 'Alertes intelligentes';
   String get noAlertsForMonth => isEn
       ? 'No alerts detected for this month.'
       : isNl
-      ? 'Geen waarschuwingen gedetecteerd voor deze maand.'
-      : 'Aucune alerte détectée pour ce mois.';
-  String get stable => isEn ? 'Stable' : isNl ? 'Stabiel' : 'Stable';
+          ? 'Geen waarschuwingen gedetecteerd voor deze maand.'
+          : 'Aucune alerte détectée pour ce mois.';
+  String get stable => isEn
+      ? 'Stable'
+      : isNl
+          ? 'Stabiel'
+          : 'Stable';
 
   String get noExpenseRecordedTitle => isEn
       ? 'No expense recorded'
       : isNl
-      ? 'Geen uitgaven geregistreerd'
-      : 'Aucune dépense enregistrée';
+          ? 'Geen uitgaven geregistreerd'
+          : 'Aucune dépense enregistrée';
   String get noExpenseRecordedMessage => isEn
       ? 'There are no expenses yet for this period. Tips will appear once you enter a few operations.'
       : isNl
-      ? 'Er zijn nog geen uitgaven voor deze periode. Adviezen verschijnen zodra je enkele bewerkingen invoert.'
-      : 'Il n’y a pas encore de dépense sur cette période. Les conseils apparaîtront dès que tu auras saisi quelques opérations.';
+          ? 'Er zijn nog geen uitgaven voor deze periode. Adviezen verschijnen zodra je enkele bewerkingen invoert.'
+          : 'Il n’y a pas encore de dépense sur cette période. Les conseils apparaîtront dès que tu auras saisi quelques opérations.';
 
   String get criticalAlertDetectedTitle => isEn
       ? 'Critical alert detected'
       : isNl
-      ? 'Kritieke waarschuwing gedetecteerd'
-      : 'Alerte critique détectée';
+          ? 'Kritieke waarschuwing gedetecteerd'
+          : 'Alerte critique détectée';
   String criticalAlertDetectedMessage(int critical, int warning) => isEn
       ? '$critical critical alert(s) and $warning warning alert(s) were detected for this month. Start by handling the balance and the biggest increases.'
       : isNl
-      ? '$critical kritieke waarschuwing(en) en $warning waarschuwing(en) zijn gedetecteerd voor deze maand. Begin met het saldo en de grootste stijgingen.'
-      : '$critical alerte critique et $warning alerte(s) de vigilance ont été détectées pour ce mois. Commence par traiter le solde et les plus grosses hausses.';
+          ? '$critical kritieke waarschuwing(en) en $warning waarschuwing(en) zijn gedetecteerd voor deze maand. Begin met het saldo en de grootste stijgingen.'
+          : '$critical alerte critique et $warning alerte(s) de vigilance ont été détectées pour ce mois. Commence par traiter le solde et les plus grosses hausses.';
   String get watchPointsDetectedTitle => isEn
       ? 'Watch points detected'
       : isNl
-      ? 'Aandachtspunten gedetecteerd'
-      : 'Points de vigilance détectés';
+          ? 'Aandachtspunten gedetecteerd'
+          : 'Points de vigilance détectés';
   String watchPointsDetectedMessage(int warning) => isEn
       ? '$warning alert(s) were detected this month. Comparing them with the previous month helps spot differences quickly.'
       : isNl
-      ? '$warning waarschuwing(en) zijn deze maand gedetecteerd. Vergelijken met de vorige maand helpt verschillen snel te zien.'
-      : '$warning alerte(s) ont été détectées sur ce mois. Les comparer au mois précédent permet de repérer vite les écarts.';
+          ? '$warning waarschuwing(en) zijn deze maand gedetecteerd. Vergelijken met de vorige maand helpt verschillen snel te zien.'
+          : '$warning alerte(s) ont été détectées sur ce mois. Les comparer au mois précédent permet de repérer vite les écarts.';
 
   String get expensesHigherThanAvailableTitle => isEn
       ? 'Expenses higher than available funds'
       : isNl
-      ? 'Uitgaven hoger dan beschikbaar'
-      : 'Dépenses supérieures au disponible';
+          ? 'Uitgaven hoger dan beschikbaar'
+          : 'Dépenses supérieures au disponible';
   String expensesHigherThanAvailableMessage(String scope) => isEn
       ? 'The balance is negative for $scope. Expenses and savings exceed income. Start by reviewing the heaviest items.'
       : isNl
-      ? 'Het saldo is negatief voor $scope. Uitgaven en spaargeld zijn hoger dan de inkomsten. Bekijk eerst de zwaarste posten.'
-      : 'Le solde est négatif sur $scope. Les dépenses et économies dépassent les rentrées. Il faut d’abord regarder les postes les plus lourds.';
-  String get positiveBalanceTitle =>
-      isEn ? 'Positive balance' : isNl ? 'Positief saldo' : 'Solde positif';
+          ? 'Het saldo is negatief voor $scope. Uitgaven en spaargeld zijn hoger dan de inkomsten. Bekijk eerst de zwaarste posten.'
+          : 'Le solde est négatif sur $scope. Les dépenses et économies dépassent les rentrées. Il faut d’abord regarder les postes les plus lourds.';
+  String get positiveBalanceTitle => isEn
+      ? 'Positive balance'
+      : isNl
+          ? 'Positief saldo'
+          : 'Solde positif';
   String positiveBalanceMessage(String scope) => isEn
       ? 'The balance remains positive for $scope. You can still improve your budget by optimizing the biggest items.'
       : isNl
-      ? 'Het saldo blijft positief voor $scope. Je kunt je budget nog verbeteren door de grootste posten te optimaliseren.'
-      : 'Le solde reste positif sur $scope. Tu peux encore améliorer ton budget en optimisant les postes les plus importants.';
+          ? 'Het saldo blijft positief voor $scope. Je kunt je budget nog verbeteren door de grootste posten te optimaliseren.'
+          : 'Le solde reste positif sur $scope. Tu peux encore améliorer ton budget en optimisant les postes les plus importants.';
 
-  String get mainCategoryTitle =>
-      isEn ? 'Main category' : isNl ? 'Hoofdcategorie' : 'Catégorie principale';
-  String mainCategoryMessage(String category, String percent, String amount) =>
-      isEn
-          ? '$category represents $percent% of expenses, i.e. $amount. This is the most strategic item to analyze.'
-          : isNl
+  String get mainCategoryTitle => isEn
+      ? 'Main category'
+      : isNl
+          ? 'Hoofdcategorie'
+          : 'Catégorie principale';
+  String mainCategoryMessage(String category, String percent, String amount) => isEn
+      ? '$category represents $percent% of expenses, i.e. $amount. This is the most strategic item to analyze.'
+      : isNl
           ? '$category vertegenwoordigt $percent% van de uitgaven, dus $amount. Dit is de meest strategische post om te analyseren.'
           : '$category représente $percent % des dépenses, soit $amount. C’est le poste le plus stratégique à analyser.';
 
   String get subCategoryToWatchTitle => isEn
       ? 'Sub-category to watch'
       : isNl
-      ? 'Subcategorie om te volgen'
-      : 'Sous-catégorie à surveiller';
+          ? 'Subcategorie om te volgen'
+          : 'Sous-catégorie à surveiller';
   String subCategoryToWatchMessage(
-      String subCategory,
-      String amount,
-      String percent,
-      ) =>
+    String subCategory,
+    String amount,
+    String percent,
+  ) =>
       isEn
           ? '$subCategory totals $amount, i.e. $percent% of expenses. Looking for an alternative here can have a quick impact.'
           : isNl
-          ? '$subCategory bedraagt $amount, oftewel $percent% van de uitgaven. Hier een alternatief zoeken kan snel effect hebben.'
-          : '$subCategory totalise $amount, soit $percent % des dépenses. Chercher une alternative ici peut avoir un effet rapide.';
+              ? '$subCategory bedraagt $amount, oftewel $percent% van de uitgaven. Hier een alternatief zoeken kan snel effect hebben.'
+              : '$subCategory totalise $amount, soit $percent % des dépenses. Chercher une alternative ici peut avoir un effet rapide.';
 
   String get biggestIncreaseOfMonthTitle => isEn
       ? 'Biggest increase of the month'
       : isNl
-      ? 'Grootste stijging van de maand'
-      : 'Plus forte hausse du mois';
+          ? 'Grootste stijging van de maand'
+          : 'Plus forte hausse du mois';
   String biggestIncreaseOfMonthMessage(
-      String subCategory,
-      String difference,
-      String extra,
-      ) =>
+    String subCategory,
+    String difference,
+    String extra,
+  ) =>
       isEn
           ? '$subCategory increases by $difference compared with the previous month$extra. This is the first item to compare with history.'
           : isNl
-          ? '$subCategory stijgt met $difference ten opzichte van de vorige maand$extra. Dit is de eerste post om met de historiek te vergelijken.'
-          : '$subCategory augmente de $difference par rapport au mois précédent$extra. C’est le premier poste à comparer avec l’historique.';
+              ? '$subCategory stijgt met $difference ten opzichte van de vorige maand$extra. Dit is de eerste post om met de historiek te vergelijken.'
+              : '$subCategory augmente de $difference par rapport au mois précédent$extra. C’est le premier poste à comparer avec l’historique.';
 
   String get heaviestItemOfMonthTitle => isEn
       ? 'Heaviest item of the month'
       : isNl
-      ? 'Zwaarste post van de maand'
-      : 'Poste le plus lourd du mois';
+          ? 'Zwaarste post van de maand'
+          : 'Poste le plus lourd du mois';
   String heaviestItemOfMonthMessage(
-      String subCategory,
-      String amount,
-      int count,
-      ) =>
+    String subCategory,
+    String amount,
+    int count,
+  ) =>
       isEn
           ? '$subCategory is the highest sub-category with $amount spread over $count operation(s).'
           : isNl
-          ? '$subCategory is de hoogste subcategorie met $amount verdeeld over $count bewerking(en).'
-          : '$subCategory est la sous-catégorie la plus élevée avec $amount répartis sur $count opération(s).';
+              ? '$subCategory is de hoogste subcategorie met $amount verdeeld over $count bewerking(en).'
+              : '$subCategory est la sous-catégorie la plus élevée avec $amount répartis sur $count opération(s).';
 
   String get manySmallOperationsTitle => isEn
       ? 'Many small operations'
       : isNl
-      ? 'Veel kleine bewerkingen'
-      : 'Beaucoup de petites opérations';
+          ? 'Veel kleine bewerkingen'
+          : 'Beaucoup de petites opérations';
   String manySmallOperationsMessage(int count, String avg) => isEn
       ? 'The number of operations is high ($count) with an average of $avg. Grouping some purchases can help avoid impulse spending.'
       : isNl
-      ? 'Het aantal bewerkingen is hoog ($count) met een gemiddelde van $avg. Sommige aankopen groeperen kan kleine extra-uitgaven vermijden.'
-      : 'Le nombre d’opérations est élevé ($count) avec une moyenne de $avg. Regrouper certains achats peut éviter les dépenses d’appoint.';
+          ? 'Het aantal bewerkingen is hoog ($count) met een gemiddelde van $avg. Sommige aankopen groeperen kan kleine extra-uitgaven vermijden.'
+          : 'Le nombre d’opérations est élevé ($count) avec une moyenne de $avg. Regrouper certains achats peut éviter les dépenses d’appoint.';
 
   String get noSavingsRecordedTitle => isEn
       ? 'No savings recorded'
       : isNl
-      ? 'Geen spaargeld geregistreerd'
-      : 'Aucune économie enregistrée';
+          ? 'Geen spaargeld geregistreerd'
+          : 'Aucune économie enregistrée';
   String get noSavingsRecordedMessage => isEn
       ? 'No savings are recorded for this period. Setting a small regular amount can already improve budget stability.'
       : isNl
-      ? 'Er is geen spaargeld geregistreerd voor deze periode. Een klein regelmatig bedrag kan de stabiliteit van het budget al verbeteren.'
-      : 'Aucune économie n’est renseignée sur cette période. Fixer un petit montant régulier peut déjà améliorer la stabilité du budget.';
+          ? 'Er is geen spaargeld geregistreerd voor deze periode. Een klein regelmatig bedrag kan de stabiliteit van het budget al verbeteren.'
+          : 'Aucune économie n’est renseignée sur cette période. Fixer un petit montant régulier peut déjà améliorer la stabilité du budget.';
 
   String get monthHigherThanAverageTitle => isEn
       ? 'Month higher than average'
       : isNl
-      ? 'Maand hoger dan gemiddeld'
-      : 'Mois plus élevé que la moyenne';
+          ? 'Maand hoger dan gemiddeld'
+          : 'Mois plus élevé que la moyenne';
   String monthHigherThanAverageMessage(String monthLabel) => isEn
       ? '$monthLabel is clearly above the average monthly expenses. It is worth reviewing that month in detail to spot the differences.'
       : isNl
-      ? '$monthLabel ligt duidelijk boven de gemiddelde maandelijkse uitgaven. Het loont om die maand in detail te bekijken om verschillen te vinden.'
-      : '$monthLabel dépasse nettement la moyenne mensuelle des dépenses. Ça vaut le coup de revoir ce mois en détail pour repérer les écarts.';
+          ? '$monthLabel ligt duidelijk boven de gemiddelde maandelijkse uitgaven. Het loont om die maand in detail te bekijken om verschillen te vinden.'
+          : '$monthLabel dépasse nettement la moyenne mensuelle des dépenses. Ça vaut le coup de revoir ce mois en détail pour repérer les écarts.';
 
   String get twoItemsDominateBudgetTitle => isEn
       ? 'Two items dominate the budget'
       : isNl
-      ? 'Twee posten domineren het budget'
-      : 'Deux postes dominent le budget';
+          ? 'Twee posten domineren het budget'
+          : 'Deux postes dominent le budget';
   String twoItemsDominateBudgetMessage(
-      String first,
-      String second,
-      String percent,
-      ) =>
+    String first,
+    String second,
+    String percent,
+  ) =>
       isEn
           ? '$first and $second together represent $percent% of expenses. This is where the greatest savings potential lies.'
           : isNl
-          ? '$first en $second vertegenwoordigen samen $percent% van de uitgaven. Hier ligt het grootste besparingspotentieel.'
-          : '$first et $second représentent ensemble $percent % des dépenses. C’est là que le plus gros potentiel d’économie se trouve.';
+              ? '$first en $second vertegenwoordigen samen $percent% van de uitgaven. Hier ligt het grootste besparingspotentieel.'
+              : '$first et $second représentent ensemble $percent % des dépenses. C’est là que le plus gros potentiel d’économie se trouve.';
 }

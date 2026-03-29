@@ -34,8 +34,7 @@ class SubscriptionService {
 
       final configuration = PurchasesConfiguration(apiKey);
 
-      if (resolvedAppUserId != null &&
-          resolvedAppUserId.trim().isNotEmpty) {
+      if (resolvedAppUserId != null && resolvedAppUserId.trim().isNotEmpty) {
         configuration.appUserID = resolvedAppUserId;
       }
 

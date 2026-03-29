@@ -9,8 +9,8 @@ class BudgetFamilialMonetizationScope
     required MonetizationController controller,
     required super.child,
   }) : super(
-    notifier: controller,
-  );
+          notifier: controller,
+        );
 
   static MonetizationController of(BuildContext context) {
     final scope = context

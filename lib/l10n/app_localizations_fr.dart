@@ -75,10 +75,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get signupTitle => 'Créer un compte';
 
   @override
-  String get loginSubtitle => 'Connecte-toi pour accéder à ton budget familial.';
+  String get loginSubtitle =>
+      'Connecte-toi pour accéder à ton budget familial.';
 
   @override
-  String get signupSubtitle => 'Crée ton compte pour commencer à gérer ton budget familial.';
+  String get signupSubtitle =>
+      'Crée ton compte pour commencer à gérer ton budget familial.';
 
   @override
   String get loginPrimaryButton => 'Se connecter';
@@ -120,7 +122,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get loginEnterPassword => 'Entre ton mot de passe';
 
   @override
-  String get loginPasswordMinLength => 'Le mot de passe doit contenir au moins 6 caractères';
+  String get loginPasswordMinLength =>
+      'Le mot de passe doit contenir au moins 6 caractères';
 
   @override
   String loginAccountCreatedVerificationSent(Object email) {
@@ -136,22 +139,27 @@ class AppLocalizationsFr extends AppLocalizations {
   String get emailVerificationTitle => 'Vérifie ton adresse e-mail';
 
   @override
-  String get emailVerificationSubtitle => 'La vérification est requise avant d’accéder à ton budget.';
+  String get emailVerificationSubtitle =>
+      'La vérification est requise avant d’accéder à ton budget.';
 
   @override
   String get emailVerificationAddressLabel => 'Adresse concernée';
 
   @override
-  String get emailVerificationAddressUnavailable => 'Adresse e-mail indisponible';
+  String get emailVerificationAddressUnavailable =>
+      'Adresse e-mail indisponible';
 
   @override
-  String get emailVerificationInstruction => 'Un e-mail de vérification a été envoyé. Clique sur le lien reçu, puis reviens dans l’application.';
+  String get emailVerificationInstruction =>
+      'Un e-mail de vérification a été envoyé. Clique sur le lien reçu, puis reviens dans l’application.';
 
   @override
-  String get emailVerificationSpamHint => 'Pense aussi à vérifier le dossier spam / indésirables.';
+  String get emailVerificationSpamHint =>
+      'Pense aussi à vérifier le dossier spam / indésirables.';
 
   @override
-  String get emailVerificationNotVerifiedYet => 'L’adresse e-mail n’est pas encore vérifiée.';
+  String get emailVerificationNotVerifiedYet =>
+      'L’adresse e-mail n’est pas encore vérifiée.';
 
   @override
   String get emailVerificationYourEmail => 'ton adresse e-mail';
@@ -180,37 +188,43 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get welcomeHeroDescription => 'Gérez votre budget personnel ou familial, suivez vos dépenses, vos économies et visualisez vos résultats mois après mois.';
+  String get welcomeHeroDescription =>
+      'Gérez votre budget personnel ou familial, suivez vos dépenses, vos économies et visualisez vos résultats mois après mois.';
 
   @override
   String get welcomeTitle => 'Commencez simplement';
 
   @override
-  String get welcomeSubtitle => 'Créez votre compte pour synchroniser votre budget, activer les fonctions famille et retrouver vos données sur plusieurs appareils.';
+  String get welcomeSubtitle =>
+      'Créez votre compte pour synchroniser votre budget, activer les fonctions famille et retrouver vos données sur plusieurs appareils.';
 
   @override
   String get welcomeFeatureBudgetTitle => 'Suivi budgétaire';
 
   @override
-  String get welcomeFeatureBudgetDescription => 'Pilotez vos rentrées, dépenses, économies et solde mensuel.';
+  String get welcomeFeatureBudgetDescription =>
+      'Pilotez vos rentrées, dépenses, économies et solde mensuel.';
 
   @override
   String get welcomeFeatureAnalysisTitle => 'Analyse du budget';
 
   @override
-  String get welcomeFeatureAnalysisDescription => 'Comparez les périodes et visualisez les tendances importantes.';
+  String get welcomeFeatureAnalysisDescription =>
+      'Comparez les périodes et visualisez les tendances importantes.';
 
   @override
   String get welcomeFeatureFamilyTitle => 'Mode famille';
 
   @override
-  String get welcomeFeatureFamilyDescription => 'Partagez un budget commun avec synchronisation cloud.';
+  String get welcomeFeatureFamilyDescription =>
+      'Partagez un budget commun avec synchronisation cloud.';
 
   @override
   String get welcomePremiumTitle => 'Version gratuite et Premium';
 
   @override
-  String get welcomePremiumDescription => 'Commencez gratuitement puis débloquez les analyses avancées, les conseils, l’export Excel et les fonctions famille avec Premium.';
+  String get welcomePremiumDescription =>
+      'Commencez gratuitement puis débloquez les analyses avancées, les conseils, l’export Excel et les fonctions famille avec Premium.';
 
   @override
   String get welcomePremiumButton => 'Voir les offres Premium';
@@ -253,13 +267,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardTransferOwnershipTitle => 'Transférer la propriété';
 
   @override
-  String get dashboardTransferOwnershipMessage => 'Choisis le membre qui deviendra propriétaire du budget familial.';
+  String get dashboardTransferOwnershipMessage =>
+      'Choisis le membre qui deviendra propriétaire du budget familial.';
 
   @override
   String get dashboardMemberLabel => 'Membre';
 
   @override
-  String get dashboardTransferOwnershipHint => 'Après le transfert, ce membre pourra gérer la famille.';
+  String get dashboardTransferOwnershipHint =>
+      'Après le transfert, ce membre pourra gérer la famille.';
 
   @override
   String get dashboardTransferOwnershipAction => 'Transférer';
@@ -268,22 +284,27 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardDeleteFamilyTitle => 'Supprimer la famille';
 
   @override
-  String get dashboardDeleteFamilyIntro => 'Tu es sur le point de supprimer définitivement la famille.';
+  String get dashboardDeleteFamilyIntro =>
+      'Tu es sur le point de supprimer définitivement la famille.';
 
   @override
   String get dashboardDeleteFamilyConsequences => 'Conséquences :';
 
   @override
-  String get dashboardDeleteFamilyConsequenceMembers => '• Tous les membres perdront l’accès au budget partagé.';
+  String get dashboardDeleteFamilyConsequenceMembers =>
+      '• Tous les membres perdront l’accès au budget partagé.';
 
   @override
-  String get dashboardDeleteFamilyConsequenceBudget => '• Le budget familial partagé sera supprimé.';
+  String get dashboardDeleteFamilyConsequenceBudget =>
+      '• Le budget familial partagé sera supprimé.';
 
   @override
-  String get dashboardDeleteFamilyConsequencePersonal => '• Les budgets personnels restent séparés.';
+  String get dashboardDeleteFamilyConsequencePersonal =>
+      '• Les budgets personnels restent séparés.';
 
   @override
-  String get dashboardDeleteFamilyIrreversible => 'Cette action est irréversible.';
+  String get dashboardDeleteFamilyIrreversible =>
+      'Cette action est irréversible.';
 
   @override
   String get dashboardDeleteFamilyAction => 'Supprimer la famille';
@@ -295,7 +316,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardFamilyNameLabel => 'Nom de la famille';
 
   @override
-  String get dashboardFamilyCreatedSharedActivated => 'Famille créée et budget partagé activé.';
+  String get dashboardFamilyCreatedSharedActivated =>
+      'Famille créée et budget partagé activé.';
 
   @override
   String get dashboardFamilyCreated => 'Famille créée avec succès.';
@@ -326,10 +348,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardNoMemberAvailableTitle => 'Aucun membre disponible';
 
   @override
-  String get dashboardNoMemberAvailableMessage => 'Aucun autre membre n’est disponible pour recevoir la propriété.';
+  String get dashboardNoMemberAvailableMessage =>
+      'Aucun autre membre n’est disponible pour recevoir la propriété.';
 
   @override
-  String get dashboardTransferOwnershipSuccess => 'Propriété transférée avec succès.';
+  String get dashboardTransferOwnershipSuccess =>
+      'Propriété transférée avec succès.';
 
   @override
   String dashboardTransferOwnershipError(Object error) {
@@ -348,13 +372,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardLeaveFamilyTitle => 'Quitter la famille';
 
   @override
-  String get dashboardLeaveFamilyChoiceIntro => 'Que veux-tu faire en quittant la famille ?';
+  String get dashboardLeaveFamilyChoiceIntro =>
+      'Que veux-tu faire en quittant la famille ?';
 
   @override
-  String get dashboardLeaveFamilyChoiceRestorePersonal => 'Restaurer mon budget personnel précédent.';
+  String get dashboardLeaveFamilyChoiceRestorePersonal =>
+      'Restaurer mon budget personnel précédent.';
 
   @override
-  String get dashboardLeaveFamilyChoiceCopyFamily => 'Copier le budget familial dans mon budget personnel.';
+  String get dashboardLeaveFamilyChoiceCopyFamily =>
+      'Copier le budget familial dans mon budget personnel.';
 
   @override
   String get dashboardLeaveFamilyRestoreAction => 'Restaurer mon budget';
@@ -363,10 +390,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardLeaveFamilyCopyAction => 'Copier le budget familial';
 
   @override
-  String get dashboardLeaveFamilyCopiedSuccess => 'Tu as quitté la famille et copié le budget familial.';
+  String get dashboardLeaveFamilyCopiedSuccess =>
+      'Tu as quitté la famille et copié le budget familial.';
 
   @override
-  String get dashboardLeaveFamilyRestoredSuccess => 'Tu as quitté la famille et restauré ton budget personnel.';
+  String get dashboardLeaveFamilyRestoredSuccess =>
+      'Tu as quitté la famille et restauré ton budget personnel.';
 
   @override
   String dashboardLeaveFamilyError(Object error) {
@@ -396,13 +425,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardNewNameLabel => 'Nouveau nom';
 
   @override
-  String get dashboardAnotherCategorySameName => 'Une autre catégorie porte déjà ce nom.';
+  String get dashboardAnotherCategorySameName =>
+      'Une autre catégorie porte déjà ce nom.';
 
   @override
-  String get dashboardAddExpenseCategoryTitle => 'Ajouter une catégorie de dépense';
+  String get dashboardAddExpenseCategoryTitle =>
+      'Ajouter une catégorie de dépense';
 
   @override
-  String get dashboardExistingExpenseCategory => 'Cette catégorie de dépense existe déjà.';
+  String get dashboardExistingExpenseCategory =>
+      'Cette catégorie de dépense existe déjà.';
 
   @override
   String dashboardAddExpenseSubCategoryFor(Object category) {
@@ -440,13 +472,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardInvalidAmountTitle => 'Montant invalide';
 
   @override
-  String get dashboardInvalidAmountMessage => 'Entre un montant valide supérieur à 0.';
+  String get dashboardInvalidAmountMessage =>
+      'Entre un montant valide supérieur à 0.';
 
   @override
-  String get dashboardRestoreSuccessPremium => 'Achats restaurés, Premium activé.';
+  String get dashboardRestoreSuccessPremium =>
+      'Achats restaurés, Premium activé.';
 
   @override
-  String get dashboardRestoreFinishedNoPremium => 'Restauration terminée, aucun achat Premium actif trouvé.';
+  String get dashboardRestoreFinishedNoPremium =>
+      'Restauration terminée, aucun achat Premium actif trouvé.';
 
   @override
   String dashboardRestoreError(Object error) {
@@ -457,7 +492,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardPrivacyOpened => 'Options de confidentialité ouvertes.';
 
   @override
-  String get dashboardPrivacyNotRequired => 'Aucune option de confidentialité requise pour le moment.';
+  String get dashboardPrivacyNotRequired =>
+      'Aucune option de confidentialité requise pour le moment.';
 
   @override
   String dashboardPrivacyError(Object error) {
@@ -511,10 +547,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardPersonalBudgetActive => 'Budget personnel actif';
 
   @override
-  String get dashboardFamilySharedDescription => 'Le budget est actuellement partagé avec les membres de la famille.';
+  String get dashboardFamilySharedDescription =>
+      'Le budget est actuellement partagé avec les membres de la famille.';
 
   @override
-  String get dashboardPersonalBudgetDescription => 'Tu travailles actuellement sur ton budget personnel.';
+  String get dashboardPersonalBudgetDescription =>
+      'Tu travailles actuellement sur ton budget personnel.';
 
   @override
   String dashboardFamilyName(Object name) {
@@ -528,7 +566,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardProcessing => 'Traitement...';
 
   @override
-  String get dashboardTransferOwnershipPremium => 'Premium requis pour transférer';
+  String get dashboardTransferOwnershipPremium =>
+      'Premium requis pour transférer';
 
   @override
   String get dashboardDeleteFamilyPremium => 'Premium requis pour supprimer';
@@ -543,7 +582,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardJoinFamilyAction => 'Rejoindre';
 
   @override
-  String get dashboardFamilyPremiumHint => 'La création et la gestion avancée de famille nécessitent Premium.';
+  String get dashboardFamilyPremiumHint =>
+      'La création et la gestion avancée de famille nécessitent Premium.';
 
   @override
   String get dashboardLeaveFamilyAction => 'Quitter la famille';
@@ -592,10 +632,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dashboardUnlockPremiumFeatures => 'Débloque les fonctions Premium';
 
   @override
-  String get dashboardPremiumBenefitsActive => 'Export Excel, analyses intelligentes, famille premium et expérience sans publicité sont actifs.';
+  String get dashboardPremiumBenefitsActive =>
+      'Export Excel, analyses intelligentes, famille premium et expérience sans publicité sont actifs.';
 
   @override
-  String get dashboardPremiumBenefitsLocked => 'Débloque l’export Excel, les conseils intelligents, la famille premium et la suppression des publicités.';
+  String get dashboardPremiumBenefitsLocked =>
+      'Débloque l’export Excel, les conseils intelligents, la famille premium et la suppression des publicités.';
 
   @override
   String get dashboardPremiumPillSmartAnalysis => 'Analyse smart';
@@ -631,7 +673,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get recapEmptyTitle => 'Aucune dépense';
 
   @override
-  String get recapEmptyMessage => 'Aucune opération n’a été enregistrée pour cette période.';
+  String get recapEmptyMessage =>
+      'Aucune opération n’a été enregistrée pour cette période.';
 
   @override
   String recapOperationsCount(Object count) {
@@ -651,16 +694,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywallFamilyTitle => 'Premium famille';
 
   @override
-  String get paywallAnnualSubtitle => 'Le meilleur tarif pour débloquer toutes les fonctions premium.';
+  String get paywallAnnualSubtitle =>
+      'Le meilleur tarif pour débloquer toutes les fonctions premium.';
 
   @override
   String get paywallMonthlySubtitle => 'Flexible, sans engagement long terme.';
 
   @override
-  String get paywallFamilySubtitle => 'Pour créer et gérer un budget familial partagé en premium.';
+  String get paywallFamilySubtitle =>
+      'Pour créer et gérer un budget familial partagé en premium.';
 
   @override
-  String get paywallDefaultPackageSubtitle => 'Débloque toutes les fonctionnalités premium.';
+  String get paywallDefaultPackageSubtitle =>
+      'Débloque toutes les fonctionnalités premium.';
 
   @override
   String get paywallBadgeBestOffer => 'Meilleure offre';
@@ -686,7 +732,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywallRestoreSuccess => 'Achats restaurés avec succès.';
 
   @override
-  String get paywallRestoreNoPurchaseFound => 'Aucun achat premium actif trouvé.';
+  String get paywallRestoreNoPurchaseFound =>
+      'Aucun achat premium actif trouvé.';
 
   @override
   String paywallRestoreError(Object error) {
@@ -703,7 +750,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywallUnlockTitle => 'Débloque toutes les fonctions premium';
 
   @override
-  String get paywallUnlockSubtitle => 'Export Excel, conseils intelligents, gestion famille premium, analyses avancées et expérience sans publicité.';
+  String get paywallUnlockSubtitle =>
+      'Export Excel, conseils intelligents, gestion famille premium, analyses avancées et expérience sans publicité.';
 
   @override
   String get paywallChooseOfferTitle => 'Choisis ton offre';
@@ -720,13 +768,15 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get paywallStoreNotice => 'Paiement et gestion de l’abonnement via Apple / Google.';
+  String get paywallStoreNotice =>
+      'Paiement et gestion de l’abonnement via Apple / Google.';
 
   @override
   String get paywallImportantInfoTitle => 'Informations importantes';
 
   @override
-  String get paywallImportantInfoBody => '• L’abonnement est renouvelé automatiquement selon les règles du store.\n• Tu peux gérer ou annuler ton abonnement depuis ton compte Apple / Google.\n• La restauration permet de réactiver un achat existant sur le même compte store.\n• La création et la gestion de famille premium dépendent de ton abonnement actif.\n• Le partage famille natif dépend aussi des règles de l’App Store ou de Google Play.';
+  String get paywallImportantInfoBody =>
+      '• L’abonnement est renouvelé automatiquement selon les règles du store.\n• Tu peux gérer ou annuler ton abonnement depuis ton compte Apple / Google.\n• La restauration permet de réactiver un achat existant sur le même compte store.\n• La création et la gestion de famille premium dépendent de ton abonnement actif.\n• Le partage famille natif dépend aussi des règles de l’App Store ou de Google Play.';
 
   @override
   String paywallPartialUnavailable(Object error) {
@@ -740,55 +790,65 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywallHeroUpgradeTitle => 'Passe en Premium';
 
   @override
-  String get paywallHeroPremiumActiveSubtitle => 'Toutes les fonctionnalités premium sont déjà déverrouillées.';
+  String get paywallHeroPremiumActiveSubtitle =>
+      'Toutes les fonctionnalités premium sont déjà déverrouillées.';
 
   @override
-  String get paywallHeroUpgradeSubtitle => 'Débloque l’export Excel, les conseils intelligents, la gestion famille premium et une expérience sans publicité.';
+  String get paywallHeroUpgradeSubtitle =>
+      'Débloque l’export Excel, les conseils intelligents, la gestion famille premium et une expérience sans publicité.';
 
   @override
   String get paywallFeatureExcelTitle => 'Export Excel complet';
 
   @override
-  String get paywallFeatureExcelSubtitle => 'Exports détaillés pour piloter et archiver ton budget.';
+  String get paywallFeatureExcelSubtitle =>
+      'Exports détaillés pour piloter et archiver ton budget.';
 
   @override
   String get paywallFeatureAdviceTitle => 'Conseils intelligents';
 
   @override
-  String get paywallFeatureAdviceSubtitle => 'Recommandations, alertes et analyses avancées.';
+  String get paywallFeatureAdviceSubtitle =>
+      'Recommandations, alertes et analyses avancées.';
 
   @override
   String get paywallFeatureFamilyTitle => 'Gestion famille premium';
 
   @override
-  String get paywallFeatureFamilySubtitle => 'Créer une famille, transférer la propriété et gérer la structure partagée.';
+  String get paywallFeatureFamilySubtitle =>
+      'Créer une famille, transférer la propriété et gérer la structure partagée.';
 
   @override
   String get paywallFeatureNoAdsTitle => 'Sans publicité';
 
   @override
-  String get paywallFeatureNoAdsSubtitle => 'Une expérience plus fluide pour les utilisateurs premium.';
+  String get paywallFeatureNoAdsSubtitle =>
+      'Une expérience plus fluide pour les utilisateurs premium.';
 
   @override
   String get paywallFeatureFutureTitle => 'Fonctions futures incluses';
 
   @override
-  String get paywallFeatureFutureSubtitle => 'Les prochaines améliorations premium seront débloquées.';
+  String get paywallFeatureFutureSubtitle =>
+      'Les prochaines améliorations premium seront débloquées.';
 
   @override
-  String get paywallPremiumAlreadyActive => 'Ton abonnement premium est déjà actif.';
+  String get paywallPremiumAlreadyActive =>
+      'Ton abonnement premium est déjà actif.';
 
   @override
   String get paywallNoOfferTitle => 'Aucune offre disponible';
 
   @override
-  String get paywallNoOfferMessage => 'Vérifie ta configuration RevenueCat, App Store Connect ou Google Play Console.';
+  String get paywallNoOfferMessage =>
+      'Vérifie ta configuration RevenueCat, App Store Connect ou Google Play Console.';
 
   @override
   String get budgetSectionAddButton => 'Ajouter';
 
   @override
-  String get budgetSectionEmpty => 'Aucune catégorie pour le moment. Ajoute une ligne.';
+  String get budgetSectionEmpty =>
+      'Aucune catégorie pour le moment. Ajoute une ligne.';
 
   @override
   String get budgetSectionAmountLabel => 'Montant';
@@ -802,10 +862,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get expenseSectionAddCategoryButton => 'Catégorie';
 
   @override
-  String get expenseSectionEmpty => 'Aucune catégorie de dépense. Ajoute une catégorie.';
+  String get expenseSectionEmpty =>
+      'Aucune catégorie de dépense. Ajoute une catégorie.';
 
   @override
-  String get expenseSectionAddSubCategoryTooltip => 'Ajouter une sous-catégorie';
+  String get expenseSectionAddSubCategoryTooltip =>
+      'Ajouter une sous-catégorie';
 
   @override
   String get expenseSectionRenameCategoryTooltip => 'Renommer la catégorie';
@@ -817,7 +879,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get expenseSectionNoSubCategory => 'Aucune sous-catégorie.';
 
   @override
-  String get expenseSectionDeleteSubCategoryTooltip => 'Supprimer la sous-catégorie';
+  String get expenseSectionDeleteSubCategoryTooltip =>
+      'Supprimer la sous-catégorie';
 
   @override
   String expenseSectionOperationsCount(Object count) {

@@ -54,8 +54,8 @@ class MonetizationController extends ChangeNotifier {
 
   bool get canShowAds =>
       !isPremium &&
-          _consentService.consentReady &&
-          _consentService.canRequestAds;
+      _consentService.consentReady &&
+      _consentService.canRequestAds;
 
   bool get privacyOptionsRequired => _consentService.privacyOptionsRequired;
 
@@ -75,9 +75,8 @@ class MonetizationController extends ChangeNotifier {
   void _syncPremiumStateFromCustomerInfo(CustomerInfo? info) {
     _customerInfo = info;
     _isPremiumFromStore =
-    info != null ? _subscriptionService.isPremium(info) : false;
-    _premiumPlanType =
-        _subscriptionService.resolvePremiumPlanType(info);
+        info != null ? _subscriptionService.isPremium(info) : false;
+    _premiumPlanType = _subscriptionService.resolvePremiumPlanType(info);
   }
 
   Future<void> initialize({String? appUserId}) async {
@@ -116,7 +115,6 @@ class MonetizationController extends ChangeNotifier {
         _syncPremiumStateFromCustomerInfo(info);
         notifyListeners();
       });
-
     } catch (e) {
       debugPrint('Monetization initialize error: $e');
 

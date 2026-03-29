@@ -240,9 +240,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   void _applyBudgetSnapshotToState(
-      BudgetDocumentSnapshotData snapshot, {
-        bool updateBudget = true,
-      }) {
+    BudgetDocumentSnapshotData snapshot, {
+    bool updateBudget = true,
+  }) {
     if (updateBudget && snapshot.budget != null) {
       _appBudget = snapshot.budget!;
       _appBudget.getOrCreatePeriod(_currentPeriodKey);
@@ -259,7 +259,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     }
 
     _cloudBudgetSubscription = _budgetCloudService.watchBudgetSnapshot().listen(
-          (snapshot) {
+      (snapshot) {
         if (!mounted || snapshot.budget == null) return;
 
         setState(() {
@@ -342,8 +342,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> _handleBudgetSaveConflict(
-      BudgetSaveConflictException conflict,
-      ) async {
+    BudgetSaveConflictException conflict,
+  ) async {
     if (_isResolvingBudgetConflict) return;
 
     _isResolvingBudgetConflict = true;
@@ -562,10 +562,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     items: memberUids
                         .map(
                           (uid) => DropdownMenuItem<String>(
-                        value: uid,
-                        child: Text(uid),
-                      ),
-                    )
+                            value: uid,
+                            child: Text(uid),
+                          ),
+                        )
                         .toList(),
                     onChanged: (value) {
                       setLocalState(() {
@@ -923,7 +923,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     try {
       await _budgetCloudService.leaveFamily(
         copyFamilyBudgetToPersonal:
-        choice == _LeaveFamilyChoice.copyFamilyBudget,
+            choice == _LeaveFamilyChoice.copyFamilyBudget,
       );
       await _loadData();
 
@@ -1217,7 +1217,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton.icon(
-                      onPressed: _isRestoringPurchases ? null : _restorePurchases,
+                      onPressed:
+                          _isRestoringPurchases ? null : _restorePurchases,
                       icon: const Icon(Icons.restore_rounded),
                       label: Text(
                         _isRestoringPurchases
@@ -1231,7 +1232,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     width: double.infinity,
                     child: OutlinedButton.icon(
                       onPressed:
-                      _isOpeningPrivacyOptions ? null : _openPrivacyOptions,
+                          _isOpeningPrivacyOptions ? null : _openPrivacyOptions,
                       icon: const Icon(Icons.privacy_tip_outlined),
                       label: Text(
                         _isOpeningPrivacyOptions
@@ -1329,8 +1330,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               child: Text(
                                 isPremium
                                     ? l10n.dashboardPremiumActiveLabel(
-                                  premiumLabel,
-                                )
+                                        premiumLabel,
+                                      )
                                     : l10n.dashboardFreeVersionActive,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w700,
@@ -1391,7 +1392,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton.icon(
-                      onPressed: _isRestoringPurchases ? null : _restorePurchases,
+                      onPressed:
+                          _isRestoringPurchases ? null : _restorePurchases,
                       icon: const Icon(Icons.restore_rounded),
                       label: Text(
                         _isRestoringPurchases
@@ -1573,8 +1575,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   _isFamilyActionLoading
                                       ? l10n.dashboardProcessing
                                       : _isPremium
-                                      ? l10n.dashboardTransferOwnershipAction
-                                      : l10n.dashboardTransferOwnershipPremium,
+                                          ? l10n
+                                              .dashboardTransferOwnershipAction
+                                          : l10n
+                                              .dashboardTransferOwnershipPremium,
                                 ),
                               ),
                             ),
@@ -1594,8 +1598,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   _isFamilyActionLoading
                                       ? l10n.dashboardProcessing
                                       : _isPremium
-                                      ? l10n.dashboardDeleteFamilyAction
-                                      : l10n.dashboardDeleteFamilyPremium,
+                                          ? l10n.dashboardDeleteFamilyAction
+                                          : l10n.dashboardDeleteFamilyPremium,
                                 ),
                               ),
                             ),
@@ -1617,8 +1621,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     _isFamilyActionLoading
                                         ? l10n.dashboardProcessing
                                         : _isPremium
-                                        ? l10n.dashboardCreateFamilyAction
-                                        : l10n.dashboardCreateFamilyPremium,
+                                            ? l10n.dashboardCreateFamilyAction
+                                            : l10n.dashboardCreateFamilyPremium,
                                   ),
                                 ),
                               ),
@@ -1649,9 +1653,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           SizedBox(
                             width: double.infinity,
                             child: OutlinedButton.icon(
-                              onPressed: _isFamilyActionLoading
-                                  ? null
-                                  : _leaveFamily,
+                              onPressed:
+                                  _isFamilyActionLoading ? null : _leaveFamily,
                               icon: const Icon(Icons.exit_to_app_rounded),
                               label: Text(
                                 _isFamilyActionLoading
@@ -1905,17 +1908,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     },
                     categoryTotalProvider: (category) =>
                         _appBudget.expenseCategoryTotalForPeriod(
-                          _currentPeriodKey,
-                          category,
-                        ),
+                      _currentPeriodKey,
+                      category,
+                    ),
                     subCategoryTotalProvider: (subCategory) =>
                         _currentPeriod.getExpenseSubCategoryTotal(
-                          subCategory.id,
-                        ),
+                      subCategory.id,
+                    ),
                     subCategoryEntryCountProvider: (subCategory) =>
                         _currentPeriod.getExpenseSubCategoryEntryCount(
-                          subCategory.id,
-                        ),
+                      subCategory.id,
+                    ),
                     isCategoryExpanded: _isExpenseCategoryExpanded,
                     onToggleCategory: _toggleExpenseCategory,
                     onAddCategory: _showAddExpenseCategoryDialog,
@@ -1966,7 +1969,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (result == null || result.isEmpty) return;
 
     final exists = section.columns.any(
-          (item) => item.name.toLowerCase().trim() == result.toLowerCase().trim(),
+      (item) => item.name.toLowerCase().trim() == result.toLowerCase().trim(),
     );
 
     if (exists) {
@@ -1988,9 +1991,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> _showRenameColumnDialog(
-      BudgetSectionTemplate section,
-      BudgetColumnTemplate column,
-      ) async {
+    BudgetSectionTemplate section,
+    BudgetColumnTemplate column,
+  ) async {
     final result = await _showTextInputDialog(
       title: l10n.dashboardRenameCategoryTitle,
       label: l10n.dashboardNewNameLabel,
@@ -2000,8 +2003,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (result == null || result.isEmpty) return;
 
     final exists = section.columns.any(
-          (item) =>
-      item.id != column.id &&
+      (item) =>
+          item.id != column.id &&
           item.name.toLowerCase().trim() == result.toLowerCase().trim(),
     );
 
@@ -2039,7 +2042,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void _deleteIncomeColumn(BudgetColumnTemplate column) {
     _applyAndSave(() {
       _appBudget.incomeTemplate.columns.removeWhere(
-            (item) => item.id == column.id,
+        (item) => item.id == column.id,
       );
       for (final period in _appBudget.periods.values) {
         period.incomeAmounts.remove(column.id);
@@ -2050,7 +2053,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void _deleteSavingColumn(BudgetColumnTemplate column) {
     _applyAndSave(() {
       _appBudget.savingTemplate.columns.removeWhere(
-            (item) => item.id == column.id,
+        (item) => item.id == column.id,
       );
       for (final period in _appBudget.periods.values) {
         period.savingAmounts.remove(column.id);
@@ -2067,7 +2070,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (result == null || result.isEmpty) return;
 
     final exists = _appBudget.expenseTemplate.categories.any(
-          (item) => item.name.toLowerCase().trim() == result.toLowerCase().trim(),
+      (item) => item.name.toLowerCase().trim() == result.toLowerCase().trim(),
     );
 
     if (exists) {
@@ -2089,8 +2092,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> _showRenameExpenseCategoryDialog(
-      ExpenseCategoryTemplate category,
-      ) async {
+    ExpenseCategoryTemplate category,
+  ) async {
     final result = await _showTextInputDialog(
       title: l10n.dashboardRenameCategoryTitle,
       label: l10n.dashboardNewNameLabel,
@@ -2100,8 +2103,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (result == null || result.isEmpty) return;
 
     final exists = _appBudget.expenseTemplate.categories.any(
-          (item) =>
-      item.id != category.id &&
+      (item) =>
+          item.id != category.id &&
           item.name.toLowerCase().trim() == result.toLowerCase().trim(),
     );
 
@@ -2125,7 +2128,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       _expandedExpenseCategoryIds.remove(category.id);
 
       _appBudget.expenseTemplate.categories.removeWhere(
-            (item) => item.id == category.id,
+        (item) => item.id == category.id,
       );
 
       for (final period in _appBudget.periods.values) {
@@ -2137,8 +2140,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> _showAddExpenseSubCategoryDialog(
-      ExpenseCategoryTemplate category,
-      ) async {
+    ExpenseCategoryTemplate category,
+  ) async {
     final result = await _showTextInputDialog(
       title: l10n.dashboardAddExpenseSubCategoryFor(category.name),
       label: l10n.dashboardSubCategoryNameLabel,
@@ -2147,7 +2150,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     if (result == null || result.isEmpty) return;
 
     final exists = category.subCategories.any(
-          (item) => item.name.toLowerCase().trim() == result.toLowerCase().trim(),
+      (item) => item.name.toLowerCase().trim() == result.toLowerCase().trim(),
     );
 
     if (exists) {
@@ -2170,8 +2173,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> _showRenameExpenseSubCategoryDialog(
-      ExpenseSubCategoryTemplate subCategory,
-      ) async {
+    ExpenseSubCategoryTemplate subCategory,
+  ) async {
     final result = await _showTextInputDialog(
       title: l10n.dashboardRenameSubCategoryTitle,
       label: l10n.dashboardNewNameLabel,
@@ -2191,8 +2194,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     if (parentCategory != null) {
       final exists = parentCategory.subCategories.any(
-            (item) =>
-        item.id != subCategory.id &&
+        (item) =>
+            item.id != subCategory.id &&
             item.name.toLowerCase().trim() == result.toLowerCase().trim(),
       );
 
@@ -2211,9 +2214,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   void _deleteExpenseSubCategory(
-      ExpenseCategoryTemplate category,
-      ExpenseSubCategoryTemplate subCategory,
-      ) {
+    ExpenseCategoryTemplate category,
+    ExpenseSubCategoryTemplate subCategory,
+  ) {
     _applyAndSave(() {
       category.subCategories.removeWhere((item) => item.id == subCategory.id);
       for (final period in _appBudget.periods.values) {
@@ -2222,7 +2225,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
   }
 
-  Future<void> _showAddEntryDialog(ExpenseSubCategoryTemplate subCategory) async {
+  Future<void> _showAddEntryDialog(
+      ExpenseSubCategoryTemplate subCategory) async {
     final controller = TextEditingController();
 
     final result = await showDialog<String>(
@@ -2340,9 +2344,8 @@ class _DashboardHeroCard extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isCompact = constraints.maxWidth < 560;
-        final metricWidth = isCompact
-            ? (constraints.maxWidth - 18 * 2 - 12) / 2
-            : 160.0;
+        final metricWidth =
+            isCompact ? (constraints.maxWidth - 18 * 2 - 12) / 2 : 160.0;
 
         return Container(
           decoration: BoxDecoration(
@@ -2404,10 +2407,10 @@ class _DashboardHeroCard extends StatelessWidget {
                     items: years
                         .map(
                           (year) => DropdownMenuItem<int>(
-                        value: year,
-                        child: Text(year.toString()),
-                      ),
-                    )
+                            value: year,
+                            child: Text(year.toString()),
+                          ),
+                        )
                         .toList(),
                     onChanged: onChangeYear,
                   ),
@@ -2419,10 +2422,10 @@ class _DashboardHeroCard extends StatelessWidget {
                     items: months
                         .map(
                           (month) => DropdownMenuItem<String>(
-                        value: month,
-                        child: Text(localizedMonthLabelBuilder(month)),
-                      ),
-                    )
+                            value: month,
+                            child: Text(localizedMonthLabelBuilder(month)),
+                          ),
+                        )
                         .toList(),
                     onChanged: onChangeMonth,
                   ),
@@ -2440,10 +2443,10 @@ class _DashboardHeroCard extends StatelessWidget {
                               items: years
                                   .map(
                                     (year) => DropdownMenuItem<int>(
-                                  value: year,
-                                  child: Text(year.toString()),
-                                ),
-                              )
+                                      value: year,
+                                      child: Text(year.toString()),
+                                    ),
+                                  )
                                   .toList(),
                               onChanged: onChangeYear,
                             ),
@@ -2463,10 +2466,11 @@ class _DashboardHeroCard extends StatelessWidget {
                               items: months
                                   .map(
                                     (month) => DropdownMenuItem<String>(
-                                  value: month,
-                                  child: Text(localizedMonthLabelBuilder(month)),
-                                ),
-                              )
+                                      value: month,
+                                      child: Text(
+                                          localizedMonthLabelBuilder(month)),
+                                    ),
+                                  )
                                   .toList(),
                               onChanged: onChangeMonth,
                             ),
@@ -2481,11 +2485,13 @@ class _DashboardHeroCard extends StatelessWidget {
                   runSpacing: 8,
                   children: [
                     _HeroInfoChip(
-                      icon: hasFamily ? Icons.groups_rounded : Icons.person_rounded,
+                      icon: hasFamily
+                          ? Icons.groups_rounded
+                          : Icons.person_rounded,
                       label: hasFamily
                           ? (familyName != null && familyName!.isNotEmpty
-                          ? familyName!
-                          : l10n.dashboardFamilyModeActive)
+                              ? familyName!
+                              : l10n.dashboardFamilyModeActive)
                           : l10n.dashboardPersonalBudgetActive,
                     ),
                     _HeroInfoChip(

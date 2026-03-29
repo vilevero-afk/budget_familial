@@ -132,9 +132,9 @@ class ExpenseCategoryTemplate {
       subCategories: (json['subCategories'] as List<dynamic>? ?? [])
           .map(
             (e) => ExpenseSubCategoryTemplate.fromJson(
-          e as Map<String, dynamic>,
-        ),
-      )
+              e as Map<String, dynamic>,
+            ),
+          )
           .toList(),
     );
   }
@@ -166,9 +166,9 @@ class ExpenseSectionTemplate {
       categories: (json['categories'] as List<dynamic>? ?? [])
           .map(
             (e) => ExpenseCategoryTemplate.fromJson(
-          e as Map<String, dynamic>,
-        ),
-      )
+              e as Map<String, dynamic>,
+            ),
+          )
           .toList(),
     );
   }
@@ -222,7 +222,7 @@ class PeriodBudgetData {
   void addExpenseEntry(String subCategoryId, ExpenseEntry entry) {
     final entries = expenseEntriesBySubCategoryId.putIfAbsent(
       subCategoryId,
-          () => [],
+      () => [],
     );
     entries.add(entry);
   }
@@ -243,7 +243,7 @@ class PeriodBudgetData {
       'incomeAmounts': incomeAmounts,
       'savingAmounts': savingAmounts,
       'expenseEntriesBySubCategoryId': expenseEntriesBySubCategoryId.map(
-            (key, value) => MapEntry(key, value.map((e) => e.toJson()).toList()),
+        (key, value) => MapEntry(key, value.map((e) => e.toJson()).toList()),
       ),
     };
   }
@@ -257,13 +257,13 @@ class PeriodBudgetData {
     return PeriodBudgetData(
       periodKey: json['periodKey'] as String,
       incomeAmounts: incomeRaw.map(
-            (key, value) => MapEntry(key, (value as num).toDouble()),
+        (key, value) => MapEntry(key, (value as num).toDouble()),
       ),
       savingAmounts: savingRaw.map(
-            (key, value) => MapEntry(key, (value as num).toDouble()),
+        (key, value) => MapEntry(key, (value as num).toDouble()),
       ),
       expenseEntriesBySubCategoryId: expenseRaw.map(
-            (key, value) => MapEntry(
+        (key, value) => MapEntry(
           key,
           (value as List<dynamic>)
               .map((e) => ExpenseEntry.fromJson(e as Map<String, dynamic>))
@@ -443,7 +443,7 @@ class AppBudgetData {
   PeriodBudgetData getOrCreatePeriod(String periodKey) {
     return periods.putIfAbsent(
       periodKey,
-          () => PeriodBudgetData(periodKey: periodKey),
+      () => PeriodBudgetData(periodKey: periodKey),
     );
   }
 
@@ -455,7 +455,7 @@ class AppBudgetData {
     final period = getOrCreatePeriod(periodKey);
     return incomeTemplate.columns.fold(
       0,
-          (sum, item) => sum + period.getIncomeAmount(item.id),
+      (sum, item) => sum + period.getIncomeAmount(item.id),
     );
   }
 
@@ -463,25 +463,25 @@ class AppBudgetData {
     final period = getOrCreatePeriod(periodKey);
     return savingTemplate.columns.fold(
       0,
-          (sum, item) => sum + period.getSavingAmount(item.id),
+      (sum, item) => sum + period.getSavingAmount(item.id),
     );
   }
 
   double expenseCategoryTotalForPeriod(
-      String periodKey,
-      ExpenseCategoryTemplate category,
-      ) {
+    String periodKey,
+    ExpenseCategoryTemplate category,
+  ) {
     final period = getOrCreatePeriod(periodKey);
     return category.subCategories.fold(
       0,
-          (sum, item) => sum + period.getExpenseSubCategoryTotal(item.id),
+      (sum, item) => sum + period.getExpenseSubCategoryTotal(item.id),
     );
   }
 
   double expenseSubCategoryTotalForPeriod(
-      String periodKey,
-      String subCategoryId,
-      ) {
+    String periodKey,
+    String subCategoryId,
+  ) {
     final period = getOrCreatePeriod(periodKey);
     return period.getExpenseSubCategoryTotal(subCategoryId);
   }
@@ -490,12 +490,12 @@ class AppBudgetData {
     final period = getOrCreatePeriod(periodKey);
     return expenseTemplate.categories.fold(
       0,
-          (sum, category) =>
-      sum +
+      (sum, category) =>
+          sum +
           category.subCategories.fold(
             0,
-                (subSum, subCategory) =>
-            subSum + period.getExpenseSubCategoryTotal(subCategory.id),
+            (subSum, subCategory) =>
+                subSum + period.getExpenseSubCategoryTotal(subCategory.id),
           ),
     );
   }
@@ -548,8 +548,7 @@ class AppBudgetData {
       currentPeriodKey: periodKey,
       previousPeriodKey: previousKey,
       currentValue: incomeTotalForPeriod(periodKey),
-      previousValue:
-      previousKey != null && hasPeriod(previousKey)
+      previousValue: previousKey != null && hasPeriod(previousKey)
           ? incomeTotalForPeriod(previousKey)
           : 0,
     );
@@ -561,8 +560,7 @@ class AppBudgetData {
       currentPeriodKey: periodKey,
       previousPeriodKey: previousKey,
       currentValue: savingTotalForPeriod(periodKey),
-      previousValue:
-      previousKey != null && hasPeriod(previousKey)
+      previousValue: previousKey != null && hasPeriod(previousKey)
           ? savingTotalForPeriod(previousKey)
           : 0,
     );
@@ -574,8 +572,7 @@ class AppBudgetData {
       currentPeriodKey: periodKey,
       previousPeriodKey: previousKey,
       currentValue: expenseTotalForPeriod(periodKey),
-      previousValue:
-      previousKey != null && hasPeriod(previousKey)
+      previousValue: previousKey != null && hasPeriod(previousKey)
           ? expenseTotalForPeriod(previousKey)
           : 0,
     );
@@ -587,20 +584,20 @@ class AppBudgetData {
       currentPeriodKey: periodKey,
       previousPeriodKey: previousKey,
       currentValue: balanceForPeriod(periodKey),
-      previousValue:
-      previousKey != null && hasPeriod(previousKey)
+      previousValue: previousKey != null && hasPeriod(previousKey)
           ? balanceForPeriod(previousKey)
           : 0,
     );
   }
 
   List<ExpenseSubCategoryInsight> getSubCategoryInsightsForPeriod(
-      String periodKey,
-      ) {
+    String periodKey,
+  ) {
     final period = getOrCreatePeriod(periodKey);
     final previousKey = previousPeriodKey(periodKey);
-    final previousPeriod =
-    previousKey != null && hasPeriod(previousKey) ? periods[previousKey] : null;
+    final previousPeriod = previousKey != null && hasPeriod(previousKey)
+        ? periods[previousKey]
+        : null;
 
     final List<ExpenseSubCategoryInsight> insights = [];
 
@@ -609,7 +606,8 @@ class AppBudgetData {
         final currentAmount = period.getExpenseSubCategoryTotal(subCategory.id);
         final previousAmount =
             previousPeriod?.getExpenseSubCategoryTotal(subCategory.id) ?? 0;
-        final entryCount = period.getExpenseSubCategoryEntryCount(subCategory.id);
+        final entryCount =
+            period.getExpenseSubCategoryEntryCount(subCategory.id);
 
         insights.add(
           ExpenseSubCategoryInsight(
@@ -629,14 +627,13 @@ class AppBudgetData {
   }
 
   List<ExpenseSubCategoryInsight> highestExpenseSubCategoriesForPeriod(
-      String periodKey, {
-        int limit = 5,
-        bool excludeZeroAmounts = true,
-      }) {
+    String periodKey, {
+    int limit = 5,
+    bool excludeZeroAmounts = true,
+  }) {
     final items = getSubCategoryInsightsForPeriod(periodKey);
 
-    final filtered =
-    excludeZeroAmounts
+    final filtered = excludeZeroAmounts
         ? items.where((e) => e.currentAmount > 0).toList()
         : items;
 
@@ -647,12 +644,11 @@ class AppBudgetData {
   }
 
   List<ExpenseSubCategoryInsight> mostIncreasedSubCategoriesForPeriod(
-      String periodKey, {
-        int limit = 5,
-        double minCurrentAmount = 0,
-      }) {
-    final items =
-    getSubCategoryInsightsForPeriod(periodKey)
+    String periodKey, {
+    int limit = 5,
+    double minCurrentAmount = 0,
+  }) {
+    final items = getSubCategoryInsightsForPeriod(periodKey)
         .where((e) => e.currentAmount >= minCurrentAmount)
         .toList();
 
@@ -665,11 +661,11 @@ class AppBudgetData {
   }
 
   List<BudgetAlertData> generateAlertsForPeriod(
-      String periodKey, {
-        double highExpenseAmountThreshold = 1000,
-        double strongIncreasePercentThreshold = 30,
-        double lowBalanceThreshold = 0,
-      }) {
+    String periodKey, {
+    double highExpenseAmountThreshold = 1000,
+    double strongIncreasePercentThreshold = 30,
+    double lowBalanceThreshold = 0,
+  }) {
     final List<BudgetAlertData> alerts = [];
 
     final balance = balanceForPeriod(periodKey);
@@ -692,7 +688,7 @@ class AppBudgetData {
           BudgetAlertData(
             title: 'Dépense élevée',
             message:
-            '${item.subCategoryName} atteint ${item.currentAmount.toStringAsFixed(2)} € sur la période.',
+                '${item.subCategoryName} atteint ${item.currentAmount.toStringAsFixed(2)} € sur la période.',
             level: BudgetAlertLevel.warning,
             categoryName: item.categoryName,
             subCategoryName: item.subCategoryName,
@@ -707,7 +703,7 @@ class AppBudgetData {
           BudgetAlertData(
             title: 'Hausse importante',
             message:
-            '${item.subCategoryName} augmente de ${item.percentChange.toStringAsFixed(1)} % par rapport au mois précédent.',
+                '${item.subCategoryName} augmente de ${item.percentChange.toStringAsFixed(1)} % par rapport au mois précédent.',
             level: BudgetAlertLevel.warning,
             categoryName: item.categoryName,
             subCategoryName: item.subCategoryName,
@@ -737,7 +733,7 @@ class AppBudgetData {
       'expenseTemplate': expenseTemplate.toJson(),
       'savingTemplate': savingTemplate.toJson(),
       'periods': periods.map(
-            (key, value) => MapEntry(key, value.toJson()),
+        (key, value) => MapEntry(key, value.toJson()),
       ),
     };
   }
@@ -756,7 +752,7 @@ class AppBudgetData {
         json['savingTemplate'] as Map<String, dynamic>,
       ),
       periods: periodsRaw.map(
-            (key, value) => MapEntry(
+        (key, value) => MapEntry(
           key,
           PeriodBudgetData.fromJson(value as Map<String, dynamic>),
         ),

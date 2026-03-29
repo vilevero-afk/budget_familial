@@ -75,10 +75,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get signupTitle => 'Account aanmaken';
 
   @override
-  String get loginSubtitle => 'Meld je aan om toegang te krijgen tot je gezinsbudget.';
+  String get loginSubtitle =>
+      'Meld je aan om toegang te krijgen tot je gezinsbudget.';
 
   @override
-  String get signupSubtitle => 'Maak je account aan om je gezinsbudget te beheren.';
+  String get signupSubtitle =>
+      'Maak je account aan om je gezinsbudget te beheren.';
 
   @override
   String get loginPrimaryButton => 'Aanmelden';
@@ -120,7 +122,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get loginEnterPassword => 'Vul je wachtwoord in';
 
   @override
-  String get loginPasswordMinLength => 'Het wachtwoord moet minstens 6 tekens bevatten';
+  String get loginPasswordMinLength =>
+      'Het wachtwoord moet minstens 6 tekens bevatten';
 
   @override
   String loginAccountCreatedVerificationSent(Object email) {
@@ -136,22 +139,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String get emailVerificationTitle => 'Verifieer je e-mailadres';
 
   @override
-  String get emailVerificationSubtitle => 'Verificatie is vereist voordat je toegang krijgt tot je budget.';
+  String get emailVerificationSubtitle =>
+      'Verificatie is vereist voordat je toegang krijgt tot je budget.';
 
   @override
   String get emailVerificationAddressLabel => 'E-mailadres';
 
   @override
-  String get emailVerificationAddressUnavailable => 'E-mailadres niet beschikbaar';
+  String get emailVerificationAddressUnavailable =>
+      'E-mailadres niet beschikbaar';
 
   @override
-  String get emailVerificationInstruction => 'Er is een verificatie-e-mail verzonden. Klik op de ontvangen link en keer daarna terug naar de app.';
+  String get emailVerificationInstruction =>
+      'Er is een verificatie-e-mail verzonden. Klik op de ontvangen link en keer daarna terug naar de app.';
 
   @override
-  String get emailVerificationSpamHint => 'Controleer ook je map spam / ongewenst.';
+  String get emailVerificationSpamHint =>
+      'Controleer ook je map spam / ongewenst.';
 
   @override
-  String get emailVerificationNotVerifiedYet => 'Het e-mailadres is nog niet geverifieerd.';
+  String get emailVerificationNotVerifiedYet =>
+      'Het e-mailadres is nog niet geverifieerd.';
 
   @override
   String get emailVerificationYourEmail => 'je e-mailadres';
@@ -180,37 +188,43 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get welcomeHeroDescription => 'Beheer je persoonlijke of gezinsbudget, volg je uitgaven en besparingen en bekijk je resultaten maand na maand.';
+  String get welcomeHeroDescription =>
+      'Beheer je persoonlijke of gezinsbudget, volg je uitgaven en besparingen en bekijk je resultaten maand na maand.';
 
   @override
   String get welcomeTitle => 'Begin eenvoudig';
 
   @override
-  String get welcomeSubtitle => 'Maak je account aan om je budget te synchroniseren, gezinsfuncties te activeren en je gegevens op meerdere apparaten terug te vinden.';
+  String get welcomeSubtitle =>
+      'Maak je account aan om je budget te synchroniseren, gezinsfuncties te activeren en je gegevens op meerdere apparaten terug te vinden.';
 
   @override
   String get welcomeFeatureBudgetTitle => 'Budgetopvolging';
 
   @override
-  String get welcomeFeatureBudgetDescription => 'Beheer je inkomsten, uitgaven, besparingen en maandelijks saldo.';
+  String get welcomeFeatureBudgetDescription =>
+      'Beheer je inkomsten, uitgaven, besparingen en maandelijks saldo.';
 
   @override
   String get welcomeFeatureAnalysisTitle => 'Budgetanalyse';
 
   @override
-  String get welcomeFeatureAnalysisDescription => 'Vergelijk periodes en bekijk belangrijke trends.';
+  String get welcomeFeatureAnalysisDescription =>
+      'Vergelijk periodes en bekijk belangrijke trends.';
 
   @override
   String get welcomeFeatureFamilyTitle => 'Gezinsmodus';
 
   @override
-  String get welcomeFeatureFamilyDescription => 'Deel een gezamenlijk budget met cloudsynchronisatie.';
+  String get welcomeFeatureFamilyDescription =>
+      'Deel een gezamenlijk budget met cloudsynchronisatie.';
 
   @override
   String get welcomePremiumTitle => 'Gratis en Premium versie';
 
   @override
-  String get welcomePremiumDescription => 'Begin gratis en ontgrendel geavanceerde analyses, advies, Excel-export en gezinsfuncties met Premium.';
+  String get welcomePremiumDescription =>
+      'Begin gratis en ontgrendel geavanceerde analyses, advies, Excel-export en gezinsfuncties met Premium.';
 
   @override
   String get welcomePremiumButton => 'Bekijk Premium-aanbiedingen';
@@ -253,13 +267,15 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardTransferOwnershipTitle => 'Eigendom overdragen';
 
   @override
-  String get dashboardTransferOwnershipMessage => 'Kies het lid dat eigenaar wordt van het gezinsbudget.';
+  String get dashboardTransferOwnershipMessage =>
+      'Kies het lid dat eigenaar wordt van het gezinsbudget.';
 
   @override
   String get dashboardMemberLabel => 'Lid';
 
   @override
-  String get dashboardTransferOwnershipHint => 'Na de overdracht kan dit lid het gezin beheren.';
+  String get dashboardTransferOwnershipHint =>
+      'Na de overdracht kan dit lid het gezin beheren.';
 
   @override
   String get dashboardTransferOwnershipAction => 'Overdragen';
@@ -268,22 +284,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardDeleteFamilyTitle => 'Gezin verwijderen';
 
   @override
-  String get dashboardDeleteFamilyIntro => 'Je staat op het punt het gezin definitief te verwijderen.';
+  String get dashboardDeleteFamilyIntro =>
+      'Je staat op het punt het gezin definitief te verwijderen.';
 
   @override
   String get dashboardDeleteFamilyConsequences => 'Gevolgen:';
 
   @override
-  String get dashboardDeleteFamilyConsequenceMembers => '• Alle leden verliezen toegang tot het gedeelde budget.';
+  String get dashboardDeleteFamilyConsequenceMembers =>
+      '• Alle leden verliezen toegang tot het gedeelde budget.';
 
   @override
-  String get dashboardDeleteFamilyConsequenceBudget => '• Het gedeelde gezinsbudget wordt verwijderd.';
+  String get dashboardDeleteFamilyConsequenceBudget =>
+      '• Het gedeelde gezinsbudget wordt verwijderd.';
 
   @override
-  String get dashboardDeleteFamilyConsequencePersonal => '• Persoonlijke budgetten blijven gescheiden.';
+  String get dashboardDeleteFamilyConsequencePersonal =>
+      '• Persoonlijke budgetten blijven gescheiden.';
 
   @override
-  String get dashboardDeleteFamilyIrreversible => 'Deze actie kan niet ongedaan worden gemaakt.';
+  String get dashboardDeleteFamilyIrreversible =>
+      'Deze actie kan niet ongedaan worden gemaakt.';
 
   @override
   String get dashboardDeleteFamilyAction => 'Gezin verwijderen';
@@ -295,7 +316,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardFamilyNameLabel => 'Gezinsnaam';
 
   @override
-  String get dashboardFamilyCreatedSharedActivated => 'Gezin aangemaakt en gedeeld budget geactiveerd.';
+  String get dashboardFamilyCreatedSharedActivated =>
+      'Gezin aangemaakt en gedeeld budget geactiveerd.';
 
   @override
   String get dashboardFamilyCreated => 'Gezin succesvol aangemaakt.';
@@ -326,10 +348,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardNoMemberAvailableTitle => 'Geen lid beschikbaar';
 
   @override
-  String get dashboardNoMemberAvailableMessage => 'Er is geen ander lid beschikbaar om het eigendom te ontvangen.';
+  String get dashboardNoMemberAvailableMessage =>
+      'Er is geen ander lid beschikbaar om het eigendom te ontvangen.';
 
   @override
-  String get dashboardTransferOwnershipSuccess => 'Eigendom succesvol overgedragen.';
+  String get dashboardTransferOwnershipSuccess =>
+      'Eigendom succesvol overgedragen.';
 
   @override
   String dashboardTransferOwnershipError(Object error) {
@@ -348,13 +372,16 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardLeaveFamilyTitle => 'Gezin verlaten';
 
   @override
-  String get dashboardLeaveFamilyChoiceIntro => 'Wat wil je doen wanneer je het gezin verlaat?';
+  String get dashboardLeaveFamilyChoiceIntro =>
+      'Wat wil je doen wanneer je het gezin verlaat?';
 
   @override
-  String get dashboardLeaveFamilyChoiceRestorePersonal => 'Mijn vorige persoonlijke budget herstellen.';
+  String get dashboardLeaveFamilyChoiceRestorePersonal =>
+      'Mijn vorige persoonlijke budget herstellen.';
 
   @override
-  String get dashboardLeaveFamilyChoiceCopyFamily => 'Het gezinsbudget kopiëren naar mijn persoonlijke budget.';
+  String get dashboardLeaveFamilyChoiceCopyFamily =>
+      'Het gezinsbudget kopiëren naar mijn persoonlijke budget.';
 
   @override
   String get dashboardLeaveFamilyRestoreAction => 'Mijn budget herstellen';
@@ -363,10 +390,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardLeaveFamilyCopyAction => 'Gezinsbudget kopiëren';
 
   @override
-  String get dashboardLeaveFamilyCopiedSuccess => 'Je hebt het gezin verlaten en het gezinsbudget gekopieerd.';
+  String get dashboardLeaveFamilyCopiedSuccess =>
+      'Je hebt het gezin verlaten en het gezinsbudget gekopieerd.';
 
   @override
-  String get dashboardLeaveFamilyRestoredSuccess => 'Je hebt het gezin verlaten en je persoonlijke budget hersteld.';
+  String get dashboardLeaveFamilyRestoredSuccess =>
+      'Je hebt het gezin verlaten en je persoonlijke budget hersteld.';
 
   @override
   String dashboardLeaveFamilyError(Object error) {
@@ -396,13 +425,15 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardNewNameLabel => 'Nieuwe naam';
 
   @override
-  String get dashboardAnotherCategorySameName => 'Een andere categorie heeft al deze naam.';
+  String get dashboardAnotherCategorySameName =>
+      'Een andere categorie heeft al deze naam.';
 
   @override
   String get dashboardAddExpenseCategoryTitle => 'Uitgavencategorie toevoegen';
 
   @override
-  String get dashboardExistingExpenseCategory => 'Deze uitgavencategorie bestaat al.';
+  String get dashboardExistingExpenseCategory =>
+      'Deze uitgavencategorie bestaat al.';
 
   @override
   String dashboardAddExpenseSubCategoryFor(Object category) {
@@ -440,13 +471,16 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardInvalidAmountTitle => 'Ongeldig bedrag';
 
   @override
-  String get dashboardInvalidAmountMessage => 'Voer een geldig bedrag groter dan 0 in.';
+  String get dashboardInvalidAmountMessage =>
+      'Voer een geldig bedrag groter dan 0 in.';
 
   @override
-  String get dashboardRestoreSuccessPremium => 'Aankopen hersteld, Premium geactiveerd.';
+  String get dashboardRestoreSuccessPremium =>
+      'Aankopen hersteld, Premium geactiveerd.';
 
   @override
-  String get dashboardRestoreFinishedNoPremium => 'Herstel voltooid, geen actieve Premium-aankoop gevonden.';
+  String get dashboardRestoreFinishedNoPremium =>
+      'Herstel voltooid, geen actieve Premium-aankoop gevonden.';
 
   @override
   String dashboardRestoreError(Object error) {
@@ -457,7 +491,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardPrivacyOpened => 'Privacy-opties geopend.';
 
   @override
-  String get dashboardPrivacyNotRequired => 'Momenteel zijn er geen privacy-opties vereist.';
+  String get dashboardPrivacyNotRequired =>
+      'Momenteel zijn er geen privacy-opties vereist.';
 
   @override
   String dashboardPrivacyError(Object error) {
@@ -511,10 +546,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardPersonalBudgetActive => 'Persoonlijk budget actief';
 
   @override
-  String get dashboardFamilySharedDescription => 'Het budget wordt momenteel gedeeld met gezinsleden.';
+  String get dashboardFamilySharedDescription =>
+      'Het budget wordt momenteel gedeeld met gezinsleden.';
 
   @override
-  String get dashboardPersonalBudgetDescription => 'Je werkt momenteel aan je persoonlijke budget.';
+  String get dashboardPersonalBudgetDescription =>
+      'Je werkt momenteel aan je persoonlijke budget.';
 
   @override
   String dashboardFamilyName(Object name) {
@@ -528,10 +565,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardProcessing => 'Bezig...';
 
   @override
-  String get dashboardTransferOwnershipPremium => 'Premium vereist om over te dragen';
+  String get dashboardTransferOwnershipPremium =>
+      'Premium vereist om over te dragen';
 
   @override
-  String get dashboardDeleteFamilyPremium => 'Premium vereist om te verwijderen';
+  String get dashboardDeleteFamilyPremium =>
+      'Premium vereist om te verwijderen';
 
   @override
   String get dashboardCreateFamilyAction => 'Gezin aanmaken';
@@ -543,7 +582,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardJoinFamilyAction => 'Aansluiten';
 
   @override
-  String get dashboardFamilyPremiumHint => 'Gezin aanmaken en geavanceerd gezinsbeheer vereisen Premium.';
+  String get dashboardFamilyPremiumHint =>
+      'Gezin aanmaken en geavanceerd gezinsbeheer vereisen Premium.';
 
   @override
   String get dashboardLeaveFamilyAction => 'Gezin verlaten';
@@ -592,10 +632,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get dashboardUnlockPremiumFeatures => 'Ontgrendel Premium-functies';
 
   @override
-  String get dashboardPremiumBenefitsActive => 'Excel-export, slimme analyses, premium gezinsfuncties en advertentievrije ervaring zijn actief.';
+  String get dashboardPremiumBenefitsActive =>
+      'Excel-export, slimme analyses, premium gezinsfuncties en advertentievrije ervaring zijn actief.';
 
   @override
-  String get dashboardPremiumBenefitsLocked => 'Ontgrendel Excel-export, slimme tips, premium gezinsfuncties en verwijder advertenties.';
+  String get dashboardPremiumBenefitsLocked =>
+      'Ontgrendel Excel-export, slimme tips, premium gezinsfuncties en verwijder advertenties.';
 
   @override
   String get dashboardPremiumPillSmartAnalysis => 'Slimme analyse';
@@ -631,7 +673,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get recapEmptyTitle => 'Geen uitgaven';
 
   @override
-  String get recapEmptyMessage => 'Er zijn geen verrichtingen geregistreerd voor deze periode.';
+  String get recapEmptyMessage =>
+      'Er zijn geen verrichtingen geregistreerd voor deze periode.';
 
   @override
   String recapOperationsCount(Object count) {
@@ -651,16 +694,20 @@ class AppLocalizationsNl extends AppLocalizations {
   String get paywallFamilyTitle => 'Gezins-Premium';
 
   @override
-  String get paywallAnnualSubtitle => 'De beste prijs om alle premiumfuncties te ontgrendelen.';
+  String get paywallAnnualSubtitle =>
+      'De beste prijs om alle premiumfuncties te ontgrendelen.';
 
   @override
-  String get paywallMonthlySubtitle => 'Flexibel, zonder langdurige verplichting.';
+  String get paywallMonthlySubtitle =>
+      'Flexibel, zonder langdurige verplichting.';
 
   @override
-  String get paywallFamilySubtitle => 'Om een gedeeld gezinsbudget in premium te maken en te beheren.';
+  String get paywallFamilySubtitle =>
+      'Om een gedeeld gezinsbudget in premium te maken en te beheren.';
 
   @override
-  String get paywallDefaultPackageSubtitle => 'Ontgrendel alle premiumfuncties.';
+  String get paywallDefaultPackageSubtitle =>
+      'Ontgrendel alle premiumfuncties.';
 
   @override
   String get paywallBadgeBestOffer => 'Beste aanbod';
@@ -686,7 +733,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get paywallRestoreSuccess => 'Aankopen succesvol hersteld.';
 
   @override
-  String get paywallRestoreNoPurchaseFound => 'Geen actieve Premium-aankoop gevonden.';
+  String get paywallRestoreNoPurchaseFound =>
+      'Geen actieve Premium-aankoop gevonden.';
 
   @override
   String paywallRestoreError(Object error) {
@@ -703,7 +751,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get paywallUnlockTitle => 'Ontgrendel alle premiumfuncties';
 
   @override
-  String get paywallUnlockSubtitle => 'Excel-export, slimme tips, premium gezinsbeheer, geavanceerde analyses en een advertentievrije ervaring.';
+  String get paywallUnlockSubtitle =>
+      'Excel-export, slimme tips, premium gezinsbeheer, geavanceerde analyses en een advertentievrije ervaring.';
 
   @override
   String get paywallChooseOfferTitle => 'Kies je aanbod';
@@ -720,13 +769,15 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get paywallStoreNotice => 'Betaling en beheer van het abonnement via Apple / Google.';
+  String get paywallStoreNotice =>
+      'Betaling en beheer van het abonnement via Apple / Google.';
 
   @override
   String get paywallImportantInfoTitle => 'Belangrijke informatie';
 
   @override
-  String get paywallImportantInfoBody => '• Het abonnement wordt automatisch verlengd volgens de regels van de store.\n• Je kunt je abonnement beheren of annuleren via je Apple- / Google-account.\n• Met herstellen kun je een bestaande aankoop op hetzelfde store-account opnieuw activeren.\n• Premium gezinscreatie en -beheer zijn afhankelijk van je actieve abonnement.\n• Native gezinsdeling hangt ook af van de regels van de App Store of Google Play.';
+  String get paywallImportantInfoBody =>
+      '• Het abonnement wordt automatisch verlengd volgens de regels van de store.\n• Je kunt je abonnement beheren of annuleren via je Apple- / Google-account.\n• Met herstellen kun je een bestaande aankoop op hetzelfde store-account opnieuw activeren.\n• Premium gezinscreatie en -beheer zijn afhankelijk van je actieve abonnement.\n• Native gezinsdeling hangt ook af van de regels van de App Store of Google Play.';
 
   @override
   String paywallPartialUnavailable(Object error) {
@@ -740,49 +791,58 @@ class AppLocalizationsNl extends AppLocalizations {
   String get paywallHeroUpgradeTitle => 'Ga naar Premium';
 
   @override
-  String get paywallHeroPremiumActiveSubtitle => 'Alle premiumfuncties zijn al ontgrendeld.';
+  String get paywallHeroPremiumActiveSubtitle =>
+      'Alle premiumfuncties zijn al ontgrendeld.';
 
   @override
-  String get paywallHeroUpgradeSubtitle => 'Ontgrendel Excel-export, slimme tips, premium gezinsbeheer en een advertentievrije ervaring.';
+  String get paywallHeroUpgradeSubtitle =>
+      'Ontgrendel Excel-export, slimme tips, premium gezinsbeheer en een advertentievrije ervaring.';
 
   @override
   String get paywallFeatureExcelTitle => 'Volledige Excel-export';
 
   @override
-  String get paywallFeatureExcelSubtitle => 'Gedetailleerde exports om je budget te beheren en te archiveren.';
+  String get paywallFeatureExcelSubtitle =>
+      'Gedetailleerde exports om je budget te beheren en te archiveren.';
 
   @override
   String get paywallFeatureAdviceTitle => 'Slim advies';
 
   @override
-  String get paywallFeatureAdviceSubtitle => 'Aanbevelingen, waarschuwingen en geavanceerde analyses.';
+  String get paywallFeatureAdviceSubtitle =>
+      'Aanbevelingen, waarschuwingen en geavanceerde analyses.';
 
   @override
   String get paywallFeatureFamilyTitle => 'Premium gezinsbeheer';
 
   @override
-  String get paywallFeatureFamilySubtitle => 'Maak een gezin aan, draag eigendom over en beheer de gedeelde structuur.';
+  String get paywallFeatureFamilySubtitle =>
+      'Maak een gezin aan, draag eigendom over en beheer de gedeelde structuur.';
 
   @override
   String get paywallFeatureNoAdsTitle => 'Geen advertenties';
 
   @override
-  String get paywallFeatureNoAdsSubtitle => 'Een vloeiendere ervaring voor premiumgebruikers.';
+  String get paywallFeatureNoAdsSubtitle =>
+      'Een vloeiendere ervaring voor premiumgebruikers.';
 
   @override
   String get paywallFeatureFutureTitle => 'Toekomstige functies inbegrepen';
 
   @override
-  String get paywallFeatureFutureSubtitle => 'Toekomstige premiumverbeteringen worden ontgrendeld.';
+  String get paywallFeatureFutureSubtitle =>
+      'Toekomstige premiumverbeteringen worden ontgrendeld.';
 
   @override
-  String get paywallPremiumAlreadyActive => 'Je premiumabonnement is al actief.';
+  String get paywallPremiumAlreadyActive =>
+      'Je premiumabonnement is al actief.';
 
   @override
   String get paywallNoOfferTitle => 'Geen aanbod beschikbaar';
 
   @override
-  String get paywallNoOfferMessage => 'Controleer je configuratie van RevenueCat, App Store Connect of Google Play Console.';
+  String get paywallNoOfferMessage =>
+      'Controleer je configuratie van RevenueCat, App Store Connect of Google Play Console.';
 
   @override
   String get budgetSectionAddButton => 'Toevoegen';
@@ -802,7 +862,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get expenseSectionAddCategoryButton => 'Categorie';
 
   @override
-  String get expenseSectionEmpty => 'Geen uitgavencategorie. Voeg een categorie toe.';
+  String get expenseSectionEmpty =>
+      'Geen uitgavencategorie. Voeg een categorie toe.';
 
   @override
   String get expenseSectionAddSubCategoryTooltip => 'Subcategorie toevoegen';
@@ -817,7 +878,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get expenseSectionNoSubCategory => 'Geen subcategorie.';
 
   @override
-  String get expenseSectionDeleteSubCategoryTooltip => 'Subcategorie verwijderen';
+  String get expenseSectionDeleteSubCategoryTooltip =>
+      'Subcategorie verwijderen';
 
   @override
   String expenseSectionOperationsCount(Object count) {

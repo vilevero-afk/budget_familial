@@ -37,7 +37,7 @@ class ConsentService {
 
       ConsentInformation.instance.requestConsentInfoUpdate(
         params,
-            () async {
+        () async {
           try {
             await _loadAndShowConsentFormIfRequired();
           } catch (e) {
@@ -48,7 +48,7 @@ class ConsentService {
             }
           }
         },
-            (FormError error) {
+        (FormError error) {
           debugPrint(
             'ConsentInfoUpdate error: ${error.errorCode} - ${error.message}',
           );
@@ -82,7 +82,7 @@ class ConsentService {
 
     try {
       ConsentForm.loadAndShowConsentFormIfRequired(
-            (FormError? error) async {
+        (FormError? error) async {
           if (error != null) {
             debugPrint(
               'ConsentForm error: ${error.errorCode} - ${error.message}',
@@ -90,13 +90,11 @@ class ConsentService {
           }
 
           try {
-            _privacyOptionsRequired =
-                await ConsentInformation.instance
+            _privacyOptionsRequired = await ConsentInformation.instance
                     .getPrivacyOptionsRequirementStatus() ==
-                    PrivacyOptionsRequirementStatus.required;
+                PrivacyOptionsRequirementStatus.required;
 
-            _canRequestAds =
-            await ConsentInformation.instance.canRequestAds();
+            _canRequestAds = await ConsentInformation.instance.canRequestAds();
 
             if (_shouldRequestATT) {
               await _requestTrackingTransparencyIfNeeded();
@@ -134,8 +132,7 @@ class ConsentService {
 
   Future<void> _requestTrackingTransparencyIfNeeded() async {
     try {
-      final status =
-      await AppTrackingTransparency.trackingAuthorizationStatus;
+      final status = await AppTrackingTransparency.trackingAuthorizationStatus;
 
       if (status == TrackingStatus.notDetermined) {
         await AppTrackingTransparency.requestTrackingAuthorization();
@@ -152,7 +149,7 @@ class ConsentService {
 
     try {
       ConsentForm.showPrivacyOptionsForm(
-            (FormError? error) async {
+        (FormError? error) async {
           if (error != null) {
             debugPrint(
               'PrivacyOptions error: ${error.errorCode} - ${error.message}',
@@ -160,13 +157,11 @@ class ConsentService {
           }
 
           try {
-            _privacyOptionsRequired =
-                await ConsentInformation.instance
+            _privacyOptionsRequired = await ConsentInformation.instance
                     .getPrivacyOptionsRequirementStatus() ==
-                    PrivacyOptionsRequirementStatus.required;
+                PrivacyOptionsRequirementStatus.required;
 
-            _canRequestAds =
-            await ConsentInformation.instance.canRequestAds();
+            _canRequestAds = await ConsentInformation.instance.canRequestAds();
           } catch (e) {
             debugPrint('PrivacyOptions processing error: $e');
           }

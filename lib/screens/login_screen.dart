@@ -187,13 +187,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final title = _isLoginMode ? l10n.loginTitle : l10n.signupTitle;
-    final subtitle =
-    _isLoginMode ? l10n.loginSubtitle : l10n.signupSubtitle;
+    final subtitle = _isLoginMode ? l10n.loginSubtitle : l10n.signupSubtitle;
     final primaryButtonLabel =
-    _isLoginMode ? l10n.loginPrimaryButton : l10n.signupPrimaryButton;
-    final secondaryLabel = _isLoginMode
-        ? l10n.loginSwitchToSignup
-        : l10n.loginSwitchToSignin;
+        _isLoginMode ? l10n.loginPrimaryButton : l10n.signupPrimaryButton;
+    final secondaryLabel =
+        _isLoginMode ? l10n.loginSwitchToSignup : l10n.loginSwitchToSignin;
 
     return Scaffold(
       body: SafeArea(
@@ -319,9 +317,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                 alignment: Alignment.centerRight,
                                 child: TextButton(
                                   onPressed:
-                                  (_isSubmitting || _isResettingPassword)
-                                      ? null
-                                      : _sendPasswordResetEmail,
+                                      (_isSubmitting || _isResettingPassword)
+                                          ? null
+                                          : _sendPasswordResetEmail,
                                   child: Text(
                                     _isResettingPassword
                                         ? l10n.loginSending
@@ -352,8 +350,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ],
                             const SizedBox(height: 18),
                             FilledButton(
-                              onPressed:
-                              (_isSubmitting || _isResettingPassword)
+                              onPressed: (_isSubmitting || _isResettingPassword)
                                   ? null
                                   : _submit,
                               child: Text(
@@ -364,8 +361,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             const SizedBox(height: 10),
                             OutlinedButton(
-                              onPressed:
-                              (_isSubmitting || _isResettingPassword)
+                              onPressed: (_isSubmitting || _isResettingPassword)
                                   ? null
                                   : _toggleMode,
                               child: Text(secondaryLabel),

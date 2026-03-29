@@ -34,7 +34,7 @@ class BudgetExportService {
     final previousExpenseRows = previousPeriodKey == null
         ? <ExpenseRowData>[]
         : (appBudget.getExpenseRowsForPeriod(previousPeriodKey).toList()
-      ..sort((a, b) => a.createdAt.compareTo(b.createdAt)));
+          ..sort((a, b) => a.createdAt.compareTo(b.createdAt)));
 
     _buildSummarySheet(
       excel: excel,
@@ -115,21 +115,20 @@ class BudgetExportService {
     final expenseRate = income > 0 ? (expenses / income) * 100 : 0.0;
 
     final previousKey = previousPeriodKey;
-    final hasPreviousData =
-        previousKey != null &&
-            (appBudget.incomeTotalForPeriod(previousKey) != 0 ||
-                appBudget.expenseTotalForPeriod(previousKey) != 0 ||
-                appBudget.savingTotalForPeriod(previousKey) != 0 ||
-                previousExpenseRows.isNotEmpty);
+    final hasPreviousData = previousKey != null &&
+        (appBudget.incomeTotalForPeriod(previousKey) != 0 ||
+            appBudget.expenseTotalForPeriod(previousKey) != 0 ||
+            appBudget.savingTotalForPeriod(previousKey) != 0 ||
+            previousExpenseRows.isNotEmpty);
 
     final previousIncome =
-    hasPreviousData ? appBudget.incomeTotalForPeriod(previousKey) : 0.0;
+        hasPreviousData ? appBudget.incomeTotalForPeriod(previousKey) : 0.0;
     final previousExpenses =
-    hasPreviousData ? appBudget.expenseTotalForPeriod(previousKey) : 0.0;
+        hasPreviousData ? appBudget.expenseTotalForPeriod(previousKey) : 0.0;
     final previousSavings =
-    hasPreviousData ? appBudget.savingTotalForPeriod(previousKey) : 0.0;
+        hasPreviousData ? appBudget.savingTotalForPeriod(previousKey) : 0.0;
     final previousBalance =
-    hasPreviousData ? appBudget.balanceForPeriod(previousKey) : 0.0;
+        hasPreviousData ? appBudget.balanceForPeriod(previousKey) : 0.0;
     final previousOperations = hasPreviousData ? previousExpenseRows.length : 0;
 
     _appendStyledRow(
@@ -227,8 +226,8 @@ class BudgetExportService {
       previousValue: hasPreviousData && previousOperations > 0
           ? previousExpenses / previousOperations
           : hasPreviousData
-          ? 0.0
-          : null,
+              ? 0.0
+              : null,
     );
 
     _appendComparisonRow(
@@ -238,8 +237,8 @@ class BudgetExportService {
       previousValue: hasPreviousData && previousIncome > 0
           ? (previousSavings / previousIncome) * 100
           : hasPreviousData
-          ? 0.0
-          : null,
+              ? 0.0
+              : null,
       asPercent: true,
     );
 
@@ -250,8 +249,8 @@ class BudgetExportService {
       previousValue: hasPreviousData && previousIncome > 0
           ? (previousExpenses / previousIncome) * 100
           : hasPreviousData
-          ? 0.0
-          : null,
+              ? 0.0
+              : null,
       asPercent: true,
     );
   }
@@ -271,7 +270,8 @@ class BudgetExportService {
     final previousCategoryTotals = _buildCategoryTotals(previousExpenseRows);
 
     final subCategoryStats = _buildSubCategoryStats(expenseRows);
-    final previousSubCategoryStats = _buildSubCategoryStats(previousExpenseRows);
+    final previousSubCategoryStats =
+        _buildSubCategoryStats(previousExpenseRows);
 
     final currentExpenses = appBudget.expenseTotalForPeriod(periodKey);
     final previousExpenses = previousPeriodKey == null
@@ -416,8 +416,9 @@ class BudgetExportService {
         final entry = topCategories[i];
         final previousTotal = previousCategoryTotals[entry.key];
         final weight =
-        currentExpenses > 0 ? (entry.value / currentExpenses) * 100 : 0.0;
-        final delta = previousTotal == null ? null : entry.value - previousTotal;
+            currentExpenses > 0 ? (entry.value / currentExpenses) * 100 : 0.0;
+        final delta =
+            previousTotal == null ? null : entry.value - previousTotal;
 
         _appendStyledRow(
           sheet,
@@ -500,7 +501,8 @@ class BudgetExportService {
         final stat = topSubCategories[i];
         final previousKey = '${stat.categoryName}|||${stat.subCategoryName}';
         final previousStat = previousSubCategoryStats[previousKey];
-        final delta = previousStat == null ? null : stat.total - previousStat.total;
+        final delta =
+            previousStat == null ? null : stat.total - previousStat.total;
 
         _appendStyledRow(
           sheet,
@@ -614,7 +616,7 @@ class BudgetExportService {
       ..sort((a, b) => b.value.compareTo(a.value));
 
     final totalExpenses =
-    sortedEntries.fold<double>(0, (sum, entry) => sum + entry.value);
+        sortedEntries.fold<double>(0, (sum, entry) => sum + entry.value);
 
     _appendStyledRow(
       sheet,
@@ -647,7 +649,8 @@ class BudgetExportService {
     );
 
     for (final entry in sortedEntries) {
-      final weight = totalExpenses > 0 ? (entry.value / totalExpenses) * 100 : 0.0;
+      final weight =
+          totalExpenses > 0 ? (entry.value / totalExpenses) * 100 : 0.0;
 
       _appendStyledRow(
         sheet,
@@ -696,7 +699,7 @@ class BudgetExportService {
       });
 
     final totalExpenses =
-    sortedStats.fold<double>(0, (sum, stat) => sum + stat.total);
+        sortedStats.fold<double>(0, (sum, stat) => sum + stat.total);
 
     _appendStyledRow(
       sheet,
@@ -733,7 +736,8 @@ class BudgetExportService {
     );
 
     for (final stat in sortedStats) {
-      final weight = totalExpenses > 0 ? (stat.total / totalExpenses) * 100 : 0.0;
+      final weight =
+          totalExpenses > 0 ? (stat.total / totalExpenses) * 100 : 0.0;
 
       _appendStyledRow(
         sheet,
@@ -793,35 +797,35 @@ class BudgetExportService {
         previousValue == null
             ? TextCellValue('N/A')
             : asInteger
-            ? IntCellValue(previousValue.round())
-            : DoubleCellValue(previousValue),
+                ? IntCellValue(previousValue.round())
+                : DoubleCellValue(previousValue),
         delta == null
             ? TextCellValue('N/A')
             : asInteger
-            ? IntCellValue(delta.round())
-            : DoubleCellValue(delta),
+                ? IntCellValue(delta.round())
+                : DoubleCellValue(delta),
       ],
       styles: [
         _labelStyle(),
         asInteger
             ? _integerStyle()
             : asPercent
-            ? _percentStyle()
-            : _currencyStyle(),
+                ? _percentStyle()
+                : _currencyStyle(),
         previousValue == null
             ? _naStyle()
             : asInteger
-            ? _integerStyle()
-            : asPercent
-            ? _percentStyle()
-            : _currencyStyle(),
+                ? _integerStyle()
+                : asPercent
+                    ? _percentStyle()
+                    : _currencyStyle(),
         delta == null
             ? _naStyle()
             : asInteger
-            ? _deltaIntegerStyle(delta)
-            : asPercent
-            ? _deltaPercentStyle(delta)
-            : _deltaCurrencyStyle(delta),
+                ? _deltaIntegerStyle(delta)
+                : asPercent
+                    ? _deltaPercentStyle(delta)
+                    : _deltaCurrencyStyle(delta),
       ],
     );
   }
@@ -868,7 +872,7 @@ class BudgetExportService {
     for (final row in expenseRows) {
       totalsByCategory.update(
         row.categoryName,
-            (value) => value + row.amount,
+        (value) => value + row.amount,
         ifAbsent: () => row.amount,
       );
     }
@@ -877,8 +881,8 @@ class BudgetExportService {
   }
 
   Map<String, _SubCategoryExportStat> _buildSubCategoryStats(
-      List<ExpenseRowData> expenseRows,
-      ) {
+    List<ExpenseRowData> expenseRows,
+  ) {
     final statsBySubCategory = <String, _SubCategoryExportStat>{};
 
     for (final row in expenseRows) {
@@ -928,10 +932,10 @@ class BudgetExportService {
   }
 
   void _appendStyledRow(
-      Sheet sheet,
-      List<CellValue> values, {
-        List<CellStyle?>? styles,
-      }) {
+    Sheet sheet,
+    List<CellValue> values, {
+    List<CellStyle?>? styles,
+  }) {
     sheet.appendRow(values);
 
     final rowIndex = sheet.maxRows - 1;

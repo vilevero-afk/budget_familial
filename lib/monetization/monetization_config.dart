@@ -35,8 +35,7 @@ class MonetizationConfig {
   // AdMob App IDs
   static const String androidAdmobAppId =
       'ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy';
-  static const String iosAdmobAppId =
-      'ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy';
+  static const String iosAdmobAppId = 'ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy';
 
   // Banner Ad Units
   static const String androidBannerAdUnitId =

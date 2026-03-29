@@ -172,10 +172,10 @@ class _FamilyScreenState extends State<FamilyScreen> {
                     items: memberUids
                         .map(
                           (uid) => DropdownMenuItem<String>(
-                        value: uid,
-                        child: Text(uid),
-                      ),
-                    )
+                            value: uid,
+                            child: Text(uid),
+                          ),
+                        )
                         .toList(),
                     onChanged: (value) {
                       setLocalState(() {
@@ -562,7 +562,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
     try {
       await _budgetCloudService.leaveFamily(
         copyFamilyBudgetToPersonal:
-        choice == _LeaveFamilyChoice.copyFamilyBudget,
+            choice == _LeaveFamilyChoice.copyFamilyBudget,
       );
       await _loadFamilyData();
 
@@ -810,8 +810,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
                       _isFamilyActionLoading
                           ? l10n.dashboardProcessing
                           : _isPremium
-                          ? l10n.dashboardCreateFamilyAction
-                          : l10n.dashboardCreateFamilyPremium,
+                              ? l10n.dashboardCreateFamilyAction
+                              : l10n.dashboardCreateFamilyPremium,
                     ),
                   ),
                 ),
@@ -844,14 +844,14 @@ class _FamilyScreenState extends State<FamilyScreen> {
                 width: double.infinity,
                 child: FilledButton.icon(
                   onPressed:
-                  _isFamilyActionLoading ? null : _transferFamilyOwnership,
+                      _isFamilyActionLoading ? null : _transferFamilyOwnership,
                   icon: const Icon(Icons.swap_horiz_rounded),
                   label: Text(
                     _isFamilyActionLoading
                         ? l10n.dashboardProcessing
                         : _isPremium
-                        ? l10n.dashboardTransferOwnershipAction
-                        : l10n.dashboardTransferOwnershipPremium,
+                            ? l10n.dashboardTransferOwnershipAction
+                            : l10n.dashboardTransferOwnershipPremium,
                   ),
                 ),
               ),
@@ -869,8 +869,8 @@ class _FamilyScreenState extends State<FamilyScreen> {
                     _isFamilyActionLoading
                         ? l10n.dashboardProcessing
                         : _isPremium
-                        ? l10n.dashboardDeleteFamilyAction
-                        : l10n.dashboardDeleteFamilyPremium,
+                            ? l10n.dashboardDeleteFamilyAction
+                            : l10n.dashboardDeleteFamilyPremium,
                   ),
                 ),
               ),
@@ -910,7 +910,7 @@ class _FamilyScreenState extends State<FamilyScreen> {
             )
           else
             ..._familyMemberUids.map(
-                  (uid) => Container(
+              (uid) => Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(bottom: 8),
                 padding: const EdgeInsets.symmetric(
@@ -964,56 +964,56 @@ class _FamilyScreenState extends State<FamilyScreen> {
       ),
       body: _isLoading
           ? const Center(
-        child: CircularProgressIndicator(),
-      )
+              child: CircularProgressIndicator(),
+            )
           : RefreshIndicator(
-        onRefresh: _loadFamilyData,
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-          children: [
-            if (currentUser?.email != null)
-              Container(
-                margin: const EdgeInsets.only(bottom: 14),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 14,
-                  vertical: 12,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF8FAFC),
-                  borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: const Color(0xFFE2E8F0)),
-                ),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.account_circle_outlined,
-                      color: Color(0xFF475467),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Text(
-                        l10n.dashboardConnectedAs(currentUser!.email!),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF475467),
-                        ),
+              onRefresh: _loadFamilyData,
+              child: ListView(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                children: [
+                  if (currentUser?.email != null)
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 14),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 12,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF8FAFC),
+                        borderRadius: BorderRadius.circular(18),
+                        border: Border.all(color: const Color(0xFFE2E8F0)),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.account_circle_outlined,
+                            color: Color(0xFF475467),
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              l10n.dashboardConnectedAs(currentUser!.email!),
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF475467),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  _buildStatusCard(),
+                  const SizedBox(height: 14),
+                  _buildPremiumHintCard(),
+                  if (!_isPremium) const SizedBox(height: 14),
+                  _buildFamilyIdCard(),
+                  if (_familyId != null) const SizedBox(height: 14),
+                  _buildMembersCard(),
+                  if (_familyId != null) const SizedBox(height: 14),
+                  _buildActionsCard(),
+                ],
               ),
-            _buildStatusCard(),
-            const SizedBox(height: 14),
-            _buildPremiumHintCard(),
-            if (!_isPremium) const SizedBox(height: 14),
-            _buildFamilyIdCard(),
-            if (_familyId != null) const SizedBox(height: 14),
-            _buildMembersCard(),
-            if (_familyId != null) const SizedBox(height: 14),
-            _buildActionsCard(),
-          ],
-        ),
-      ),
+            ),
     );
   }
 }

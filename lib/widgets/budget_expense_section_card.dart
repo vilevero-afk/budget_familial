@@ -28,9 +28,9 @@ class BudgetExpenseSectionCard extends StatelessWidget {
   final VoidCallback onToggleSection;
   final double Function(ExpenseCategoryTemplate category) categoryTotalProvider;
   final double Function(ExpenseSubCategoryTemplate subCategory)
-  subCategoryTotalProvider;
+      subCategoryTotalProvider;
   final int Function(ExpenseSubCategoryTemplate subCategory)
-  subCategoryEntryCountProvider;
+      subCategoryEntryCountProvider;
   final bool Function(ExpenseCategoryTemplate category) isCategoryExpanded;
   final void Function(ExpenseCategoryTemplate category) onToggleCategory;
   final VoidCallback onAddCategory;
@@ -38,11 +38,11 @@ class BudgetExpenseSectionCard extends StatelessWidget {
   final void Function(ExpenseCategoryTemplate category) onDeleteCategory;
   final void Function(ExpenseCategoryTemplate category) onAddSubCategory;
   final void Function(ExpenseSubCategoryTemplate subCategory)
-  onRenameSubCategory;
+      onRenameSubCategory;
   final void Function(
-      ExpenseCategoryTemplate category,
-      ExpenseSubCategoryTemplate subCategory,
-      ) onDeleteSubCategory;
+    ExpenseCategoryTemplate category,
+    ExpenseSubCategoryTemplate subCategory,
+  ) onDeleteSubCategory;
   final void Function(ExpenseSubCategoryTemplate subCategory) onAddEntry;
 
   static const _sectionColor = Color(0xFFEF4444);
@@ -68,7 +68,7 @@ class BudgetExpenseSectionCard extends StatelessWidget {
 
     final total = section.categories.fold<double>(
       0.0,
-          (sum, item) => sum + categoryTotalProvider(item),
+      (sum, item) => sum + categoryTotalProvider(item),
     );
 
     final localizedTitle = _localizedSectionTitle(l10n);
@@ -105,125 +105,127 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                   child: isCompact
                       ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 42,
-                            height: 42,
-                            decoration: BoxDecoration(
-                              color: _sectionColor.withValues(alpha: 0.10),
-                              shape: BoxShape.circle,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 42,
+                                  height: 42,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        _sectionColor.withValues(alpha: 0.10),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(
+                                    sectionExpanded
+                                        ? Icons.keyboard_arrow_down_rounded
+                                        : Icons.keyboard_arrow_right_rounded,
+                                    color: _sectionColor,
+                                  ),
+                                ),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Text(
+                                    localizedTitle,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w800,
+                                      color: Color(0xFF111827),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: Icon(
-                              sectionExpanded
-                                  ? Icons.keyboard_arrow_down_rounded
-                                  : Icons.keyboard_arrow_right_rounded,
-                              color: _sectionColor,
+                            const SizedBox(height: 12),
+                            Wrap(
+                              spacing: 10,
+                              runSpacing: 10,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12,
+                                    vertical: 8,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        _sectionColor.withValues(alpha: 0.10),
+                                    borderRadius: BorderRadius.circular(999),
+                                  ),
+                                  child: Text(
+                                    _formatAmount(total),
+                                    style: const TextStyle(
+                                      color: _sectionColor,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                ),
+                                FilledButton.icon(
+                                  onPressed: onAddCategory,
+                                  icon: const Icon(Icons.add_rounded),
+                                  label: Text(
+                                    l10n.expenseSectionAddCategoryButton,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Text(
-                              localizedTitle,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w800,
-                                color: Color(0xFF111827),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Wrap(
-                        spacing: 10,
-                        runSpacing: 10,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 12,
-                              vertical: 8,
-                            ),
-                            decoration: BoxDecoration(
-                              color: _sectionColor.withValues(alpha: 0.10),
-                              borderRadius: BorderRadius.circular(999),
-                            ),
-                            child: Text(
-                              _formatAmount(total),
-                              style: const TextStyle(
-                                color: _sectionColor,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
-                          ),
-                          FilledButton.icon(
-                            onPressed: onAddCategory,
-                            icon: const Icon(Icons.add_rounded),
-                            label: Text(
-                              l10n.expenseSectionAddCategoryButton,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
+                          ],
+                        )
                       : Row(
-                    children: [
-                      Container(
-                        width: 42,
-                        height: 42,
-                        decoration: BoxDecoration(
-                          color: _sectionColor.withValues(alpha: 0.10),
-                          shape: BoxShape.circle,
+                          children: [
+                            Container(
+                              width: 42,
+                              height: 42,
+                              decoration: BoxDecoration(
+                                color: _sectionColor.withValues(alpha: 0.10),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                sectionExpanded
+                                    ? Icons.keyboard_arrow_down_rounded
+                                    : Icons.keyboard_arrow_right_rounded,
+                                color: _sectionColor,
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                localizedTitle,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                  color: Color(0xFF111827),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 8,
+                              ),
+                              decoration: BoxDecoration(
+                                color: _sectionColor.withValues(alpha: 0.10),
+                                borderRadius: BorderRadius.circular(999),
+                              ),
+                              child: Text(
+                                _formatAmount(total),
+                                style: const TextStyle(
+                                  color: _sectionColor,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            FilledButton.icon(
+                              onPressed: onAddCategory,
+                              icon: const Icon(Icons.add_rounded),
+                              label: Text(l10n.expenseSectionAddCategoryButton),
+                            ),
+                          ],
                         ),
-                        child: Icon(
-                          sectionExpanded
-                              ? Icons.keyboard_arrow_down_rounded
-                              : Icons.keyboard_arrow_right_rounded,
-                          color: _sectionColor,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(
-                          localizedTitle,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xFF111827),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: _sectionColor.withValues(alpha: 0.10),
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Text(
-                          _formatAmount(total),
-                          style: const TextStyle(
-                            color: _sectionColor,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      FilledButton.icon(
-                        onPressed: onAddCategory,
-                        icon: const Icon(Icons.add_rounded),
-                        label: Text(l10n.expenseSectionAddCategoryButton),
-                      ),
-                    ],
-                  ),
                 ),
                 AnimatedCrossFade(
                   firstChild: const SizedBox.shrink(),
@@ -238,7 +240,8 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: const Color(0xFFF8FAFC),
                               borderRadius: BorderRadius.circular(18),
-                              border: Border.all(color: const Color(0xFFE5EAF3)),
+                              border:
+                                  Border.all(color: const Color(0xFFE5EAF3)),
                             ),
                             child: Text(
                               l10n.expenseSectionEmpty,
@@ -254,7 +257,8 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: const Color(0xFFFFF7F7),
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: const Color(0xFFF1D8D8)),
+                              border:
+                                  Border.all(color: const Color(0xFFF1D8D8)),
                             ),
                             child: Column(
                               children: [
@@ -276,185 +280,186 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                     ),
                                     child: isCompact
                                         ? Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(
-                                              expanded
-                                                  ? Icons
-                                                  .keyboard_arrow_down_rounded
-                                                  : Icons
-                                                  .keyboard_arrow_right_rounded,
-                                              color: _sectionColor,
-                                            ),
-                                            const SizedBox(width: 8),
-                                            Expanded(
-                                              child: Text(
-                                                category.name,
-                                                maxLines: 3,
-                                                overflow:
-                                                TextOverflow.ellipsis,
-                                                style: const TextStyle(
-                                                  fontSize: 17,
-                                                  fontWeight:
-                                                  FontWeight.w800,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 12),
-                                        Wrap(
-                                          spacing: 8,
-                                          runSpacing: 8,
-                                          crossAxisAlignment:
-                                          WrapCrossAlignment.center,
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets
-                                                  .symmetric(
-                                                horizontal: 12,
-                                                vertical: 8,
-                                              ),
-                                              decoration: BoxDecoration(
-                                                color: _sectionColor
-                                                    .withValues(
-                                                  alpha: 0.10,
-                                                ),
-                                                borderRadius:
-                                                BorderRadius.circular(
-                                                  999,
-                                                ),
-                                              ),
-                                              child: Text(
-                                                _formatAmount(
-                                                  categoryTotalProvider(
-                                                    category,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Icon(
+                                                    expanded
+                                                        ? Icons
+                                                            .keyboard_arrow_down_rounded
+                                                        : Icons
+                                                            .keyboard_arrow_right_rounded,
+                                                    color: _sectionColor,
                                                   ),
-                                                ),
-                                                style: const TextStyle(
-                                                  color: _sectionColor,
-                                                  fontWeight:
-                                                  FontWeight.w800,
-                                                ),
-                                              ),
-                                            ),
-                                            IconButton(
-                                              onPressed: () =>
-                                                  onAddSubCategory(
-                                                    category,
+                                                  const SizedBox(width: 8),
+                                                  Expanded(
+                                                    child: Text(
+                                                      category.name,
+                                                      maxLines: 3,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      style: const TextStyle(
+                                                        fontSize: 17,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                      ),
+                                                    ),
                                                   ),
-                                              icon: const Icon(
-                                                Icons.playlist_add,
+                                                ],
                                               ),
-                                              tooltip: l10n
-                                                  .expenseSectionAddSubCategoryTooltip,
-                                            ),
-                                            IconButton(
-                                              onPressed: () =>
-                                                  onRenameCategory(
-                                                    category,
+                                              const SizedBox(height: 12),
+                                              Wrap(
+                                                spacing: 8,
+                                                runSpacing: 8,
+                                                crossAxisAlignment:
+                                                    WrapCrossAlignment.center,
+                                                children: [
+                                                  Container(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                      horizontal: 12,
+                                                      vertical: 8,
+                                                    ),
+                                                    decoration: BoxDecoration(
+                                                      color: _sectionColor
+                                                          .withValues(
+                                                        alpha: 0.10,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                        999,
+                                                      ),
+                                                    ),
+                                                    child: Text(
+                                                      _formatAmount(
+                                                        categoryTotalProvider(
+                                                          category,
+                                                        ),
+                                                      ),
+                                                      style: const TextStyle(
+                                                        color: _sectionColor,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                      ),
+                                                    ),
                                                   ),
-                                              icon: const Icon(
-                                                Icons.edit_outlined,
-                                              ),
-                                              tooltip: l10n
-                                                  .expenseSectionRenameCategoryTooltip,
-                                            ),
-                                            IconButton(
-                                              onPressed: () =>
-                                                  onDeleteCategory(
-                                                    category,
+                                                  IconButton(
+                                                    onPressed: () =>
+                                                        onAddSubCategory(
+                                                      category,
+                                                    ),
+                                                    icon: const Icon(
+                                                      Icons.playlist_add,
+                                                    ),
+                                                    tooltip: l10n
+                                                        .expenseSectionAddSubCategoryTooltip,
                                                   ),
-                                              icon: const Icon(
-                                                Icons
-                                                    .delete_outline_rounded,
+                                                  IconButton(
+                                                    onPressed: () =>
+                                                        onRenameCategory(
+                                                      category,
+                                                    ),
+                                                    icon: const Icon(
+                                                      Icons.edit_outlined,
+                                                    ),
+                                                    tooltip: l10n
+                                                        .expenseSectionRenameCategoryTooltip,
+                                                  ),
+                                                  IconButton(
+                                                    onPressed: () =>
+                                                        onDeleteCategory(
+                                                      category,
+                                                    ),
+                                                    icon: const Icon(
+                                                      Icons
+                                                          .delete_outline_rounded,
+                                                    ),
+                                                    color: Colors.redAccent,
+                                                    tooltip: l10n
+                                                        .expenseSectionDeleteCategoryTooltip,
+                                                  ),
+                                                ],
                                               ),
-                                              color: Colors.redAccent,
-                                              tooltip: l10n
-                                                  .expenseSectionDeleteCategoryTooltip,
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    )
+                                            ],
+                                          )
                                         : Row(
-                                      children: [
-                                        Icon(
-                                          expanded
-                                              ? Icons
-                                              .keyboard_arrow_down_rounded
-                                              : Icons
-                                              .keyboard_arrow_right_rounded,
-                                          color: _sectionColor,
-                                        ),
-                                        const SizedBox(width: 8),
-                                        Expanded(
-                                          child: Text(
-                                            category.name,
-                                            style: const TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                        ),
-                                        Container(
-                                          padding:
-                                          const EdgeInsets.symmetric(
-                                            horizontal: 12,
-                                            vertical: 8,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: _sectionColor
-                                                .withValues(alpha: 0.10),
-                                            borderRadius:
-                                            BorderRadius.circular(999),
-                                          ),
-                                          child: Text(
-                                            _formatAmount(
-                                              categoryTotalProvider(
-                                                category,
+                                            children: [
+                                              Icon(
+                                                expanded
+                                                    ? Icons
+                                                        .keyboard_arrow_down_rounded
+                                                    : Icons
+                                                        .keyboard_arrow_right_rounded,
+                                                color: _sectionColor,
                                               ),
-                                            ),
-                                            style: const TextStyle(
-                                              color: _sectionColor,
-                                              fontWeight: FontWeight.w800,
-                                            ),
+                                              const SizedBox(width: 8),
+                                              Expanded(
+                                                child: Text(
+                                                  category.name,
+                                                  style: const TextStyle(
+                                                    fontSize: 17,
+                                                    fontWeight: FontWeight.w800,
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                  horizontal: 12,
+                                                  vertical: 8,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: _sectionColor
+                                                      .withValues(alpha: 0.10),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          999),
+                                                ),
+                                                child: Text(
+                                                  _formatAmount(
+                                                    categoryTotalProvider(
+                                                      category,
+                                                    ),
+                                                  ),
+                                                  style: const TextStyle(
+                                                    color: _sectionColor,
+                                                    fontWeight: FontWeight.w800,
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(width: 6),
+                                              IconButton(
+                                                onPressed: () =>
+                                                    onAddSubCategory(category),
+                                                icon: const Icon(
+                                                  Icons.playlist_add,
+                                                ),
+                                                tooltip: l10n
+                                                    .expenseSectionAddSubCategoryTooltip,
+                                              ),
+                                              IconButton(
+                                                onPressed: () =>
+                                                    onRenameCategory(category),
+                                                icon: const Icon(
+                                                  Icons.edit_outlined,
+                                                ),
+                                                tooltip: l10n
+                                                    .expenseSectionRenameCategoryTooltip,
+                                              ),
+                                              IconButton(
+                                                onPressed: () =>
+                                                    onDeleteCategory(category),
+                                                icon: const Icon(
+                                                  Icons.delete_outline_rounded,
+                                                ),
+                                                color: Colors.redAccent,
+                                                tooltip: l10n
+                                                    .expenseSectionDeleteCategoryTooltip,
+                                              ),
+                                            ],
                                           ),
-                                        ),
-                                        const SizedBox(width: 6),
-                                        IconButton(
-                                          onPressed: () =>
-                                              onAddSubCategory(category),
-                                          icon: const Icon(
-                                            Icons.playlist_add,
-                                          ),
-                                          tooltip: l10n
-                                              .expenseSectionAddSubCategoryTooltip,
-                                        ),
-                                        IconButton(
-                                          onPressed: () =>
-                                              onRenameCategory(category),
-                                          icon: const Icon(
-                                            Icons.edit_outlined,
-                                          ),
-                                          tooltip: l10n
-                                              .expenseSectionRenameCategoryTooltip,
-                                        ),
-                                        IconButton(
-                                          onPressed: () =>
-                                              onDeleteCategory(category),
-                                          icon: const Icon(
-                                            Icons.delete_outline_rounded,
-                                          ),
-                                          color: Colors.redAccent,
-                                          tooltip: l10n
-                                              .expenseSectionDeleteCategoryTooltip,
-                                        ),
-                                      ],
-                                    ),
                                   ),
                                 ),
                                 AnimatedCrossFade(
@@ -470,7 +475,7 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius:
-                                              BorderRadius.circular(16),
+                                                  BorderRadius.circular(16),
                                             ),
                                             child: Text(
                                               l10n.expenseSectionNoSubCategory,
@@ -482,11 +487,11 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                         ...category.subCategories
                                             .map((subCategory) {
                                           final entryCount =
-                                          subCategoryEntryCountProvider(
+                                              subCategoryEntryCountProvider(
                                             subCategory,
                                           );
                                           final subTotal =
-                                          subCategoryTotalProvider(
+                                              subCategoryTotalProvider(
                                             subCategory,
                                           );
 
@@ -500,7 +505,7 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                             decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius:
-                                              BorderRadius.circular(18),
+                                                  BorderRadius.circular(18),
                                               border: Border.all(
                                                 color: const Color(0xFFF1E3E3),
                                               ),
@@ -509,32 +514,31 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                               children: [
                                                 Row(
                                                   crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                                      CrossAxisAlignment.start,
                                                   children: [
                                                     Expanded(
                                                       child: InkWell(
                                                         onTap: () =>
                                                             onRenameSubCategory(
-                                                              subCategory,
-                                                            ),
+                                                          subCategory,
+                                                        ),
                                                         child: Row(
                                                           crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
+                                                              CrossAxisAlignment
+                                                                  .start,
                                                           children: [
                                                             Container(
                                                               width: 32,
                                                               height: 32,
                                                               decoration:
-                                                              BoxDecoration(
-                                                                color:
-                                                                _sectionColor
+                                                                  BoxDecoration(
+                                                                color: _sectionColor
                                                                     .withValues(
                                                                   alpha: 0.08,
                                                                 ),
                                                                 borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
+                                                                    BorderRadius
+                                                                        .circular(
                                                                   10,
                                                                 ),
                                                               ),
@@ -542,7 +546,7 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                                 Icons
                                                                     .subdirectory_arrow_right_rounded,
                                                                 color:
-                                                                _sectionColor,
+                                                                    _sectionColor,
                                                                 size: 18,
                                                               ),
                                                             ),
@@ -551,17 +555,18 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                             ),
                                                             Expanded(
                                                               child: Text(
-                                                                subCategory.name,
+                                                                subCategory
+                                                                    .name,
                                                                 maxLines: 3,
                                                                 overflow:
-                                                                TextOverflow
-                                                                    .ellipsis,
+                                                                    TextOverflow
+                                                                        .ellipsis,
                                                                 style:
-                                                                const TextStyle(
+                                                                    const TextStyle(
                                                                   fontSize: 16,
                                                                   fontWeight:
-                                                                  FontWeight
-                                                                      .w700,
+                                                                      FontWeight
+                                                                          .w700,
                                                                 ),
                                                               ),
                                                             ),
@@ -583,9 +588,9 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                     IconButton(
                                                       onPressed: () =>
                                                           onDeleteSubCategory(
-                                                            category,
-                                                            subCategory,
-                                                          ),
+                                                        category,
+                                                        subCategory,
+                                                      ),
                                                       icon: const Icon(
                                                         Icons
                                                             .delete_outline_rounded,
@@ -604,31 +609,30 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                     children: [
                                                       Container(
                                                         padding:
-                                                        const EdgeInsets
-                                                            .symmetric(
+                                                            const EdgeInsets
+                                                                .symmetric(
                                                           horizontal: 10,
                                                           vertical: 6,
                                                         ),
                                                         decoration:
-                                                        BoxDecoration(
+                                                            BoxDecoration(
                                                           color: const Color(
                                                             0xFFF8FAFC,
                                                           ),
                                                           borderRadius:
-                                                          BorderRadius
-                                                              .circular(
+                                                              BorderRadius
+                                                                  .circular(
                                                             999,
                                                           ),
                                                         ),
                                                         child: Text(
-                                                          l10n
-                                                              .expenseSectionOperationsCount(
+                                                          l10n.expenseSectionOperationsCount(
                                                             entryCount,
                                                           ),
                                                           style:
-                                                          const TextStyle(
+                                                              const TextStyle(
                                                             fontWeight:
-                                                            FontWeight.w600,
+                                                                FontWeight.w600,
                                                             color: Color(
                                                               0xFF475467,
                                                             ),
@@ -637,35 +641,35 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                       ),
                                                       Container(
                                                         padding:
-                                                        const EdgeInsets
-                                                            .symmetric(
+                                                            const EdgeInsets
+                                                                .symmetric(
                                                           horizontal: 10,
                                                           vertical: 6,
                                                         ),
                                                         decoration:
-                                                        BoxDecoration(
+                                                            BoxDecoration(
                                                           color: _sectionColor
                                                               .withValues(
                                                             alpha: 0.10,
                                                           ),
                                                           borderRadius:
-                                                          BorderRadius
-                                                              .circular(
+                                                              BorderRadius
+                                                                  .circular(
                                                             999,
                                                           ),
                                                         ),
                                                         child: Text(
-                                                          l10n
-                                                              .expenseSectionTotalLabel(
+                                                          l10n.expenseSectionTotalLabel(
                                                             _formatAmount(
                                                               subTotal,
                                                             ),
                                                           ),
                                                           style:
-                                                          const TextStyle(
+                                                              const TextStyle(
                                                             fontWeight:
-                                                            FontWeight.w800,
-                                                            color: _sectionColor,
+                                                                FontWeight.w800,
+                                                            color:
+                                                                _sectionColor,
                                                           ),
                                                         ),
                                                       ),
@@ -674,18 +678,17 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                   const SizedBox(height: 10),
                                                   Align(
                                                     alignment:
-                                                    Alignment.centerLeft,
+                                                        Alignment.centerLeft,
                                                     child: FilledButton.icon(
                                                       onPressed: () =>
                                                           onAddEntry(
-                                                            subCategory,
-                                                          ),
+                                                        subCategory,
+                                                      ),
                                                       icon: const Icon(
                                                         Icons.add_rounded,
                                                       ),
                                                       label: Text(
-                                                        l10n
-                                                            .expenseSectionAddAmountButton,
+                                                        l10n.expenseSectionAddAmountButton,
                                                       ),
                                                     ),
                                                   ),
@@ -699,33 +702,32 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                           children: [
                                                             Container(
                                                               padding:
-                                                              const EdgeInsets
-                                                                  .symmetric(
+                                                                  const EdgeInsets
+                                                                      .symmetric(
                                                                 horizontal: 10,
                                                                 vertical: 6,
                                                               ),
                                                               decoration:
-                                                              BoxDecoration(
+                                                                  BoxDecoration(
                                                                 color:
-                                                                const Color(
+                                                                    const Color(
                                                                   0xFFF8FAFC,
                                                                 ),
                                                                 borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
+                                                                    BorderRadius
+                                                                        .circular(
                                                                   999,
                                                                 ),
                                                               ),
                                                               child: Text(
-                                                                l10n
-                                                                    .expenseSectionOperationsCount(
+                                                                l10n.expenseSectionOperationsCount(
                                                                   entryCount,
                                                                 ),
                                                                 style:
-                                                                const TextStyle(
+                                                                    const TextStyle(
                                                                   fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
+                                                                      FontWeight
+                                                                          .w600,
                                                                   color: Color(
                                                                     0xFF475467,
                                                                   ),
@@ -734,37 +736,36 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                             ),
                                                             Container(
                                                               padding:
-                                                              const EdgeInsets
-                                                                  .symmetric(
+                                                                  const EdgeInsets
+                                                                      .symmetric(
                                                                 horizontal: 10,
                                                                 vertical: 6,
                                                               ),
                                                               decoration:
-                                                              BoxDecoration(
+                                                                  BoxDecoration(
                                                                 color: _sectionColor
                                                                     .withValues(
                                                                   alpha: 0.10,
                                                                 ),
                                                                 borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
+                                                                    BorderRadius
+                                                                        .circular(
                                                                   999,
                                                                 ),
                                                               ),
                                                               child: Text(
-                                                                l10n
-                                                                    .expenseSectionTotalLabel(
+                                                                l10n.expenseSectionTotalLabel(
                                                                   _formatAmount(
                                                                     subTotal,
                                                                   ),
                                                                 ),
                                                                 style:
-                                                                const TextStyle(
+                                                                    const TextStyle(
                                                                   fontWeight:
-                                                                  FontWeight
-                                                                      .w800,
+                                                                      FontWeight
+                                                                          .w800,
                                                                   color:
-                                                                  _sectionColor,
+                                                                      _sectionColor,
                                                                 ),
                                                               ),
                                                             ),
@@ -775,14 +776,13 @@ class BudgetExpenseSectionCard extends StatelessWidget {
                                                       FilledButton.icon(
                                                         onPressed: () =>
                                                             onAddEntry(
-                                                              subCategory,
-                                                            ),
+                                                          subCategory,
+                                                        ),
                                                         icon: const Icon(
                                                           Icons.add_rounded,
                                                         ),
                                                         label: Text(
-                                                          l10n
-                                                              .expenseSectionAddAmountButton,
+                                                          l10n.expenseSectionAddAmountButton,
                                                         ),
                                                       ),
                                                     ],

@@ -41,8 +41,7 @@ class BudgetSaveConflictException implements Exception {
   BudgetSaveConflictException({
     required this.expectedRevision,
     required this.actualRevision,
-    this.message =
-    'Le budget a été modifié ailleurs avant cette sauvegarde.',
+    this.message = 'Le budget a été modifié ailleurs avant cette sauvegarde.',
   });
 
   final int expectedRevision;
@@ -224,7 +223,7 @@ class BudgetCloudService {
         ownerUidValue: ownerUid,
       ),
       name: data[_nameField] is String &&
-          (data[_nameField] as String).trim().isNotEmpty
+              (data[_nameField] as String).trim().isNotEmpty
           ? (data[_nameField] as String).trim()
           : null,
     );
@@ -263,7 +262,8 @@ class BudgetCloudService {
       );
 
       if (ownerUid != user.uid) {
-        throw Exception('Seul le propriétaire actuel peut transférer la famille.');
+        throw Exception(
+            'Seul le propriétaire actuel peut transférer la famille.');
       }
 
       if (normalizedNewOwnerUid == user.uid) {
@@ -271,7 +271,8 @@ class BudgetCloudService {
       }
 
       if (!members.contains(normalizedNewOwnerUid)) {
-        throw Exception('Le nouveau propriétaire doit déjà être membre de la famille.');
+        throw Exception(
+            'Le nouveau propriétaire doit déjà être membre de la famille.');
       }
 
       transaction.set(
@@ -359,7 +360,7 @@ class BudgetCloudService {
     await _firestore.runTransaction((transaction) async {
       final userSnapshot = await transaction.get(userRef);
       final currentFamilyId =
-      _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
+          _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
 
       if (currentFamilyId != null) {
         return;
@@ -405,7 +406,7 @@ class BudgetCloudService {
     await _firestore.runTransaction((transaction) async {
       final userSnapshot = await transaction.get(userRef);
       final currentFamilyId =
-      _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
+          _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
 
       if (currentFamilyId == normalizedFamilyId) {
         return;
@@ -464,7 +465,7 @@ class BudgetCloudService {
     await _firestore.runTransaction((transaction) async {
       final userSnapshot = await transaction.get(userRef);
       final currentFamilyId =
-      _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
+          _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
 
       if (currentFamilyId == null) {
         return;
@@ -531,7 +532,8 @@ class BudgetCloudService {
           _familyIdField: FieldValue.delete(),
           _updatedAtField: FieldValue.serverTimestamp(),
           if (familyBudgetPayload != null) _dataField: familyBudgetPayload,
-          if (familyBudgetRevision != null) _revisionField: familyBudgetRevision,
+          if (familyBudgetRevision != null)
+            _revisionField: familyBudgetRevision,
           if (familyBudgetUpdatedBy != null)
             _updatedByField: familyBudgetUpdatedBy,
         },
@@ -630,9 +632,9 @@ class BudgetCloudService {
   }
 
   Future<void> saveBudgetWithRevisionCheck(
-      AppBudgetData appBudget, {
-        required int expectedRevision,
-      }) async {
+    AppBudgetData appBudget, {
+    required int expectedRevision,
+  }) async {
     final user = currentUser;
     if (user == null) {
       throw Exception('Aucun utilisateur connecté.');
@@ -694,7 +696,7 @@ class BudgetCloudService {
           : _personalBudgetDoc(user.uid);
 
       budgetSub = targetDoc.snapshots().listen(
-            (snapshot) async {
+        (snapshot) async {
           if (isFamilyBudget) {
             final familySnapshot = _buildBudgetSnapshotData(
               payload: snapshot.data(),
@@ -732,9 +734,9 @@ class BudgetCloudService {
     }
 
     userSub = _userDoc(user.uid).snapshots().listen(
-          (userSnapshot) async {
+      (userSnapshot) async {
         final familyId =
-        _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
+            _normalizeFamilyId(userSnapshot.data()?[_familyIdField]);
         try {
           await bindBudgetStream(familyId);
         } catch (e, st) {

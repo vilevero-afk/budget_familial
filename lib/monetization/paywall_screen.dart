@@ -43,7 +43,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
     }
 
     final stillExists = packages.any(
-          (p) => p.identifier == _selectedPackageIdentifier,
+      (p) => p.identifier == _selectedPackageIdentifier,
     );
     if (stillExists) return;
 
@@ -349,70 +349,70 @@ class _PaywallScreenState extends State<PaywallScreen> {
                         else if (packages.isEmpty)
                           const _OfferUnavailableCard()
                         else ...[
-                            Text(
-                              l10n.paywallChooseOfferTitle,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                                color: Color(0xFF111827),
+                          Text(
+                            l10n.paywallChooseOfferTitle,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFF111827),
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          ...packages.map(
+                            (package) => Padding(
+                              padding: const EdgeInsets.only(bottom: 12),
+                              child: _PackageTile(
+                                package: package,
+                                title: _packageTitle(package),
+                                subtitle: _packageSubtitle(package),
+                                badge: _packageBadge(package),
+                                selected: package.identifier ==
+                                    _selectedPackageIdentifier,
+                                onTap: () {
+                                  setState(() {
+                                    _selectedPackageIdentifier =
+                                        package.identifier;
+                                  });
+                                },
                               ),
                             ),
-                            const SizedBox(height: 12),
-                            ...packages.map(
-                                  (package) => Padding(
-                                padding: const EdgeInsets.only(bottom: 12),
-                                child: _PackageTile(
-                                  package: package,
-                                  title: _packageTitle(package),
-                                  subtitle: _packageSubtitle(package),
-                                  badge: _packageBadge(package),
-                                  selected: package.identifier ==
-                                      _selectedPackageIdentifier,
-                                  onTap: () {
-                                    setState(() {
-                                      _selectedPackageIdentifier =
-                                          package.identifier;
-                                    });
-                                  },
-                                ),
+                          ),
+                          const SizedBox(height: 10),
+                          SizedBox(
+                            width: double.infinity,
+                            child: FilledButton(
+                              onPressed: isBusy || selectedPackage == null
+                                  ? null
+                                  : _buySelectedPackage,
+                              style: FilledButton.styleFrom(
+                                backgroundColor: const Color(0xFF4F46E5),
+                                foregroundColor: Colors.white,
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 16),
                               ),
-                            ),
-                            const SizedBox(height: 10),
-                            SizedBox(
-                              width: double.infinity,
-                              child: FilledButton(
-                                onPressed: isBusy || selectedPackage == null
-                                    ? null
-                                    : _buySelectedPackage,
-                                style: FilledButton.styleFrom(
-                                  backgroundColor: const Color(0xFF4F46E5),
-                                  foregroundColor: Colors.white,
-                                  padding:
-                                  const EdgeInsets.symmetric(vertical: 16),
-                                ),
-                                child: Text(
-                                  isBusy
-                                      ? l10n.paywallProcessing
-                                      : _ctaLabel(selectedPackage),
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 12),
-                            Center(
                               child: Text(
-                                l10n.paywallStoreNotice,
-                                textAlign: TextAlign.center,
+                                isBusy
+                                    ? l10n.paywallProcessing
+                                    : _ctaLabel(selectedPackage),
                                 style: const TextStyle(
-                                  color: Color(0xFF667085),
-                                  fontSize: 13,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w800,
                                 ),
                               ),
                             ),
-                          ],
+                          ),
+                          const SizedBox(height: 12),
+                          Center(
+                            child: Text(
+                              l10n.paywallStoreNotice,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                color: Color(0xFF667085),
+                                fontSize: 13,
+                              ),
+                            ),
+                          ),
+                        ],
                         const SizedBox(height: 18),
                         Container(
                           padding: const EdgeInsets.all(14),
@@ -451,7 +451,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
                               color: const Color(0xFFFFF7ED),
                               borderRadius: BorderRadius.circular(18),
                               border:
-                              Border.all(color: const Color(0xFFFED7AA)),
+                                  Border.all(color: const Color(0xFFFED7AA)),
                             ),
                             child: Text(
                               l10n.paywallPartialUnavailable(
@@ -677,10 +677,9 @@ class _PackageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final borderColor =
-    selected ? const Color(0xFF4F46E5) : const Color(0xFFE5E7EB);
+        selected ? const Color(0xFF4F46E5) : const Color(0xFFE5E7EB);
 
-    final backgroundColor =
-    selected ? const Color(0xFFF5F3FF) : Colors.white;
+    final backgroundColor = selected ? const Color(0xFFF5F3FF) : Colors.white;
 
     return InkWell(
       borderRadius: BorderRadius.circular(22),
@@ -697,12 +696,12 @@ class _PackageTile extends StatelessWidget {
           ),
           boxShadow: selected
               ? const [
-            BoxShadow(
-              color: Color(0x144F46E5),
-              blurRadius: 18,
-              offset: Offset(0, 8),
-            ),
-          ]
+                  BoxShadow(
+                    color: Color(0x144F46E5),
+                    blurRadius: 18,
+                    offset: Offset(0, 8),
+                  ),
+                ]
               : null,
         ),
         child: Row(
@@ -712,9 +711,8 @@ class _PackageTile extends StatelessWidget {
               selected
                   ? Icons.radio_button_checked_rounded
                   : Icons.radio_button_off_rounded,
-              color: selected
-                  ? const Color(0xFF4F46E5)
-                  : const Color(0xFF98A2B3),
+              color:
+                  selected ? const Color(0xFF4F46E5) : const Color(0xFF98A2B3),
             ),
             const SizedBox(width: 12),
             Expanded(
