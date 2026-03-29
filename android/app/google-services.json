@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "578932115388",
+    "project_id": "budget-familial-5c21a",
+    "storage_bucket": "budget-familial-5c21a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578932115388:android:d1b5f38388a60ca668cdb9",
+        "android_client_info": {
+          "package_name": "com.example.budget_familial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgs9WA6vjQudbc5D0Smzlq00jgw3TTol8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

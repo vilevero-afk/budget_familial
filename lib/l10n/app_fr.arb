@@ -1,0 +1,423 @@
+{
+  "@@locale": "fr",
+  "appTitle": "Budget familial",
+
+  "monthJanuary": "Janvier",
+  "monthFebruary": "Février",
+  "monthMarch": "Mars",
+  "monthApril": "Avril",
+  "monthMay": "Mai",
+  "monthJune": "Juin",
+  "monthJuly": "Juillet",
+  "monthAugust": "Août",
+  "monthSeptember": "Septembre",
+  "monthOctober": "Octobre",
+  "monthNovember": "Novembre",
+  "monthDecember": "Décembre",
+
+  "commonOk": "OK",
+  "commonCancel": "Annuler",
+  "commonValidate": "Valider",
+  "commonOptional": "Optionnel",
+  "commonAdd": "Ajouter",
+  "commonCopy": "Copier",
+  "commonShare": "Partager",
+
+  "loginTitle": "Connexion",
+  "signupTitle": "Créer un compte",
+  "loginSubtitle": "Connecte-toi pour accéder à ton budget familial.",
+  "signupSubtitle": "Crée ton compte pour commencer à gérer ton budget familial.",
+  "loginPrimaryButton": "Se connecter",
+  "signupPrimaryButton": "Créer mon compte",
+  "loginSwitchToSignup": "Créer un compte",
+  "loginSwitchToSignin": "J’ai déjà un compte",
+  "loginFirebaseSecure": "Connexion sécurisée avec Firebase",
+  "loginEmailLabel": "Adresse e-mail",
+  "loginPasswordLabel": "Mot de passe",
+  "loginSending": "Envoi...",
+  "loginForgotPassword": "Mot de passe oublié ?",
+  "loginProcessing": "Traitement...",
+  "loginEnterEmail": "Entre ton adresse e-mail",
+  "loginInvalidEmail": "Adresse e-mail invalide",
+  "loginEnterPassword": "Entre ton mot de passe",
+  "loginPasswordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
+  "loginAccountCreatedVerificationSent": "Compte créé. Un e-mail de vérification a été envoyé à {email}.",
+  "@loginAccountCreatedVerificationSent": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "loginPasswordResetSent": "Un e-mail de réinitialisation a été envoyé à {email}.",
+  "@loginPasswordResetSent": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+
+  "emailVerificationTitle": "Vérifie ton adresse e-mail",
+  "emailVerificationSubtitle": "La vérification est requise avant d’accéder à ton budget.",
+  "emailVerificationAddressLabel": "Adresse concernée",
+  "emailVerificationAddressUnavailable": "Adresse e-mail indisponible",
+  "emailVerificationInstruction": "Un e-mail de vérification a été envoyé. Clique sur le lien reçu, puis reviens dans l’application.",
+  "emailVerificationSpamHint": "Pense aussi à vérifier le dossier spam / indésirables.",
+  "emailVerificationNotVerifiedYet": "L’adresse e-mail n’est pas encore vérifiée.",
+  "emailVerificationYourEmail": "ton adresse e-mail",
+  "emailVerificationChecking": "Vérification...",
+  "emailVerificationConfirmed": "J’ai vérifié",
+  "emailVerificationSending": "Envoi...",
+  "emailVerificationResend": "Renvoyer l’e-mail",
+  "emailVerificationSigningOut": "Déconnexion...",
+  "emailVerificationSignOut": "Se déconnecter",
+  "emailVerificationResent": "Un nouvel e-mail de vérification a été envoyé à {email}.",
+  "@emailVerificationResent": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+
+  "welcomeHeroDescription": "Gérez votre budget personnel ou familial, suivez vos dépenses, vos économies et visualisez vos résultats mois après mois.",
+  "welcomeTitle": "Commencez simplement",
+  "welcomeSubtitle": "Créez votre compte pour synchroniser votre budget, activer les fonctions famille et retrouver vos données sur plusieurs appareils.",
+  "welcomeFeatureBudgetTitle": "Suivi budgétaire",
+  "welcomeFeatureBudgetDescription": "Pilotez vos rentrées, dépenses, économies et solde mensuel.",
+  "welcomeFeatureAnalysisTitle": "Analyse du budget",
+  "welcomeFeatureAnalysisDescription": "Comparez les périodes et visualisez les tendances importantes.",
+  "welcomeFeatureFamilyTitle": "Mode famille",
+  "welcomeFeatureFamilyDescription": "Partagez un budget commun avec synchronisation cloud.",
+  "welcomePremiumTitle": "Version gratuite et Premium",
+  "welcomePremiumDescription": "Commencez gratuitement puis débloquez les analyses avancées, les conseils, l’export Excel et les fonctions famille avec Premium.",
+  "welcomePremiumButton": "Voir les offres Premium",
+  "welcomeCreateAccount": "Créer un compte",
+  "welcomeSignIn": "Se connecter",
+
+  "dashboardIncome": "Rentrées",
+  "dashboardExpenses": "Dépenses",
+  "dashboardSavings": "Économies",
+  "dashboardBalance": "Solde",
+  "dashboardFamilyIdCopied": "Identifiant famille copié.",
+  "dashboardFamilyShareSubject": "Inviter dans le budget familial",
+  "dashboardFamilyShareMessage": "Rejoins mon budget familial avec cet identifiant : {familyId}",
+  "@dashboardFamilyShareMessage": {
+    "placeholders": {
+      "familyId": {}
+    }
+  },
+  "dashboardFamilyShareError": "Impossible de partager l’identifiant famille : {error}",
+  "@dashboardFamilyShareError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardTransferOwnershipTitle": "Transférer la propriété",
+  "dashboardTransferOwnershipMessage": "Choisis le membre qui deviendra propriétaire du budget familial.",
+  "dashboardMemberLabel": "Membre",
+  "dashboardTransferOwnershipHint": "Après le transfert, ce membre pourra gérer la famille.",
+  "dashboardTransferOwnershipAction": "Transférer",
+  "dashboardDeleteFamilyTitle": "Supprimer la famille",
+  "dashboardDeleteFamilyIntro": "Tu es sur le point de supprimer définitivement la famille.",
+  "dashboardDeleteFamilyConsequences": "Conséquences :",
+  "dashboardDeleteFamilyConsequenceMembers": "• Tous les membres perdront l’accès au budget partagé.",
+  "dashboardDeleteFamilyConsequenceBudget": "• Le budget familial partagé sera supprimé.",
+  "dashboardDeleteFamilyConsequencePersonal": "• Les budgets personnels restent séparés.",
+  "dashboardDeleteFamilyIrreversible": "Cette action est irréversible.",
+  "dashboardDeleteFamilyAction": "Supprimer la famille",
+  "dashboardCreateFamilyTitle": "Créer une famille",
+  "dashboardFamilyNameLabel": "Nom de la famille",
+  "dashboardFamilyCreatedSharedActivated": "Famille créée et budget partagé activé.",
+  "dashboardFamilyCreated": "Famille créée avec succès.",
+  "dashboardCreateFamilyError": "Impossible de créer la famille : {error}",
+  "@dashboardCreateFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardJoinFamilyTitle": "Rejoindre une famille",
+  "dashboardFamilyIdLabel": "Identifiant famille",
+  "dashboardFamilyIdExample": "Exemple : ABC123XYZ",
+  "dashboardFamilyJoinedSuccess": "Famille rejointe avec succès.",
+  "dashboardJoinFamilyError": "Impossible de rejoindre la famille : {error}",
+  "@dashboardJoinFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardNoMemberAvailableTitle": "Aucun membre disponible",
+  "dashboardNoMemberAvailableMessage": "Aucun autre membre n’est disponible pour recevoir la propriété.",
+  "dashboardTransferOwnershipSuccess": "Propriété transférée avec succès.",
+  "dashboardTransferOwnershipError": "Impossible de transférer la propriété : {error}",
+  "@dashboardTransferOwnershipError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardDeleteFamilySuccess": "Famille supprimée.",
+  "dashboardDeleteFamilyError": "Impossible de supprimer la famille : {error}",
+  "@dashboardDeleteFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardLeaveFamilyTitle": "Quitter la famille",
+  "dashboardLeaveFamilyChoiceIntro": "Que veux-tu faire en quittant la famille ?",
+  "dashboardLeaveFamilyChoiceRestorePersonal": "Restaurer mon budget personnel précédent.",
+  "dashboardLeaveFamilyChoiceCopyFamily": "Copier le budget familial dans mon budget personnel.",
+  "dashboardLeaveFamilyRestoreAction": "Restaurer mon budget",
+  "dashboardLeaveFamilyCopyAction": "Copier le budget familial",
+  "dashboardLeaveFamilyCopiedSuccess": "Tu as quitté la famille et copié le budget familial.",
+  "dashboardLeaveFamilyRestoredSuccess": "Tu as quitté la famille et restauré ton budget personnel.",
+  "dashboardLeaveFamilyError": "Impossible de quitter la famille : {error}",
+  "@dashboardLeaveFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardAddCategoryForSection": "Ajouter une catégorie dans {section}",
+  "@dashboardAddCategoryForSection": {
+    "placeholders": {
+      "section": {}
+    }
+  },
+  "dashboardCategoryNameLabel": "Nom de la catégorie",
+  "dashboardExistingCategoryTitle": "Catégorie existante",
+  "dashboardExistingCategoryInSection": "Une catégorie avec ce nom existe déjà dans {section}.",
+  "@dashboardExistingCategoryInSection": {
+    "placeholders": {
+      "section": {}
+    }
+  },
+  "dashboardRenameCategoryTitle": "Renommer la catégorie",
+  "dashboardNewNameLabel": "Nouveau nom",
+  "dashboardAnotherCategorySameName": "Une autre catégorie porte déjà ce nom.",
+  "dashboardAddExpenseCategoryTitle": "Ajouter une catégorie de dépense",
+  "dashboardExistingExpenseCategory": "Cette catégorie de dépense existe déjà.",
+  "dashboardAddExpenseSubCategoryFor": "Ajouter une sous-catégorie dans {category}",
+  "@dashboardAddExpenseSubCategoryFor": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "dashboardSubCategoryNameLabel": "Nom de la sous-catégorie",
+  "dashboardExistingSubCategoryTitle": "Sous-catégorie existante",
+  "dashboardExistingSubCategoryIn": "Cette sous-catégorie existe déjà dans {category}.",
+  "@dashboardExistingSubCategoryIn": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "dashboardRenameSubCategoryTitle": "Renommer la sous-catégorie",
+  "dashboardAnotherSubCategorySameNameIn": "Une autre sous-catégorie porte déjà ce nom dans {category}.",
+  "@dashboardAnotherSubCategorySameNameIn": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "dashboardAddAmountFor": "Ajouter un montant pour {subCategory}",
+  "@dashboardAddAmountFor": {
+    "placeholders": {
+      "subCategory": {}
+    }
+  },
+  "dashboardAmountLabel": "Montant",
+  "dashboardInvalidAmountTitle": "Montant invalide",
+  "dashboardInvalidAmountMessage": "Entre un montant valide supérieur à 0.",
+  "dashboardRestoreSuccessPremium": "Achats restaurés, Premium activé.",
+  "dashboardRestoreFinishedNoPremium": "Restauration terminée, aucun achat Premium actif trouvé.",
+  "dashboardRestoreError": "Erreur lors de la restauration : {error}",
+  "@dashboardRestoreError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardPrivacyOpened": "Options de confidentialité ouvertes.",
+  "dashboardPrivacyNotRequired": "Aucune option de confidentialité requise pour le moment.",
+  "dashboardPrivacyError": "Impossible d’ouvrir les options de confidentialité : {error}",
+  "@dashboardPrivacyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardSignOutSuccess": "Déconnexion réussie.",
+  "dashboardSignOutError": "Erreur lors de la déconnexion : {error}",
+  "@dashboardSignOutError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardSubscriptionTooltip": "Voir les offres Premium",
+  "dashboardOptionsTooltip": "Options",
+  "dashboardMenuPremium": "Premium",
+  "dashboardRestoring": "Restauration...",
+  "dashboardRestorePurchases": "Restaurer les achats",
+  "dashboardOpening": "Ouverture...",
+  "dashboardPrivacyRgpd": "Confidentialité / RGPD",
+  "dashboardSigningOut": "Déconnexion...",
+  "dashboardSignOut": "Se déconnecter",
+  "dashboardConnectedAs": "Connecté en tant que {email}",
+  "@dashboardConnectedAs": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "dashboardFamilyModeActive": "Mode famille actif",
+  "dashboardPersonalBudgetActive": "Budget personnel actif",
+  "dashboardFamilySharedDescription": "Le budget est actuellement partagé avec les membres de la famille.",
+  "dashboardPersonalBudgetDescription": "Tu travailles actuellement sur ton budget personnel.",
+  "dashboardFamilyName": "Famille : {name}",
+  "@dashboardFamilyName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "dashboardFamilyIdTitle": "Identifiant famille",
+  "dashboardProcessing": "Traitement...",
+  "dashboardTransferOwnershipPremium": "Premium requis pour transférer",
+  "dashboardDeleteFamilyPremium": "Premium requis pour supprimer",
+  "dashboardCreateFamilyAction": "Créer une famille",
+  "dashboardCreateFamilyPremium": "Créer une famille (Premium)",
+  "dashboardJoinFamilyAction": "Rejoindre",
+  "dashboardFamilyPremiumHint": "La création et la gestion avancée de famille nécessitent Premium.",
+  "dashboardLeaveFamilyAction": "Quitter la famille",
+  "dashboardPremiumActiveLabel": "{plan} actif",
+  "@dashboardPremiumActiveLabel": {
+    "placeholders": {
+      "plan": {}
+    }
+  },
+  "dashboardFreeVersionActive": "Version gratuite active",
+  "dashboardSeeOffers": "Voir les offres",
+  "dashboardTitle": "Tableau de bord",
+  "dashboardActivePeriod": "Période active : {month} {year}",
+  "@dashboardActivePeriod": {
+    "placeholders": {
+      "month": {},
+      "year": {}
+    }
+  },
+  "dashboardYearLabel": "Année",
+  "dashboardMonthLabel": "Mois",
+  "dashboardAnalysisAction": "Analyse",
+  "dashboardDetailAction": "Voir le détail",
+  "dashboardManagePremium": "Gérer Premium",
+  "dashboardSubscription": "Abonnement",
+  "dashboardRestore": "Restaurer",
+  "dashboardUnlockPremiumFeatures": "Débloque les fonctions Premium",
+  "dashboardPremiumBenefitsActive": "Export Excel, analyses intelligentes, famille premium et expérience sans publicité sont actifs.",
+  "dashboardPremiumBenefitsLocked": "Débloque l’export Excel, les conseils intelligents, la famille premium et la suppression des publicités.",
+  "dashboardPremiumPillSmartAnalysis": "Analyse smart",
+  "dashboardPremiumPillAdvice": "Conseils",
+  "dashboardPremiumPillExcel": "Export Excel",
+  "dashboardPremiumPillFamily": "Famille",
+  "dashboardManageSubscription": "Gérer l’abonnement",
+  "dashboardSeePremiumOffers": "Voir les offres Premium",
+
+  "recapDetailOperationsTitle": "Détail des opérations",
+  "recapTitle": "Récapitulatif",
+  "recapOperations": "Opérations",
+  "recapTotalExpenses": "Total dépenses",
+  "recapEmptyTitle": "Aucune dépense",
+  "recapEmptyMessage": "Aucune opération n’a été enregistrée pour cette période.",
+  "recapOperationsCount": "{count} opération(s)",
+  "@recapOperationsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "recapDelete": "Supprimer",
+
+  "paywallAnnualTitle": "Premium annuel",
+  "paywallMonthlyTitle": "Premium mensuel",
+  "paywallFamilyTitle": "Premium famille",
+  "paywallAnnualSubtitle": "Le meilleur tarif pour débloquer toutes les fonctions premium.",
+  "paywallMonthlySubtitle": "Flexible, sans engagement long terme.",
+  "paywallFamilySubtitle": "Pour créer et gérer un budget familial partagé en premium.",
+  "paywallDefaultPackageSubtitle": "Débloque toutes les fonctionnalités premium.",
+  "paywallBadgeBestOffer": "Meilleure offre",
+  "paywallBadgeFamily": "Famille",
+  "paywallBadgeFlexible": "Flexible",
+  "paywallPurchaseSuccess": "Premium activé avec succès.",
+  "paywallPurchaseCanceled": "Achat annulé.",
+  "paywallPurchaseError": "Impossible de finaliser l’achat : {error}",
+  "@paywallPurchaseError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "paywallRestoreSuccess": "Achats restaurés avec succès.",
+  "paywallRestoreNoPurchaseFound": "Aucun achat premium actif trouvé.",
+  "paywallRestoreError": "Erreur lors de la restauration : {error}",
+  "@paywallRestoreError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "paywallRestoring": "Restauration...",
+  "paywallRestore": "Restaurer",
+  "paywallUnlockTitle": "Débloque toutes les fonctions premium",
+  "paywallUnlockSubtitle": "Export Excel, conseils intelligents, gestion famille premium, analyses avancées et expérience sans publicité.",
+  "paywallChooseOfferTitle": "Choisis ton offre",
+  "paywallProcessing": "Traitement...",
+  "paywallChooseOfferButton": "Choisir une offre",
+  "paywallContinueWithPrice": "Continuer avec {price}",
+  "@paywallContinueWithPrice": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paywallStoreNotice": "Paiement et gestion de l’abonnement via Apple / Google.",
+  "paywallImportantInfoTitle": "Informations importantes",
+  "paywallImportantInfoBody": "• L’abonnement est renouvelé automatiquement selon les règles du store.\n• Tu peux gérer ou annuler ton abonnement depuis ton compte Apple / Google.\n• La restauration permet de réactiver un achat existant sur le même compte store.\n• La création et la gestion de famille premium dépendent de ton abonnement actif.\n• Le partage famille natif dépend aussi des règles de l’App Store ou de Google Play.",
+  "paywallPartialUnavailable": "Monétisation partiellement indisponible : {error}",
+  "@paywallPartialUnavailable": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "paywallHeroPremiumActiveTitle": "Premium actif",
+  "paywallHeroUpgradeTitle": "Passe en Premium",
+  "paywallHeroPremiumActiveSubtitle": "Toutes les fonctionnalités premium sont déjà déverrouillées.",
+  "paywallHeroUpgradeSubtitle": "Débloque l’export Excel, les conseils intelligents, la gestion famille premium et une expérience sans publicité.",
+  "paywallFeatureExcelTitle": "Export Excel complet",
+  "paywallFeatureExcelSubtitle": "Exports détaillés pour piloter et archiver ton budget.",
+  "paywallFeatureAdviceTitle": "Conseils intelligents",
+  "paywallFeatureAdviceSubtitle": "Recommandations, alertes et analyses avancées.",
+  "paywallFeatureFamilyTitle": "Gestion famille premium",
+  "paywallFeatureFamilySubtitle": "Créer une famille, transférer la propriété et gérer la structure partagée.",
+  "paywallFeatureNoAdsTitle": "Sans publicité",
+  "paywallFeatureNoAdsSubtitle": "Une expérience plus fluide pour les utilisateurs premium.",
+  "paywallFeatureFutureTitle": "Fonctions futures incluses",
+  "paywallFeatureFutureSubtitle": "Les prochaines améliorations premium seront débloquées.",
+  "paywallPremiumAlreadyActive": "Ton abonnement premium est déjà actif.",
+  "paywallNoOfferTitle": "Aucune offre disponible",
+  "paywallNoOfferMessage": "Vérifie ta configuration RevenueCat, App Store Connect ou Google Play Console.",
+
+  "budgetSectionAddButton": "Ajouter",
+  "budgetSectionEmpty": "Aucune catégorie pour le moment. Ajoute une ligne.",
+  "budgetSectionAmountLabel": "Montant",
+  "budgetSectionTotalLabel": "Total : {amount}",
+  "@budgetSectionTotalLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+
+  "expenseSectionAddCategoryButton": "Catégorie",
+  "expenseSectionEmpty": "Aucune catégorie de dépense. Ajoute une catégorie.",
+  "expenseSectionAddSubCategoryTooltip": "Ajouter une sous-catégorie",
+  "expenseSectionRenameCategoryTooltip": "Renommer la catégorie",
+  "expenseSectionDeleteCategoryTooltip": "Supprimer la catégorie",
+  "expenseSectionNoSubCategory": "Aucune sous-catégorie.",
+  "expenseSectionDeleteSubCategoryTooltip": "Supprimer la sous-catégorie",
+  "expenseSectionOperationsCount": "Opérations : {count}",
+  "@expenseSectionOperationsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "expenseSectionTotalLabel": "Total : {amount}",
+  "@expenseSectionTotalLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "expenseSectionAddAmountButton": "Montant"
+}

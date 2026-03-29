@@ -1,0 +1,423 @@
+{
+  "@@locale": "nl",
+  "appTitle": "Gezinsbudget",
+
+  "monthJanuary": "Januari",
+  "monthFebruary": "Februari",
+  "monthMarch": "Maart",
+  "monthApril": "April",
+  "monthMay": "Mei",
+  "monthJune": "Juni",
+  "monthJuly": "Juli",
+  "monthAugust": "Augustus",
+  "monthSeptember": "September",
+  "monthOctober": "Oktober",
+  "monthNovember": "November",
+  "monthDecember": "December",
+
+  "commonOk": "OK",
+  "commonCancel": "Annuleren",
+  "commonValidate": "Bevestigen",
+  "commonOptional": "Optioneel",
+  "commonAdd": "Toevoegen",
+  "commonCopy": "Kopiëren",
+  "commonShare": "Delen",
+
+  "loginTitle": "Aanmelden",
+  "signupTitle": "Account aanmaken",
+  "loginSubtitle": "Meld je aan om toegang te krijgen tot je gezinsbudget.",
+  "signupSubtitle": "Maak je account aan om je gezinsbudget te beheren.",
+  "loginPrimaryButton": "Aanmelden",
+  "signupPrimaryButton": "Mijn account aanmaken",
+  "loginSwitchToSignup": "Account aanmaken",
+  "loginSwitchToSignin": "Ik heb al een account",
+  "loginFirebaseSecure": "Veilige aanmelding met Firebase",
+  "loginEmailLabel": "E-mailadres",
+  "loginPasswordLabel": "Wachtwoord",
+  "loginSending": "Verzenden...",
+  "loginForgotPassword": "Wachtwoord vergeten?",
+  "loginProcessing": "Bezig...",
+  "loginEnterEmail": "Vul je e-mailadres in",
+  "loginInvalidEmail": "Ongeldig e-mailadres",
+  "loginEnterPassword": "Vul je wachtwoord in",
+  "loginPasswordMinLength": "Het wachtwoord moet minstens 6 tekens bevatten",
+  "loginAccountCreatedVerificationSent": "Account aangemaakt. Er is een verificatie-e-mail verzonden naar {email}.",
+  "@loginAccountCreatedVerificationSent": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "loginPasswordResetSent": "Er is een e-mail voor het resetten van het wachtwoord verzonden naar {email}.",
+  "@loginPasswordResetSent": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+
+  "emailVerificationTitle": "Verifieer je e-mailadres",
+  "emailVerificationSubtitle": "Verificatie is vereist voordat je toegang krijgt tot je budget.",
+  "emailVerificationAddressLabel": "E-mailadres",
+  "emailVerificationAddressUnavailable": "E-mailadres niet beschikbaar",
+  "emailVerificationInstruction": "Er is een verificatie-e-mail verzonden. Klik op de ontvangen link en keer daarna terug naar de app.",
+  "emailVerificationSpamHint": "Controleer ook je map spam / ongewenst.",
+  "emailVerificationNotVerifiedYet": "Het e-mailadres is nog niet geverifieerd.",
+  "emailVerificationYourEmail": "je e-mailadres",
+  "emailVerificationChecking": "Controleren...",
+  "emailVerificationConfirmed": "Ik heb geverifieerd",
+  "emailVerificationSending": "Verzenden...",
+  "emailVerificationResend": "E-mail opnieuw verzenden",
+  "emailVerificationSigningOut": "Afmelden...",
+  "emailVerificationSignOut": "Afmelden",
+  "emailVerificationResent": "Er is een nieuwe verificatie-e-mail verzonden naar {email}.",
+  "@emailVerificationResent": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+
+  "welcomeHeroDescription": "Beheer je persoonlijke of gezinsbudget, volg je uitgaven en besparingen en bekijk je resultaten maand na maand.",
+  "welcomeTitle": "Begin eenvoudig",
+  "welcomeSubtitle": "Maak je account aan om je budget te synchroniseren, gezinsfuncties te activeren en je gegevens op meerdere apparaten terug te vinden.",
+  "welcomeFeatureBudgetTitle": "Budgetopvolging",
+  "welcomeFeatureBudgetDescription": "Beheer je inkomsten, uitgaven, besparingen en maandelijks saldo.",
+  "welcomeFeatureAnalysisTitle": "Budgetanalyse",
+  "welcomeFeatureAnalysisDescription": "Vergelijk periodes en bekijk belangrijke trends.",
+  "welcomeFeatureFamilyTitle": "Gezinsmodus",
+  "welcomeFeatureFamilyDescription": "Deel een gezamenlijk budget met cloudsynchronisatie.",
+  "welcomePremiumTitle": "Gratis en Premium versie",
+  "welcomePremiumDescription": "Begin gratis en ontgrendel geavanceerde analyses, advies, Excel-export en gezinsfuncties met Premium.",
+  "welcomePremiumButton": "Bekijk Premium-aanbiedingen",
+  "welcomeCreateAccount": "Account aanmaken",
+  "welcomeSignIn": "Aanmelden",
+
+  "dashboardIncome": "Inkomsten",
+  "dashboardExpenses": "Uitgaven",
+  "dashboardSavings": "Besparingen",
+  "dashboardBalance": "Saldo",
+  "dashboardFamilyIdCopied": "Gezins-ID gekopieerd.",
+  "dashboardFamilyShareSubject": "Uitnodiging voor gezinsbudget",
+  "dashboardFamilyShareMessage": "Sluit je aan bij mijn gezinsbudget met deze ID: {familyId}",
+  "@dashboardFamilyShareMessage": {
+    "placeholders": {
+      "familyId": {}
+    }
+  },
+  "dashboardFamilyShareError": "Kan gezins-ID niet delen: {error}",
+  "@dashboardFamilyShareError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardTransferOwnershipTitle": "Eigendom overdragen",
+  "dashboardTransferOwnershipMessage": "Kies het lid dat eigenaar wordt van het gezinsbudget.",
+  "dashboardMemberLabel": "Lid",
+  "dashboardTransferOwnershipHint": "Na de overdracht kan dit lid het gezin beheren.",
+  "dashboardTransferOwnershipAction": "Overdragen",
+  "dashboardDeleteFamilyTitle": "Gezin verwijderen",
+  "dashboardDeleteFamilyIntro": "Je staat op het punt het gezin definitief te verwijderen.",
+  "dashboardDeleteFamilyConsequences": "Gevolgen:",
+  "dashboardDeleteFamilyConsequenceMembers": "• Alle leden verliezen toegang tot het gedeelde budget.",
+  "dashboardDeleteFamilyConsequenceBudget": "• Het gedeelde gezinsbudget wordt verwijderd.",
+  "dashboardDeleteFamilyConsequencePersonal": "• Persoonlijke budgetten blijven gescheiden.",
+  "dashboardDeleteFamilyIrreversible": "Deze actie kan niet ongedaan worden gemaakt.",
+  "dashboardDeleteFamilyAction": "Gezin verwijderen",
+  "dashboardCreateFamilyTitle": "Gezin aanmaken",
+  "dashboardFamilyNameLabel": "Gezinsnaam",
+  "dashboardFamilyCreatedSharedActivated": "Gezin aangemaakt en gedeeld budget geactiveerd.",
+  "dashboardFamilyCreated": "Gezin succesvol aangemaakt.",
+  "dashboardCreateFamilyError": "Kan gezin niet aanmaken: {error}",
+  "@dashboardCreateFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardJoinFamilyTitle": "Bij een gezin aansluiten",
+  "dashboardFamilyIdLabel": "Gezins-ID",
+  "dashboardFamilyIdExample": "Voorbeeld: ABC123XYZ",
+  "dashboardFamilyJoinedSuccess": "Succesvol bij gezin aangesloten.",
+  "dashboardJoinFamilyError": "Kan niet bij gezin aansluiten: {error}",
+  "@dashboardJoinFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardNoMemberAvailableTitle": "Geen lid beschikbaar",
+  "dashboardNoMemberAvailableMessage": "Er is geen ander lid beschikbaar om het eigendom te ontvangen.",
+  "dashboardTransferOwnershipSuccess": "Eigendom succesvol overgedragen.",
+  "dashboardTransferOwnershipError": "Kan eigendom niet overdragen: {error}",
+  "@dashboardTransferOwnershipError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardDeleteFamilySuccess": "Gezin verwijderd.",
+  "dashboardDeleteFamilyError": "Kan gezin niet verwijderen: {error}",
+  "@dashboardDeleteFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardLeaveFamilyTitle": "Gezin verlaten",
+  "dashboardLeaveFamilyChoiceIntro": "Wat wil je doen wanneer je het gezin verlaat?",
+  "dashboardLeaveFamilyChoiceRestorePersonal": "Mijn vorige persoonlijke budget herstellen.",
+  "dashboardLeaveFamilyChoiceCopyFamily": "Het gezinsbudget kopiëren naar mijn persoonlijke budget.",
+  "dashboardLeaveFamilyRestoreAction": "Mijn budget herstellen",
+  "dashboardLeaveFamilyCopyAction": "Gezinsbudget kopiëren",
+  "dashboardLeaveFamilyCopiedSuccess": "Je hebt het gezin verlaten en het gezinsbudget gekopieerd.",
+  "dashboardLeaveFamilyRestoredSuccess": "Je hebt het gezin verlaten en je persoonlijke budget hersteld.",
+  "dashboardLeaveFamilyError": "Kan gezin niet verlaten: {error}",
+  "@dashboardLeaveFamilyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardAddCategoryForSection": "Categorie toevoegen in {section}",
+  "@dashboardAddCategoryForSection": {
+    "placeholders": {
+      "section": {}
+    }
+  },
+  "dashboardCategoryNameLabel": "Categorienaam",
+  "dashboardExistingCategoryTitle": "Bestaande categorie",
+  "dashboardExistingCategoryInSection": "Er bestaat al een categorie met deze naam in {section}.",
+  "@dashboardExistingCategoryInSection": {
+    "placeholders": {
+      "section": {}
+    }
+  },
+  "dashboardRenameCategoryTitle": "Categorie hernoemen",
+  "dashboardNewNameLabel": "Nieuwe naam",
+  "dashboardAnotherCategorySameName": "Een andere categorie heeft al deze naam.",
+  "dashboardAddExpenseCategoryTitle": "Uitgavencategorie toevoegen",
+  "dashboardExistingExpenseCategory": "Deze uitgavencategorie bestaat al.",
+  "dashboardAddExpenseSubCategoryFor": "Subcategorie toevoegen in {category}",
+  "@dashboardAddExpenseSubCategoryFor": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "dashboardSubCategoryNameLabel": "Naam van de subcategorie",
+  "dashboardExistingSubCategoryTitle": "Bestaande subcategorie",
+  "dashboardExistingSubCategoryIn": "Deze subcategorie bestaat al in {category}.",
+  "@dashboardExistingSubCategoryIn": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "dashboardRenameSubCategoryTitle": "Subcategorie hernoemen",
+  "dashboardAnotherSubCategorySameNameIn": "Een andere subcategorie heeft al deze naam in {category}.",
+  "@dashboardAnotherSubCategorySameNameIn": {
+    "placeholders": {
+      "category": {}
+    }
+  },
+  "dashboardAddAmountFor": "Bedrag toevoegen voor {subCategory}",
+  "@dashboardAddAmountFor": {
+    "placeholders": {
+      "subCategory": {}
+    }
+  },
+  "dashboardAmountLabel": "Bedrag",
+  "dashboardInvalidAmountTitle": "Ongeldig bedrag",
+  "dashboardInvalidAmountMessage": "Voer een geldig bedrag groter dan 0 in.",
+  "dashboardRestoreSuccessPremium": "Aankopen hersteld, Premium geactiveerd.",
+  "dashboardRestoreFinishedNoPremium": "Herstel voltooid, geen actieve Premium-aankoop gevonden.",
+  "dashboardRestoreError": "Fout bij herstellen: {error}",
+  "@dashboardRestoreError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardPrivacyOpened": "Privacy-opties geopend.",
+  "dashboardPrivacyNotRequired": "Momenteel zijn er geen privacy-opties vereist.",
+  "dashboardPrivacyError": "Kan privacy-opties niet openen: {error}",
+  "@dashboardPrivacyError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardSignOutSuccess": "Succesvol afgemeld.",
+  "dashboardSignOutError": "Fout bij afmelden: {error}",
+  "@dashboardSignOutError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "dashboardSubscriptionTooltip": "Premium-aanbiedingen bekijken",
+  "dashboardOptionsTooltip": "Opties",
+  "dashboardMenuPremium": "Premium",
+  "dashboardRestoring": "Herstellen...",
+  "dashboardRestorePurchases": "Aankopen herstellen",
+  "dashboardOpening": "Openen...",
+  "dashboardPrivacyRgpd": "Privacy / GDPR",
+  "dashboardSigningOut": "Afmelden...",
+  "dashboardSignOut": "Afmelden",
+  "dashboardConnectedAs": "Aangemeld als {email}",
+  "@dashboardConnectedAs": {
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "dashboardFamilyModeActive": "Gezinsmodus actief",
+  "dashboardPersonalBudgetActive": "Persoonlijk budget actief",
+  "dashboardFamilySharedDescription": "Het budget wordt momenteel gedeeld met gezinsleden.",
+  "dashboardPersonalBudgetDescription": "Je werkt momenteel aan je persoonlijke budget.",
+  "dashboardFamilyName": "Gezin: {name}",
+  "@dashboardFamilyName": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "dashboardFamilyIdTitle": "Gezins-ID",
+  "dashboardProcessing": "Bezig...",
+  "dashboardTransferOwnershipPremium": "Premium vereist om over te dragen",
+  "dashboardDeleteFamilyPremium": "Premium vereist om te verwijderen",
+  "dashboardCreateFamilyAction": "Gezin aanmaken",
+  "dashboardCreateFamilyPremium": "Gezin aanmaken (Premium)",
+  "dashboardJoinFamilyAction": "Aansluiten",
+  "dashboardFamilyPremiumHint": "Gezin aanmaken en geavanceerd gezinsbeheer vereisen Premium.",
+  "dashboardLeaveFamilyAction": "Gezin verlaten",
+  "dashboardPremiumActiveLabel": "{plan} actief",
+  "@dashboardPremiumActiveLabel": {
+    "placeholders": {
+      "plan": {}
+    }
+  },
+  "dashboardFreeVersionActive": "Gratis versie actief",
+  "dashboardSeeOffers": "Aanbiedingen bekijken",
+  "dashboardTitle": "Dashboard",
+  "dashboardActivePeriod": "Actieve periode: {month} {year}",
+  "@dashboardActivePeriod": {
+    "placeholders": {
+      "month": {},
+      "year": {}
+    }
+  },
+  "dashboardYearLabel": "Jaar",
+  "dashboardMonthLabel": "Maand",
+  "dashboardAnalysisAction": "Analyse",
+  "dashboardDetailAction": "Details bekijken",
+  "dashboardManagePremium": "Premium beheren",
+  "dashboardSubscription": "Abonnement",
+  "dashboardRestore": "Herstellen",
+  "dashboardUnlockPremiumFeatures": "Ontgrendel Premium-functies",
+  "dashboardPremiumBenefitsActive": "Excel-export, slimme analyses, premium gezinsfuncties en advertentievrije ervaring zijn actief.",
+  "dashboardPremiumBenefitsLocked": "Ontgrendel Excel-export, slimme tips, premium gezinsfuncties en verwijder advertenties.",
+  "dashboardPremiumPillSmartAnalysis": "Slimme analyse",
+  "dashboardPremiumPillAdvice": "Advies",
+  "dashboardPremiumPillExcel": "Excel-export",
+  "dashboardPremiumPillFamily": "Gezin",
+  "dashboardManageSubscription": "Abonnement beheren",
+  "dashboardSeePremiumOffers": "Premium-aanbiedingen bekijken",
+
+  "recapDetailOperationsTitle": "Details van verrichtingen",
+  "recapTitle": "Overzicht",
+  "recapOperations": "Verrichtingen",
+  "recapTotalExpenses": "Totale uitgaven",
+  "recapEmptyTitle": "Geen uitgaven",
+  "recapEmptyMessage": "Er zijn geen verrichtingen geregistreerd voor deze periode.",
+  "recapOperationsCount": "{count} verrichting(en)",
+  "@recapOperationsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "recapDelete": "Verwijderen",
+
+  "paywallAnnualTitle": "Jaarlijks Premium",
+  "paywallMonthlyTitle": "Maandelijks Premium",
+  "paywallFamilyTitle": "Gezins-Premium",
+  "paywallAnnualSubtitle": "De beste prijs om alle premiumfuncties te ontgrendelen.",
+  "paywallMonthlySubtitle": "Flexibel, zonder langdurige verplichting.",
+  "paywallFamilySubtitle": "Om een gedeeld gezinsbudget in premium te maken en te beheren.",
+  "paywallDefaultPackageSubtitle": "Ontgrendel alle premiumfuncties.",
+  "paywallBadgeBestOffer": "Beste aanbod",
+  "paywallBadgeFamily": "Gezin",
+  "paywallBadgeFlexible": "Flexibel",
+  "paywallPurchaseSuccess": "Premium succesvol geactiveerd.",
+  "paywallPurchaseCanceled": "Aankoop geannuleerd.",
+  "paywallPurchaseError": "Kan aankoop niet voltooien: {error}",
+  "@paywallPurchaseError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "paywallRestoreSuccess": "Aankopen succesvol hersteld.",
+  "paywallRestoreNoPurchaseFound": "Geen actieve Premium-aankoop gevonden.",
+  "paywallRestoreError": "Fout bij herstellen van aankopen: {error}",
+  "@paywallRestoreError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "paywallRestoring": "Herstellen...",
+  "paywallRestore": "Herstellen",
+  "paywallUnlockTitle": "Ontgrendel alle premiumfuncties",
+  "paywallUnlockSubtitle": "Excel-export, slimme tips, premium gezinsbeheer, geavanceerde analyses en een advertentievrije ervaring.",
+  "paywallChooseOfferTitle": "Kies je aanbod",
+  "paywallProcessing": "Bezig...",
+  "paywallChooseOfferButton": "Kies een aanbod",
+  "paywallContinueWithPrice": "Doorgaan met {price}",
+  "@paywallContinueWithPrice": {
+    "placeholders": {
+      "price": {}
+    }
+  },
+  "paywallStoreNotice": "Betaling en beheer van het abonnement via Apple / Google.",
+  "paywallImportantInfoTitle": "Belangrijke informatie",
+  "paywallImportantInfoBody": "• Het abonnement wordt automatisch verlengd volgens de regels van de store.\n• Je kunt je abonnement beheren of annuleren via je Apple- / Google-account.\n• Met herstellen kun je een bestaande aankoop op hetzelfde store-account opnieuw activeren.\n• Premium gezinscreatie en -beheer zijn afhankelijk van je actieve abonnement.\n• Native gezinsdeling hangt ook af van de regels van de App Store of Google Play.",
+  "paywallPartialUnavailable": "Monetisatie gedeeltelijk niet beschikbaar: {error}",
+  "@paywallPartialUnavailable": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "paywallHeroPremiumActiveTitle": "Premium actief",
+  "paywallHeroUpgradeTitle": "Ga naar Premium",
+  "paywallHeroPremiumActiveSubtitle": "Alle premiumfuncties zijn al ontgrendeld.",
+  "paywallHeroUpgradeSubtitle": "Ontgrendel Excel-export, slimme tips, premium gezinsbeheer en een advertentievrije ervaring.",
+  "paywallFeatureExcelTitle": "Volledige Excel-export",
+  "paywallFeatureExcelSubtitle": "Gedetailleerde exports om je budget te beheren en te archiveren.",
+  "paywallFeatureAdviceTitle": "Slim advies",
+  "paywallFeatureAdviceSubtitle": "Aanbevelingen, waarschuwingen en geavanceerde analyses.",
+  "paywallFeatureFamilyTitle": "Premium gezinsbeheer",
+  "paywallFeatureFamilySubtitle": "Maak een gezin aan, draag eigendom over en beheer de gedeelde structuur.",
+  "paywallFeatureNoAdsTitle": "Geen advertenties",
+  "paywallFeatureNoAdsSubtitle": "Een vloeiendere ervaring voor premiumgebruikers.",
+  "paywallFeatureFutureTitle": "Toekomstige functies inbegrepen",
+  "paywallFeatureFutureSubtitle": "Toekomstige premiumverbeteringen worden ontgrendeld.",
+  "paywallPremiumAlreadyActive": "Je premiumabonnement is al actief.",
+  "paywallNoOfferTitle": "Geen aanbod beschikbaar",
+  "paywallNoOfferMessage": "Controleer je configuratie van RevenueCat, App Store Connect of Google Play Console.",
+
+  "budgetSectionAddButton": "Toevoegen",
+  "budgetSectionEmpty": "Nog geen categorie. Voeg een regel toe.",
+  "budgetSectionAmountLabel": "Bedrag",
+  "budgetSectionTotalLabel": "Totaal: {amount}",
+  "@budgetSectionTotalLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+
+  "expenseSectionAddCategoryButton": "Categorie",
+  "expenseSectionEmpty": "Geen uitgavencategorie. Voeg een categorie toe.",
+  "expenseSectionAddSubCategoryTooltip": "Subcategorie toevoegen",
+  "expenseSectionRenameCategoryTooltip": "Categorie hernoemen",
+  "expenseSectionDeleteCategoryTooltip": "Categorie verwijderen",
+  "expenseSectionNoSubCategory": "Geen subcategorie.",
+  "expenseSectionDeleteSubCategoryTooltip": "Subcategorie verwijderen",
+  "expenseSectionOperationsCount": "Verrichtingen: {count}",
+  "@expenseSectionOperationsCount": {
+    "placeholders": {
+      "count": {}
+    }
+  },
+  "expenseSectionTotalLabel": "Totaal: {amount}",
+  "@expenseSectionTotalLabel": {
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "expenseSectionAddAmountButton": "Bedrag"
+}

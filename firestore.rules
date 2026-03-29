@@ -1,0 +1,136 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function familyDoc(familyId) {
+      return get(/databases/$(database)/documents/families/$(familyId));
+    }
+
+    function familyExists(familyId) {
+      return familyDoc(familyId).exists();
+    }
+
+    function isFamilyMember(familyId) {
+      return isSignedIn()
+        && familyExists(familyId)
+        && request.auth.uid in familyDoc(familyId).data.members;
+    }
+
+    function isFamilyOwner(familyId) {
+      return isSignedIn()
+        && familyExists(familyId)
+        && familyDoc(familyId).data.ownerUid == request.auth.uid;
+    }
+
+    function userBelongsToOwnedFamily(uid) {
+      return isSignedIn()
+        && resource.data.familyId is string
+        && familyExists(resource.data.familyId)
+        && familyDoc(resource.data.familyId).data.ownerUid == request.auth.uid
+        && uid in familyDoc(resource.data.familyId).data.members;
+    }
+
+    function onlyUserFamilyLinkFieldsChanged() {
+      return request.resource.data.diff(resource.data).affectedKeys()
+        .hasOnly(['familyId', 'updatedAt']);
+    }
+
+    function familyIdRemoved() {
+      return !request.resource.data.keys().hasAny(['familyId']);
+    }
+
+    function familyDocHasAllowedKeys() {
+      return request.resource.data.keys().hasOnly([
+        'ownerUid',
+        'members',
+        'createdAt',
+        'updatedAt',
+        'name',
+      ]);
+    }
+
+    function isValidFamilyCreate() {
+      return isSignedIn()
+        && familyDocHasAllowedKeys()
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.members is list
+        && request.resource.data.members.size() == 1
+        && request.resource.data.members[0] == request.auth.uid;
+    }
+
+    function isOwnerManagedFamilyUpdate(familyId) {
+      return isFamilyOwner(familyId)
+        && familyDocHasAllowedKeys()
+        && request.resource.data.members is list
+        && request.resource.data.ownerUid is string
+        && request.resource.data.ownerUid in request.resource.data.members;
+    }
+
+    function isSelfJoinFamily(familyId) {
+      return isSignedIn()
+        && familyExists(familyId)
+        && !(request.auth.uid in resource.data.members)
+        && request.resource.data.ownerUid == resource.data.ownerUid
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.name == resource.data.name
+        && request.resource.data.members is list
+        && request.auth.uid in request.resource.data.members;
+    }
+
+    function isSelfLeaveFamily(familyId) {
+      return isSignedIn()
+        && familyExists(familyId)
+        && request.auth.uid in resource.data.members
+        && resource.data.ownerUid != request.auth.uid
+        && request.resource.data.ownerUid == resource.data.ownerUid
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.name == resource.data.name
+        && request.resource.data.members is list
+        && !(request.auth.uid in request.resource.data.members);
+    }
+
+    match /users/{uid} {
+      allow read: if isSelf(uid);
+
+      allow create, update: if isSelf(uid);
+
+      allow update: if userBelongsToOwnedFamily(uid)
+        && onlyUserFamilyLinkFieldsChanged()
+        && familyIdRemoved();
+
+      allow delete: if false;
+    }
+
+    match /families/{familyId} {
+      allow read: if isFamilyMember(familyId);
+
+      allow create: if isValidFamilyCreate();
+
+      allow update: if isOwnerManagedFamilyUpdate(familyId)
+        || isSelfJoinFamily(familyId)
+        || isSelfLeaveFamily(familyId);
+
+      allow delete: if isFamilyOwner(familyId);
+
+      match /private/budget {
+        allow read, write: if isFamilyMember(familyId);
+      }
+
+      match /private/{documentId} {
+        allow read, write: if false;
+      }
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
